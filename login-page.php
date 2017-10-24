@@ -19,9 +19,9 @@
             <div class="ico">
                 <img src="Images/logo.png" alt="Grey Hotel" class="ico-image">
             </div>
-            <!--rename .html file to .php, delete this comment after-->
+            
             <div class="topnav" id="myTopnav">
-                <a href="index.html" class="h">HOME</a>
+                <a href="index.php" class="h">HOME</a>
                 <a href="#room" class="h">ROOMS</a>
                 <a href="#contact" class="h">CONTACT US</a>
             </div>

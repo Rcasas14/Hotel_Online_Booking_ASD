@@ -23,8 +23,8 @@
                 <img src="Images/logo.png" alt="Grey Hotel" class="ico-image">
             </div>
             <div>
-                <!-- Rename login-page.html to .php-->
-                <button type="button" class="login-but"><a href="login-page.html">LOGIN</a></button>
+                
+                <button type="button" class="login-but"><a href="login-page.php">LOGIN</a></button>
             </div>
             <div class="topnav" id="myTopnav">
                 <a href="#home" class="h">HOME</a>
