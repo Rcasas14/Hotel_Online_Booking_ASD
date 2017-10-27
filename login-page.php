@@ -24,7 +24,7 @@
                 <a href="index.php" class="h">HOME</a>
                 <a href="#room" class="h">ROOMS</a>
                 <a href="#contact" class="h">CONTACT US</a>
-                <a href="#booking" class="h">BOOK NOW</a>
+                <a href="#reserve-now" class="h">RESERVE NOW</a>
             </div>
         </div>
      <!--   <div class="head-image">
@@ -37,29 +37,29 @@
                 <fieldset class="uk-fieldset">
                     <legend class="uk-legend" id="log-text">LOGIN AS OUR CLIENT</legend>
                     <div class="uk-margin">
-                        <label class="uk-form-label form-horizontal-text">Email Address *</label>
+                        <label class="uk-form-label form-horizontal-text font-Roboto">Email Address *</label>
                         <div class="uk-form-controls">
                             <input class="uk-input uk-form-small" id="form-horizontal-text" type="Email" placeholder="name@example.com">
                             <br>
                             <br>
-                            <label class="uk-form-label form-horizontal-text">Password*</label>
+                            <label class="uk-form-label form-horizontal-text font-Roboto">Password *</label>
                             <input class="uk-input uk-form-small" id="form-horizontal-text" type="password">
                             <br>
                             <br>
                             <button class=" uk-button-default log-butt">LOGIN</button>
                             <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
-                                <label>
-                                    <input class="uk-checkbox" type="checkbox"> Login as administrator &nbsp;&nbsp;&nbsp;&nbsp;
+                                <label class=" font-log">
+                                    <input class="uk-checkbox" type="checkbox"> Login as administrator &nbsp;&nbsp;
                                     <input class="uk-checkbox" type="checkbox"> Remember me</label>
                             </div>
-                            <a href=#admin-page>Forgot your password?</a>
+                            <a href=#admin-page class="font-Roboto">Forgot your password?</a>
                             <br>
                             <br>
                             <br>
                         </div>
                         <div class="not-member-container">
                             <p class="notAmember-yet">NOT A MEMBER YET?</p>
-                            <p id="create-acc">Create an Account <span><a href="#register-page.php">here!</a></span></p>
+                            <p id="create-acc">Create an Account <span class="font-Roboto"><a href="register-page.php">here!</a></span></p>
                         </div>
                     </div>
         </div>
