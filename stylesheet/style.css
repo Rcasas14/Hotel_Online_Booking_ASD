@@ -1,0 +1,305 @@
+    @font-face {
+        font-family: "Strait-Regular";
+        src: url(Fonts/strait/Strait-Regular.ttf);
+    }
+    
+    @font-face {
+        font-family: "Roboto-Light";
+        src: url("Fonts/Roboto/Roboto-Light.ttf");
+    }
+    
+    @font-face {
+        font-family: "Montserrat-Regular";
+        src: url("Fonts/Montserrat/Montserrat-Regular.otf");
+    }
+        
+    .body {
+        margin: 0;
+        background-color: rgb( 248, 244, 244);
+        padding: 0;
+    }
+    
+    .top-bg-color {
+        background-color: #555f70;
+        background-size: cover;
+        display: block;
+        height: 100px;
+        margin: 0;
+    }
+    
+    .ico {
+        float: left;
+        display: block;
+        margin: -13px;
+        width: 100px;
+    }
+    
+    .ico-image {
+        float: left;
+        margin-top: 18px;
+        margin-left: 20px;
+        box-shadow: 2px 2px #1e1414;
+        border-radius: 50%;
+    }
+    
+    .login-but {
+        float: right;
+        margin-top: 70px;
+        margin-right: 20px;
+    }
+    
+    .topnav {
+        float: right;
+        display: inline-block;
+        margin-top: 70px;
+    }
+    
+    .h {
+        font-family: "Roboto-Light";
+        font-size: 18px;
+        text-decoration: none;
+        color: #fff;
+        margin-right: 20px;
+        font-weight: 100;
+        border: 0 none;
+        position: relative;
+        outline: none;
+    }
+    
+    .h:after,
+    .h:before {
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+    }
+    
+    .topNav > .h {
+        text-decoration: none;
+        color: #fff;
+        z-index: 1;
+        margin-top: 8px
+    }
+    
+    .topNav > .h:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background: #fff;
+        visibility: hidden;
+        border-radius: 2px;
+        transform: scaleX(0);
+        transition: .25s linear;
+        ;
+    }
+    
+    .topNav > .h:hover:before,
+    .topNav > .h:focus:before {
+        visibility: visible;
+        transform: scaleX(1);
+    }
+    
+    .login-but {
+        -webkit-appearance: none;
+        display: inline-block;
+        cursor: pointer;
+        border: 0;
+        border-radius: 5%;
+        background: rgba(85, 95, 112, 0.5);
+        color: #fff;
+        font-weight: 32px;
+        outline: 0;
+        text-decoration: none;
+        -moz-transition: background-color .25s ease-in-out;
+        -webkit-transition: background-color .25s ease-in-out;
+        -ms-transition: background-color .25s ease-in-out;
+        transition: background-color .25s ease-in-out;
+    }
+    
+    .login-but:hover {
+        background-color: rgba(255, 255, 255, 0.6);
+    }
+    
+    .login-but a {
+        font-family: "Roboto-Light";
+        font-size: 21px;
+        color: #fff;
+        text-decoration: none;
+    }
+    
+    .slide {
+        height: 650px;
+        width: 100%;
+    }
+    /*login-page style*/
+    
+    .log-container {
+        height: 410px;
+        padding: 25px 50px 60px 90px;
+        background-color: #efefef;
+        margin-right: 420px;
+        margin-left: 450px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        /*border: 2px solid rgba(0, 0, 0, 0.5);*/
+    }
+    
+    #log-text {
+        color: #000;
+        text-decoration: none;
+        font-family: "Montserrat-Regular";
+    }
+    
+    .form-size {
+        width: 280px;
+        height: 6px;
+    }
+    
+    .item {
+        height: 200px;
+        background: RED;
+        width: 100%;
+        color: #000;
+    }
+    
+    .reset-margin {
+        margin: 0;
+    }
+    
+.font-log{
+    font-size: 14.5px;
+    margin: 0;
+    padding: 0;
+}
+    .log-butt {
+        font-family: "Roboto-Light";
+        text-decoration: none;
+        background: #424242;
+        color: #fff;
+        padding: 12px 25px 12px 25px;
+        font-size: 13px;
+    }
+
+    .Sign-Up-butt {
+        font-family: "Roboto-Light";
+        text-decoration: none;
+        background: #424242;
+        color: #fff;
+        padding: 12px 25px 12px 25px;
+        font-size: 13px;
+        float: right;
+        margin-top: 125%;
+        margin-right: 10px;
+    }
+    .Reservation-butt {
+        font-family: "Roboto-Light";
+        text-decoration: none;
+        background: #424242;
+        color: #fff;
+        padding: 12px 25px 12px 25px;
+        font-size: 13px;
+        float: right;
+        margin-top: 110%;
+        margin-right: 10px;
+    }
+    
+    .not-member-container p {
+        margin-left: 50px;
+        padding-right: 0;
+    }
+    
+    .notAmember-yet {
+        font-size: 17px;
+        text-align: center;
+        color: #000;
+        text-decoration: none;
+        font-family: "Montserrat-Regular";
+    }
+    
+    #create-acc {
+        text-align: center;
+        font-family: "Roboto-Light";
+    }
+    .head-image {
+        height: 480px;
+        background-size: contain;
+    }
+    
+    .font-Roboto {
+        font-family: "Roboto-Light";
+    }
+    /* register-page style */
+    
+    .Create-acc-container {
+        height: 670px;
+        padding: 8px;
+        background-color: #efefef;
+        margin-right: 420px;
+        margin-left: 450px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    .Reservation_container {
+        height: 600px;
+        padding: 8px;
+        background-color: #efefef;
+        margin-right: 420px;
+        margin-left: 450px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    
+    .log-details {
+        font-size: 24px;
+        padding-top: 10px;
+        padding-left: 10px;
+        font-family: "Montserrat-Regular";
+    }
+    
+    #reg-width {
+        width: 280px;
+    }
+    
+    .form-margin {
+        margin-left: 15px;
+    }
+    
+    .form-left {
+        float: left;
+    }
+    
+    .personal-att {
+        margin-left: 65px;
+    }
+    
+    .personal-details {
+        margin-left: 53px;
+    }
+    
+    .form-style {
+        border-left: 2px solid #000;
+        margin-left: 70px;
+        padding-left: 24px;
+    }
+    
+    .date-form {
+        width: 50px;
+        height: 35px;
+    }
+    
+    .fl {
+        display: inline-block;
+    }
+
+    aside{
+        float: left;
+        background-color: black;
+        color: white;
+    }
+    .content{
+        width: 100%;
+        height: 500px;
+        background-color: gray;
+        color: white;
+    }
