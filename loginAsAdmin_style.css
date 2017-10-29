@@ -31,7 +31,6 @@
         float: left;
         display: block;
         margin: 0;
-
     }
     
     .ico-image {
@@ -40,8 +39,6 @@
         margin-left: 20px;
         box-shadow: 2px 2px #1e1414;
         border-radius: 50%;
-        position: fixed;
-        z-index: 99;
     }
     
     .login-but {
@@ -261,68 +258,22 @@
         display: inline-block;
     }
 
+
+    /*loginAsAdmin page*/
+
     .adminHeader h1  {
         font-family: "Roboto-Light";
         text-decoration: none;
         color: #fff;
         padding-top: 30px;
-        padding-left: 250px;
+        margin-left: 250px;
         border: 0 none;
         position: relative;
         outline: none;
     }
 
     .sidebar {
-        position: relative;
-        background-color:#eeeeee;
-        height: auto;
-        width: 300px;
-        float: left;
-        padding: 5px; 
-        
-}
-
-
-    .sidebar h4{
-        font-family: "Roboto-Light";
-        text-decoration: none;
-        color: #555f70;
-        padding-top: 70px; 
-        font-weight: bold;
+        margin-left: 0px;
+        width: 30px;
+        background-color: blue; 
     }
-        
-    
-
-    .sidebar_links{
-        padding-left: 30px;
-    }
-
-
-    .sidebar li {
-        font-family: "Roboto-Light";
-        font-size: 18px;
-        text-decoration: none;
-        color: #555f70;
-        font-weight: 100;
-        position: relative;
-    }
-
-    .sidebar a {
-        font-family: "Roboto-Light";
-        font-size: 18px;
-        text-decoration: none;
-        color: #555f70;
-        font-weight: 100;
-        position: relative;
-    }
-
-    .content {
-        width: 1000px;
-        height: auto;
-        float: left;
-        padding: 10px;   
-        
-          
-    }
-
-    
