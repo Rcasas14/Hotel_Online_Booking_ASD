@@ -22,14 +22,15 @@
     .top-bg-color {
         background-color: #555f70;
         background-size: cover;
-        display: block;
         height: 100px;
-        margin: 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
     }
     
     .ico {
         float: left;
-        display: block;
         margin: 0;
     }
     
@@ -41,14 +42,14 @@
         border-radius: 50%;
     }
     
-    .login-but {
-        float: right;
-        margin-top: 70px;
-        margin-right: 20px;
-    }
-    
     .topnav {
         float: left;
+        margin-left: 100px;
+        width: 100%;
+        top: 0;
+        position: fixed;
+        display: inline-block;
+        z-index: 1000px;
     }
     
     .h {
@@ -69,14 +70,14 @@
         -moz-box-sizing: border-box;
     }
     
-    .topNav > .h {
+    .topnav > .h {
         text-decoration: none;
         color: #fff;
         z-index: 1;
         margin-top: 8px
     }
     
-    .topNav > .h:before {
+    .topnav > .h:before {
         content: "";
         position: absolute;
         width: 100%;
@@ -88,11 +89,10 @@
         border-radius: 2px;
         transform: scaleX(0);
         transition: .25s linear;
-        ;
     }
     
-    .topNav > .h:hover:before,
-    .topNav > .h:focus:before {
+    .topnav > .h:hover:before,
+    .topnav > .h:focus:before {
         visibility: visible;
         transform: scaleX(1);
     }
@@ -103,37 +103,43 @@
         margin-bottom: 12px;
     }
     
-    .login-but {
-        -webkit-appearance: none;
-        display: inline-block;
+    .nav-text {
         cursor: pointer;
-        border: 0;
-        border-radius: 5%;
-        background: rgba(85, 95, 112, 0.5);
-        color: #fff;
-        font-weight: 32px;
-        outline: 0;
+        display: inline-block;
+        
+    }
+    
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+.dropdown p{
+    text-decoration: none;
+}
+    
+    .dropdown-content {
+        display: none;
         text-decoration: none;
-        -moz-transition: background-color .25s ease-in-out;
-        -webkit-transition: background-color .25s ease-in-out;
-        -ms-transition: background-color .25s ease-in-out;
-        transition: background-color .25s ease-in-out;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
     }
     
-    .login-but:hover {
-        background-color: rgba(255, 255, 255, 0.6);
-    }
-    
-    .login-but a {
-        font-family: "Roboto-Light";
-        font-size: 21px;
-        color: #fff;
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
         text-decoration: none;
+        display: block;
     }
     
-    .slide {
-        height: 650px;
-        width: 100%;
+    .dropdown-content a:hover {
+        background-color: #f1f1f1
+    }
+    
+    .dropdown:hover .dropdown-content {
+        display: block;
     }
     /*login-page style*/
     
@@ -170,11 +176,12 @@
         margin: 0;
     }
     
-.font-log{
-    font-size: 14.5px;
-    margin: 0;
-    padding: 0;
-}
+    .font-log {
+        font-size: 14.5px;
+        margin: 0;
+        padding: 0;
+    }
+    
     .log-butt {
         font-family: "Roboto-Light";
         text-decoration: none;
@@ -256,7 +263,80 @@
         width: 50px;
         height: 35px;
     }
+    /* SLIDESHOW*/
     
-    .fl {
-        display: inline-block;
+    @keyframes slideshow-container {
+        0% {
+            left: 0;
+        }
+        20% {
+            left: 0;
+        }
+        25% {
+            left: -100%;
+        }
+        45% {
+            left: -100%;
+        }
+        50% {
+            left: -200%;
+        }
+        70% {
+            left: -200%;
+        }
+        75% {
+            left: -300%;
+        }
+        95% {
+            left: -300%;
+        }
+        100% {
+            left: -400%;
+        }
+    }
+    
+    .slideshow-container {
+        margin: 0;
+    }
+    
+    .slideshow-container figure img {
+        width: 20%;
+        float: left;
+    }
+    
+    .slideshow-container figure {
+        width: 500%;
+        margin-top: 100px;
+        position: relative;
+        left: 0;
+        text-align: left;
+        animation: 20s slideshow-container infinite;
+    }
+    /*ABOUT GREY HOTEL style*/
+    
+.About-hotel-container{
+    margin: 60px;
+}
+
+    .About-greyHotel {
+        text-decoration: none;
+        text-align: left;
+        font-family: "Montserrat-Regular";
+        font-size: 30px;
+        color: #000;
+    }
+    
+    .temp {
+        font-size: 20px;
+        color: #000;
+        font-family: "Roboto-Light";
+        text-decoration: none;
+    }
+    /*FOOTER style*/
+    
+    .Footer {
+        background-color: dimgray;
+        background-size: cover;
+        margin: 0;
+        height: 200px;
     }

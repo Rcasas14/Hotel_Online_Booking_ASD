@@ -17,7 +17,7 @@
 <body>
     <div class="top-bg-color">
         <div class="ico">
-            <img src="Images/logo.png" alt="Grey Hotel" class="ico-image">
+            <a href="index.php"><img src="Images/logo.png" alt="Grey Hotel" class="ico-image"></a>
         </div>
 
         <div class="topnav" id="myTopnav">

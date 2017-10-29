@@ -8,9 +8,7 @@
     <title>Grey Hotel</title>
     <link href="UIKIT/css/uikit.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet" type="text/css">
-
-
-
+    <link href="../tes-css.css" rel="stylesheet" type="text/css">
 </head>
 
 <body class="body">
@@ -19,29 +17,52 @@
             <div class="ico">
                 <img src="Images/logo.png" alt="Grey Hotel" class="ico-image">
             </div>
-            <div>
-
-                <button type="button" class="login-but"><a href="login-page.php">LOGIN</a></button>
-            </div>
             <div class="topnav" id="myTopnav">
-                <a href="#home" class="h">HOME</a>
-                <a href="#rooms" class="h">ROOMS OFFER</a>
-                <a href="#contact" class="h">CONTACT US</a>
-                <a href="#reserve-now" class="h">RESERVE NOW</a>
+                <div class="dropdown">
+                    <p class="nav-text"><a href="#home" class="h">HOME</a></p>
+                    <div class="dropdown-content">
+                        <a href="#about-hotel">About Grey Hotel</a>
+                        <a href="#contact">Contact Us</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <p class="nav-text"><a href="#rooms" class="h">ROOMS</a></p>
+                    <div class="dropdown-content">
+                        <a href="#about-hotel">Room Types</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <p class="nav-text"><a href="login-page.php" class="h">RESERVE NOW</a></p>
+                    <div class="dropdown-content">
+                        <a href="#reserve-room">Reserve Room</a>
+                        <a href="#client-profile">Client Profile</a>
+                    </div>
+                </div>
             </div>
         </div>
-
-
+    <div class="slideshow-container">
+        <figure>
+        <img src="Images/Greatness.jpg">
+            <img src="Images/Relax.jpeg">
+            <img src="Images/Experience.jpeg">
+            <img src="Images/Youth.jpeg">
+        </figure>
     </div>
-
-
+        
+        <div class="About-hotel-container">
+            <p class="About-greyHotel">ABOUT GREY HOTEL</p>
+            <p class="temp">Lorem ipsum dolor sit amet, conse ctetuer. Duis autem vemeu iriure dolor adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat wisi enim.</p>
+        </div>
     </div>
+    <div class="Footer">
+        <footer class="Contacts-Footer">
 
+        </footer>
+    </div>
     <script src="Jquery/jquery.min.js"></script>
     <script src="UIKIT/js/uikit.js"></script>
     <script src="UIKIT/js/uikit-icons.js"></script>
-
-
+    <script src="Script/slideshow-scrpit.js"></script>
 </body>
 
 </html>
