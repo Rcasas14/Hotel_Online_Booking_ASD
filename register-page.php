@@ -21,11 +21,27 @@
         </div>
 
         <div class="topnav" id="myTopnav">
-            <a href="index.php" class="h">HOME</a>
-            <a href="#room" class="h">ROOMS</a>
-            <a href="#contact" class="h">CONTACT US</a>
-            <a href="#reserve-now" class="h">RESERVE NOW</a>
-        </div>
+                <div class="dropdown">
+                    <p class="nav-text"><a href="index.php" class="link-head-text">HOME</a></p>
+                    <div class="dropdown-content">
+                        <a href="#about-hotel">About Grey Hotel</a>
+                        <a href="#contact">Contact Us</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <p class="nav-text"><a href="#rooms" class="link-head-text">ROOMS</a></p>
+                    <div class="dropdown-content">
+                        <a href="#about-hotel">Room Types</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <p class="nav-text"><a href="login-page.php" class="link-head-text">RESERVE NOW</a></p>
+                    <div class="dropdown-content">
+                        <a href="#reserve-room">Reserve Room</a>
+                        <a href="#client-profile">Client Profile</a>
+                    </div>
+                </div>
+            </div>
     </div>
     <div>
         <div class="Create-acc-container">

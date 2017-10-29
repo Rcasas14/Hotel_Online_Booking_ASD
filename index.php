@@ -15,24 +15,24 @@
     <div>
         <div class="top-bg-color">
             <div class="ico">
-                <img src="Images/logo.png" alt="Grey Hotel" class="ico-image">
+                <a href="index.php"><img src="Images/logo.png" alt="Grey Hotel" class="ico-image"></a>
             </div>
             <div class="topnav" id="myTopnav">
                 <div class="dropdown">
-                    <p class="nav-text"><a href="#home" class="h">HOME</a></p>
+                    <p class="nav-text"><a href="index.php" class="link-head-text">HOME</a></p>
                     <div class="dropdown-content">
                         <a href="#about-hotel">About Grey Hotel</a>
                         <a href="#contact">Contact Us</a>
                     </div>
                 </div>
                 <div class="dropdown">
-                    <p class="nav-text"><a href="#rooms" class="h">ROOMS</a></p>
+                    <p class="nav-text"><a href="#rooms" class="link-head-text">ROOMS</a></p>
                     <div class="dropdown-content">
                         <a href="#about-hotel">Room Types</a>
                     </div>
                 </div>
                 <div class="dropdown">
-                    <p class="nav-text"><a href="login-page.php" class="h">RESERVE NOW</a></p>
+                    <p class="nav-text"><a href="login-page.php" class="link-head-text">RESERVE NOW</a></p>
                     <div class="dropdown-content">
                         <a href="#reserve-room">Reserve Room</a>
                         <a href="#client-profile">Client Profile</a>
@@ -40,18 +40,22 @@
                 </div>
             </div>
         </div>
-    <div class="slideshow-container">
-        <figure>
-        <img src="Images/Greatness.jpg">
-            <img src="Images/Relax.jpeg">
-            <img src="Images/Experience.jpeg">
-            <img src="Images/Youth.jpeg">
-        </figure>
-    </div>
-        
+        <div class="slideshow-container">
+            <figure>
+                <img src="Images/Greatness.jpg">
+                <img src="Images/Relax.jpeg">
+                <img src="Images/Experience.jpeg">
+                <img src="Images/Youth.jpeg">
+            </figure>
+            <a href="#about-hotel" uk-scroll><img src="Images/scroll_down.png" class="scroll-ico">
+            </a>
+        </div>
+        <br>
+        <br>
+
         <div class="About-hotel-container">
-            <p class="About-greyHotel">ABOUT GREY HOTEL</p>
-            <p class="temp">Lorem ipsum dolor sit amet, conse ctetuer. Duis autem vemeu iriure dolor adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat wisi enim.</p>
+            <p class="About-greyHotel" id="about-hotel">ABOUT GREY HOTEL</p>
+            <p class="aboutHotel-temp-content ">Lorem ipsum dolor sit amet, conse ctetuer. Duis autem vemeu iriure dolor adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat wisi enim.</p>
         </div>
     </div>
     <div class="Footer">

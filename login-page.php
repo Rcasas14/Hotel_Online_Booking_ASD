@@ -22,20 +22,20 @@
 
             <div class="topnav" id="myTopnav">
                 <div class="dropdown">
-                    <p class="nav-text"><a href="index.php" class="h">HOME</a></p>
+                    <p class="nav-text"><a href="index.php" class="link-head-text">HOME</a></p>
                     <div class="dropdown-content">
                         <a href="#about-hotel">About Grey Hotel</a>
                         <a href="#contact">Contact Us</a>
                     </div>
                 </div>
                 <div class="dropdown">
-                    <p class="nav-text"><a href="#rooms" class="h">ROOMS</a></p>
+                    <p class="nav-text"><a href="#rooms" class="link-head-text">ROOMS</a></p>
                     <div class="dropdown-content">
                         <a href="#about-hotel">Room Types</a>
                     </div>
                 </div>
                 <div class="dropdown">
-                    <p class="nav-text"><a href="login-page.php" class="h">RESERVE NOW</a></p>
+                    <p class="nav-text"><a href="login-page.php" class="link-head-text">RESERVE NOW</a></p>
                     <div class="dropdown-content">
                         <a href="#reserve-room">Reserve Room</a>
                         <a href="#client-profile">Client Profile</a>

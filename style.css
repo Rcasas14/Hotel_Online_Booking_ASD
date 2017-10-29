@@ -42,6 +42,17 @@
         border-radius: 50%;
     }
     
+    .link-head-text {
+        font-family: "Roboto-Light";
+        font-size: 19px;
+        text-decoration: none;
+        color: #fff;
+        margin-right: 20px;
+        position: relative;
+        outline: none;
+        border: 0 none;
+    }
+    
     .topnav {
         float: left;
         margin-left: 100px;
@@ -49,52 +60,11 @@
         top: 0;
         position: fixed;
         display: inline-block;
-        z-index: 1000px;
     }
     
-    .h {
-        font-family: "Roboto-Light";
-        font-size: 18px;
-        text-decoration: none;
-        color: #fff;
-        margin-right: 20px;
-        font-weight: 100;
-        border: 0 none;
+    .dropdown {
         position: relative;
-        outline: none;
-    }
-    
-    .h:after,
-    .h:before {
-        box-sizing: border-box;
-        -moz-box-sizing: border-box;
-    }
-    
-    .topnav > .h {
-        text-decoration: none;
-        color: #fff;
-        z-index: 1;
-        margin-top: 8px
-    }
-    
-    .topnav > .h:before {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 2px;
-        bottom: 0;
-        left: 0;
-        background: #fff;
-        visibility: hidden;
-        border-radius: 2px;
-        transform: scaleX(0);
-        transition: .25s linear;
-    }
-    
-    .topnav > .h:hover:before,
-    .topnav > .h:focus:before {
-        visibility: visible;
-        transform: scaleX(1);
+        display: inline-block;
     }
     
     #myTopNav {
@@ -106,36 +76,30 @@
     .nav-text {
         cursor: pointer;
         display: inline-block;
-        
+        text-decoration: none;
     }
     
-    .dropdown {
-        position: relative;
-        display: inline-block;
-    }
-.dropdown p{
-    text-decoration: none;
-}
     
     .dropdown-content {
         display: none;
         text-decoration: none;
         position: absolute;
-        background-color: #f9f9f9;
+        background-color: #555f70;
         min-width: 160px;
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
         z-index: 1;
     }
     
     .dropdown-content a {
-        color: black;
+        color: #fff;
         padding: 12px 16px;
         text-decoration: none;
         display: block;
+        font-family: "Roboto-Light";
     }
     
     .dropdown-content a:hover {
-        background-color: #f1f1f1
+        background-color: rgba(255,255,255, 0.4);
     }
     
     .dropdown:hover .dropdown-content {
@@ -151,7 +115,7 @@
         margin-left: 450px;
         margin-top: 50px;
         margin-bottom: 50px;
-        /*border: 2px solid rgba(0, 0, 0, 0.5);*/
+       
     }
     
     #log-text {
@@ -270,7 +234,7 @@
             left: 0;
         }
         20% {
-            left: 0;
+            left: 0%;
         }
         25% {
             left: -100%;
@@ -297,6 +261,7 @@
     
     .slideshow-container {
         margin: 0;
+        overflow: hidden;
     }
     
     .slideshow-container figure img {
@@ -306,18 +271,32 @@
     
     .slideshow-container figure {
         width: 500%;
-        margin-top: 100px;
+        margin-top: 0px;
         position: relative;
         left: 0;
         text-align: left;
         animation: 20s slideshow-container infinite;
     }
+    
+    .scroll-ico {
+        text-align: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        color: #fff;
+        margin-top: 300px;
+        height: 36px;
+        border: 2px solid #fff;
+        border-radius: 20%;
+    }
     /*ABOUT GREY HOTEL style*/
     
-.About-hotel-container{
-    margin: 60px;
-}
-
+    .About-hotel-container {
+        margin: 60px;
+        border: 5px solid #000;
+    }
+    
     .About-greyHotel {
         text-decoration: none;
         text-align: left;
@@ -326,7 +305,7 @@
         color: #000;
     }
     
-    .temp {
+    .abouthotel-temp-content {
         font-size: 20px;
         color: #000;
         font-family: "Roboto-Light";
