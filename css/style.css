@@ -270,6 +270,7 @@
     font-size: 13px;
     margin-top: 5px;
     margin-left: 40px;
+    
 }
 .reserve-width-form {
     width: 300px;
@@ -303,6 +304,9 @@
 }
 .reserve-form-contain input {
     float: right;
+}
+.reserv-select{
+    height: 50px;
 }
 .tex-area-float {
     float: right;

@@ -52,7 +52,11 @@
                                 <input class="uk-input uk-form-small reserve-width-form" type="text">
                             </p>
                             <p class="reserve-details">Room Type*:
-                                <input class="uk-input uk-form-small reserve-width-form" type="text" placeholder="dropdown textfield">
+                                <select class="uk-select reserve-width-form reserve-details reserv-select">
+                                    <option>Room Type A</option>
+                                    <option>Room Type C</option>
+                                    <option>Room Type B</option>
+                                </select>
                             </p>
                             <p class="reserve-details ">Room Rate:
                                 <input class=" uk-input uk-form-small reserve-width-form" type="text" placeholder="(room-price function)">
