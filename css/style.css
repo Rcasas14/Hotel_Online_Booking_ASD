@@ -18,7 +18,8 @@
     background-color: rgb( 248, 244, 244);
     padding: 0;
 }
-.body-inline{
+
+.body-inline {
     display: inline;
 }
 
@@ -109,47 +110,77 @@
     display: block;
 }
 
+@keyframes downdown {
+    0 {
+        margin-top: 0;
+    }
+    50% {
+        margin-top: 12px;
+    }
+    100% {
+        margin-top: 0px;
+    }
+}
+
+.moving-down {
+    animation-name: downdown;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+}
+
+.scroll-ico {
+    text-align: center;
+    top: 94%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    color: #fff;
+    margin-top: 20px;
+    height: 36px;
+    border: 2px solid #fff;
+    border-radius: 20%;
+    -webkit-appearance: none;
+    -moz-transition: background-color .25s ease-in-out;
+    -webkit-transition: background-color .25s ease-in-out;
+    -ms-transition: background-color .25s ease-in-out;
+    transition: background-color .25s ease-in-out;
+}
+
 
 /*login-page style*/
-
 .log-container {
     height: 500px;
     padding: 25px 50px 60px 90px;
     background-color: #efefef;
     margin-right: 420px;
     margin-left: 450px;
-    margin-top: 50px;
+    margin-top: 120px;
     margin-bottom: 50px;
 }
-
 #log-text {
     color: #000;
     text-decoration: none;
     font-family: "Montserrat-Regular";
 }
-
 .form-size {
     width: 280px;
     height: 6px;
 }
-
 .item {
     height: 200px;
     background: RED;
     width: 100%;
     color: #000;
 }
-
 .reset-margin {
     margin: 0;
 }
-
 .font-log {
     font-size: 14.5px;
     margin: 0;
     padding: 0;
 }
-
 .log-butt {
     font-family: "Roboto-Light";
     text-decoration: none;
@@ -158,7 +189,6 @@
     padding: 12px 25px 12px 25px;
     font-size: 13px;
 }
-
 .notAmember-yet {
     font-size: 27px;
     text-align: center;
@@ -166,77 +196,61 @@
     text-decoration: none;
     font-family: "Montserrat-Regular";
 }
-
 #create-acc {
     text-align: center;
     font-family: "Roboto-Light";
 }
-
 .not-member-container p {
     margin-left: 50px;
     padding-right: 0;
 }
-
 .head-image {
     height: 480px;
     background-size: contain;
 }
-
 .font-Roboto {
     font-family: "Roboto-Light";
 }
 
-
 /* register-page style */
-
 .Create-acc-container {
     height: 400px;
     margin: 100px 270px 100px 270px;
     background-color: #efefef;
     padding: 8px;
 }
-
 .log-details {
     font-size: 24px;
     padding-top: 10px;
     padding-left: 10px;
     font-family: "Montserrat-Regular";
 }
-
 #reg-width {
     width: 280px;
 }
-
 .form-margin {
     margin-left: 15px;
 }
-
 .form-left {
     float: left;
 }
-
 .personal-att {
     margin-left: 65px;
 }
-
 .personal-details {
     margin-left: 53px;
 }
-
 .form-style {
     border-left: 2px solid #000;
     margin-left: 70px;
     padding-left: 24px;
 }
-
 .date-form {
     width: 50px;
     height: 35px;
 }
 
-
 /*reserve-form-page css*/
-
 .reserve-container {
     background-color: #efefef;
     margin: 120px 100px 40px 370px;
@@ -244,27 +258,22 @@
     padding-right: 200px;
     padding-bottom: 50px;
 }
-
 .reserve-content {
     display: block;
 }
-
 .reserve-form-contain {
     display: inline;
     margin-top: 50px;
 }
-
 .reserve-details {
     font-family: "Roboto-Light";
     font-size: 13px;
     margin-top: 5px;
     margin-left: 40px;
 }
-
 .reserve-width-form {
     width: 300px;
 }
-
 .reserve-head {
     font-family: "Montserrat-Regular";
     font-size: 25px;
@@ -272,7 +281,6 @@
     margin-left: 40px;
     margin-bottom: 25px;
 }
-
 .reserve-log-butt {
     font-family: "Roboto-Light";
     text-decoration: none;
@@ -282,25 +290,20 @@
     font-size: 13px;
     margin-left: 45px;
 }
-
 .reserve-log-butt a {
     text-decoration: none;
 }
-
 .reserve-link {
     text-decoration: none;
 }
-
 .reserv-butt {
     margin-left: 140px;
     margin-top: 25px;
     display: block;
 }
-
 .reserve-form-contain input {
     float: right;
 }
-
 .tex-area-float {
     float: right;
     width: 300px;
@@ -308,9 +311,7 @@
     margin-bottom: 25px;
 }
 
-
 /*invoice-page css*/
-
 .inv-container {
     background-color: #efefef;
     margin: 120px 100px 40px 370px;
@@ -319,11 +320,9 @@
     padding-left: 100px;
     padding-bottom: 50px;
 }
-
 .inv-content {
     display: inline-block;
 }
-
 .inv-head {
     margin-top: 30px;
     margin-left: 40px;
@@ -332,7 +331,6 @@
     font-size: 25px;
     color: #000;
 }
-
 .inv-greyHotel-text {
     font-family: "Roboto-Light";
     font-size: 20px;
@@ -341,17 +339,14 @@
     text-align: center;
     margin-left: 100px;
 }
-
 .inv-information {
     font-family: "Roboto-Light";
     font-size: 14px;
     color: #000;
 }
-
 .inv-content-margin {
     margin-left: 40px;
 }
-
 .inv-function {
     font-family: "Roboto-Light";
     font-size: 13px;
@@ -360,18 +355,15 @@
     display: inline;
     margin-left: 50px;
 }
-
 .inv-information-desc {
     font-family: "Montserrat-Regular";
     color: #000;
     font-size: 16px;
 }
-
 .inv-total-border {
     border-top: 4px solid #000;
     display: block;
 }
-
 .inv-icon img {
     display: block;
     height: 90px;
@@ -379,7 +371,6 @@
     margin-left: 50%;
     margin-right: 50%;
 }
-
 .inv-log-butt {
     font-family: "Roboto-Light";
     text-decoration: none;
@@ -389,49 +380,52 @@
     font-size: 13px;
 }
 
-
 /* SLIDESHOW*/
-
 @keyframes slideshow-container {
     0% {
         left: 0;
     }
+    
     20% {
         left: 0%;
     }
+    
     25% {
         left: -100%;
     }
+    
     45% {
         left: -100%;
     }
+    
     50% {
         left: -200%;
     }
+    
     70% {
         left: -200%;
     }
+    
     75% {
         left: -300%;
     }
+    
     95% {
         left: -300%;
     }
+    
     100% {
         left: -400%;
     }
 }
-
 .slideshow-container {
     margin: 0;
     overflow: hidden;
 }
-
 .slideshow-container figure img {
     width: 20%;
     float: left;
 }
-
 .slideshow-container figure {
     width: 500%;
     margin-top: 0px;
@@ -441,32 +435,16 @@
     animation: 20s slideshow-container infinite;
 }
 
-.scroll-ico {
-    text-align: center;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: absolute;
-    color: #fff;
-    margin-top: 300px;
-    height: 36px;
-    border: 2px solid #fff;
-    border-radius: 20%;
-}
-
-
 /*ABOUT GREY HOTEL style*/
-
 .About-hotel-container {
     margin: 60px;
     display: inline-block;
 }
-.grey-img{
+.grey-img {
     height: 500px;
     width: auto;
     position: relative;
 }
-
 .About-greyHotel {
     text-decoration: none;
     text-align: left;
@@ -475,21 +453,18 @@
     color: #000;
     display: inline;
 }
-
 .abouthotel-temp-content {
     font-size: 20px;
     color: #000;
     padding: 20px 240px 10px 0px;
     font-family: "Roboto-Light";
     text-decoration: none;
-    
 }
-.grey-hotel-dav{
+.grey-hotel-dav {
     font-family: "Strait-Regular";
     font-size: 25px;
     color: #000;
 }
-
 
 /*FOOTER style
 

@@ -20,22 +20,22 @@
         </div>
 
         <div class="topnav" id="myTopnav">
-                <div class="dropdown">
-                    <p class="nav-text"><a href="index.php" class="link-head-text">HOME</a></p>
-                    <div class="dropdown-content">
-                        <a href="#about-hotel">About Grey Hotel</a>
-                        <a href="#contact">Contact Us</a>
-                    </div>
-                </div>
-                <p class="nav-text"><a href="#rooms" class="link-head-text">ROOMS</a></p>
-                <div class="dropdown">
-                    <p class="nav-text"><a href="login-page.php" class="link-head-text">RESERVE NOW</a></p>
-                    <div class="dropdown-content">
-                        <a href="#reserve-room">Reserve Room</a>
-                        <a href="#client-profile">Client Profile</a>
-                    </div>
+            <div class="dropdown">
+                <p class="nav-text"><a href="index.php" class="link-head-text">HOME</a></p>
+                <div class="dropdown-content">
+                    <a href="#about-hotel">About Grey Hotel</a>
+                    <a href="#contact">Contact Us</a>
                 </div>
             </div>
+            <p class="nav-text"><a href="#rooms" class="link-head-text">ROOMS</a></p>
+            <div class="dropdown">
+                <p class="nav-text"><a href="login-page.php" class="link-head-text">RESERVE NOW</a></p>
+                <div class="dropdown-content">
+                    <a href="#reserve-room">Reserve Room</a>
+                    <a href="#client-profile">Client Profile</a>
+                </div>
+            </div>
+        </div>
     </div>
     <div>
         <div class="Create-acc-container">
@@ -74,15 +74,32 @@
                                 <input class="uk-radio" type="radio" name="radio1"> Female</label>
                         </div>
                         <br>
-                        <label class="uk-form-label" for="form-horizontal-text">Date of Birth *</label>  
-                        <div class="date-form">
-                            <input class="uk-input fl" id="form-horizontal-text" type="text" placeholder="dd">
-                            <input class="uk-input fl" id="form-horizontal-text" type="text" placeholder="mm">
-                        </div>
+                        <label class="uk-form-label" for="form-horizontal-text">Date of Birth *</label>
+                        <input class="uk-input" id="form-horizontal-text" type="date">
                 </fieldset>
             </form>
             </div>
 
+        </div>
+        <div class="Footer">
+            <footer class="footer-distributed">
+                <div class="footer-right">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                    <a href="#"><i class="fa fa-github"></i></a>
+                </div>
+                <div class="footer-left">
+                    <p class="footer-links">
+                        <a href="index.php" uk-scroll>Home</a>.
+                        <a href="#">Pricing</a> .
+                        <a href="#about-hotel">About</a> .
+                        <a href="#">Contact</a> .
+                    </p>
+                    <p>Grey Hotel &copy; 2015</p>
+                </div>
+
+            </footer>
         </div>
     </div>
 

@@ -27,7 +27,7 @@
                         <a href="#contact">Contact Us</a>
                     </div>
                 </div>
-                    <p class="nav-text"><a href="#rooms" class="link-head-text">ROOMS</a></p>
+                <p class="nav-text"><a href="#rooms" class="link-head-text">ROOMS</a></p>
                 <div class="dropdown">
                     <p class="nav-text"><a href="login-page.php" class="link-head-text">RESERVE NOW</a></p>
                     <div class="dropdown-content">
@@ -65,6 +65,26 @@
                     </div>
                 </fieldset>
             </div>
+        </div>
+        <div class="Footer">
+            <footer class="footer-distributed">
+                <div class="footer-right">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                    <a href="#"><i class="fa fa-github"></i></a>
+                </div>
+                <div class="footer-left">
+                    <p class="footer-links">
+                        <a href="index.php" uk-scroll>Home</a>.
+                        <a href="#">Pricing</a> .
+                        <a href="#about-hotel">About</a> .
+                        <a href="#">Contact</a> .
+                    </p>
+                    <p>Grey Hotel &copy; 2015</p>
+                </div>
+
+            </footer>
         </div>
     </div>
 </body>

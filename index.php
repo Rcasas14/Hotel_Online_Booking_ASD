@@ -25,8 +25,8 @@
                         <a href="#about-hotel" uk-scroll>About Grey Hotel</a>
                         <a href="#contact">Contact Us</a>
                     </div>
-                </div>                
-                    <p class="nav-text"><a href="#rooms" class="link-head-text">ROOMS</a></p>
+                </div>
+                <p class="nav-text"><a href="#rooms" class="link-head-text">ROOMS</a></p>
                 <div class="dropdown">
                     <p class="nav-text"><a href="login-page.php" class="link-head-text">RESERVE NOW</a></p>
                     <div class="dropdown-content">
@@ -38,12 +38,12 @@
         </div>
         <div class="slideshow-container">
             <figure>
-                <img src="Images/Greatness.jpg">
-                <img src="Images/Relax.jpeg">
-                <img src="Images/Experience.jpeg">
-                <img src="Images/Youth.jpeg">
+                <img src="Images/Greatness.png">
+                <img src="Images/Relax.png">
+                <img src="Images/Experience.png">
+                <img src="Images/Youth.png">
             </figure>
-            <a href="#about-hotel" uk-scroll><img src="Images/scroll_down.png" class="scroll-ico">
+            <a href="#about-hotel" uk-scroll><img src="Images/scroll_down.png" class="scroll-ico moving-down">
             </a>
         </div>
         <br>
