@@ -48,7 +48,7 @@
                 <img src="Images/Youth.jpeg">
             </figure>
             <a href="#about-hotel" uk-scroll><img src="Images/scroll_down.png" class="scroll-ico">
-            </a>
+            </a>            
         </div>
         <br>
         <br>
