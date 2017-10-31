@@ -8,7 +8,8 @@
     <title>Grey Hotel</title>
     <link href="UIKIT/css/uikit.css" rel="stylesheet">
     <link href="UIKIT/css/uikit-rtl.css" rel="stylesheet">
-    <link href="style.css" type="text/css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/footer-distributed.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -53,6 +54,9 @@
                             <p class="reserve-details">Room Type*:
                                 <input class="uk-input uk-form-small reserve-width-form" type="text" placeholder="dropdown textfield">
                             </p>
+                            <p class="reserve-details ">Room Rate:
+                                <input class=" uk-input uk-form-small reserve-width-form" type="text" placeholder="(room-price function)">
+                            </p>
                             <p class="reserve-details">Mobile\Telephone #*:
                                 <input class=" uk-input uk-form-small reserve-width-form" type="text">
                             </p>
@@ -67,9 +71,6 @@
                             </p>
                             <p class="reserve-details">Number of Rooms*:
                                 <input class=" uk-input uk-form-small reserve-width-form" type="number">
-                            </p>
-                            <p class="reserve-details ">Number of Nights*:
-                                <input class=" uk-input uk-form-small reserve-width-form" type="text">
                             </p>
                             <p class="reserve-details">Address*:
                                 <textarea class="uk-textarea tex-area-float" rows="5"></textarea>

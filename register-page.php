@@ -8,7 +8,8 @@
     <title>Grey Hotel</title>
     <link href="UIKIT/css/uikit.css" rel="stylesheet">
     <link href="UIKIT/css/uikit-rtl.css" rel="stylesheet">
-    <link href="style.css" type="text/css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/footer-distributed.css" rel="stylesheet" type="text/css">
 
 </head>
 
@@ -26,12 +27,7 @@
                         <a href="#contact">Contact Us</a>
                     </div>
                 </div>
-                <div class="dropdown">
-                    <p class="nav-text"><a href="#rooms" class="link-head-text">ROOMS</a></p>
-                    <div class="dropdown-content">
-                        <a href="#about-hotel">Room Types</a>
-                    </div>
-                </div>
+                <p class="nav-text"><a href="#rooms" class="link-head-text">ROOMS</a></p>
                 <div class="dropdown">
                     <p class="nav-text"><a href="login-page.php" class="link-head-text">RESERVE NOW</a></p>
                     <div class="dropdown-content">
