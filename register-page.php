@@ -6,10 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale-1">
     <link rel="shortcut icon" href="Images/icon.ico">
     <title>Grey Hotel</title>
-    <link href="UIKIT/css/uikit.min.css" rel="stylesheet">
     <link href="UIKIT/css/uikit.css" rel="stylesheet">
     <link href="UIKIT/css/uikit-rtl.css" rel="stylesheet">
-    <link href="UIKIT/css/uikit-rtl.min.css" rel="stylesheet" type="text/css">
     <link href="style.css" type="text/css" rel="stylesheet">
 
 </head>
@@ -92,10 +90,8 @@
         </div>
     </div>
 
-    <script src="UIKIT/js/uikit.min.js"></script>
     <script src="UIKIT/js/uikit.js"></script>
     <script src="UIKIT/js/uikit-icons.js"></script>
-    <script src="UIKIT/js/uikit-icons.min.js"></script>
 </body>
 
 </html>

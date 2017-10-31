@@ -19,9 +19,9 @@
             </div>
             <div class="topnav" id="myTopnav">
                 <div class="dropdown">
-                    <p class="nav-text"><a href="index.php" class="link-head-text">HOME</a></p>
+                    <p class="nav-text"><a href="index.php" class="link-head-text" uk-scroll>HOME</a></p>
                     <div class="dropdown-content">
-                        <a href="#about-hotel">About Grey Hotel</a>
+                        <a href="#about-hotel" uk-scroll>About Grey Hotel</a>
                         <a href="#contact">Contact Us</a>
                     </div>
                 </div>
@@ -34,7 +34,7 @@
                 <div class="dropdown">
                     <p class="nav-text"><a href="login-page.php" class="link-head-text">RESERVE NOW</a></p>
                     <div class="dropdown-content">
-                        <a href="#reserve-room">Reserve Room</a>
+                        <a href="reserve-form-page.php">Reserve Room</a>
                         <a href="#client-profile">Client Profile</a>
                     </div>
                 </div>
