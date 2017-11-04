@@ -1,0 +1,33 @@
+.roomType{
+        margin-top: 180px;
+      
+    }
+
+    .roomType h3 {
+        font-size: 35px;
+        font-weight: bold;
+        margin-top: 50px;
+        margin-left: 40px; 
+    }
+
+    .roomType img {
+        width: 400px;
+        height: 230px;
+        margin-top: 50px;
+        margin-left: 20px; 
+        display: inline;
+    }
+
+
+    .imgRow{
+        display: inline;
+    }
+
+    .imgDescription{
+        display: inline-block;
+    }
+
+    .imgDescription p{
+        text-align: left;
+        margin-left: 30px;
+    }
