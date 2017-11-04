@@ -329,16 +329,21 @@
           
     }
 
-    .roomType h3 {
+    .roomType{
         margin-top: 180px;
+      
+    }
+
+    .roomType h3 {
+        margin-top: 50px;
         margin-left: 40px; 
     }
 
     .roomType img {
-        width: 350px;
+        width: 400px;
         height: 230px;
         margin-top: 50px;
-        margin-left: 40px; 
+        margin-left: 20px; 
         display: inline;
     }
 
@@ -353,7 +358,7 @@
 
     .imgDescription p{
         text-align: left;
-        margin-left: 50px;
+        margin-left: 30px;
     }
 
 
