@@ -31,80 +31,111 @@
     
     .ico {
         float: left;
-        margin: 0;
+        display: block;
+        margin: -13px;
+        width: 100px;
     }
     
     .ico-image {
         float: left;
         margin-top: 18px;
-        margin-left: 20px;
+        margin-left: 30px;
         box-shadow: 2px 2px #1e1414;
         border-radius: 50%;
     }
     
-    .link-head-text {
-        font-family: "Roboto-Light";
-        font-size: 19px;
-        text-decoration: none;
-        color: #fff;
+    .login-but {
+        float: right;
+        margin-top: 70px;
         margin-right: 20px;
-        position: relative;
-        outline: none;
-        border: 0 none;
     }
     
     .topnav {
-        float: left;
-        margin-left: 100px;
-        width: 100%;
-        top: 0;
-        position: fixed;
-        display: inline-block;
+
+        float: right;
     }
     
-    .dropdown {
+    .h {
+        font-family: "Roboto-Light";
+        font-size: 18px;
+        text-decoration: none;
+        color: #fff;
+        margin-right: 20px;
+        font-weight: 100;
+        border: 0 none;
         position: relative;
-        display: inline-block;
+        outline: none;
+    }
+    
+    .h:after,
+    .h:before {
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+    }
+    
+    .topNav > .h {
+        text-decoration: none;
+        color: #fff;
+        z-index: 1;
+        margin-top: 8px
+    }
+    
+    .topNav > .h:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background: #fff;
+        visibility: hidden;
+        border-radius: 2px;
+        transform: scaleX(0);
+        transition: .25s linear;
+        ;
+    }
+    
+    .topNav > .h:hover:before,
+    .topNav > .h:focus:before {
+        visibility: visible;
+        transform: scaleX(1);
     }
     
     #myTopNav {
         margin-top: 70px;
-        margin-left: 150px;
+        margin-left: 100px;
         margin-bottom: 12px;
     }
     
-    .nav-text {
-        cursor: pointer;
+    .login-but {
+        -webkit-appearance: none;
         display: inline-block;
-        text-decoration: none;
-    }
-    
-    
-    .dropdown-content {
-        display: none;
-        text-decoration: none;
-        position: absolute;
-        background-color: #555f70;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-    }
-    
-    .dropdown-content a {
+        cursor: pointer;
+        border: 0;
+        border-radius: 5%;
+        background: rgba(85, 95, 112, 0.5);
         color: #fff;
-        padding: 12px 16px;
+        font-weight: 32px;
+        outline: 0;
         text-decoration: none;
-        display: block;
+        -moz-transition: background-color .25s ease-in-out;
+        -webkit-transition: background-color .25s ease-in-out;
+        -ms-transition: background-color .25s ease-in-out;
+        transition: background-color .25s ease-in-out;
+    }
+    
+    .login-but:hover {
+        background-color: rgba(255, 255, 255, 0.6);
+    }
+    
+    .login-but a {
         font-family: "Roboto-Light";
+        font-size: 21px;
+        color: #fff;
+        text-decoration: none;
     }
     
-    .dropdown-content a:hover {
-        background-color: rgba(255,255,255, 0.4);
-    }
     
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
     /*login-page style*/
     
     .log-container {
@@ -115,7 +146,7 @@
         margin-left: 450px;
         margin-top: 50px;
         margin-bottom: 50px;
-       
+        /*border: 2px solid rgba(0, 0, 0, 0.5);*/
     }
     
     #log-text {
@@ -140,12 +171,11 @@
         margin: 0;
     }
     
-    .font-log {
-        font-size: 14.5px;
-        margin: 0;
-        padding: 0;
-    }
-    
+.font-log{
+    font-size: 14.5px;
+    margin: 0;
+    padding: 0;
+}
     .log-butt {
         font-family: "Roboto-Light";
         text-decoration: none;
@@ -227,95 +257,104 @@
         width: 50px;
         height: 35px;
     }
-    /* SLIDESHOW*/
     
-    @keyframes slideshow-container {
-        0% {
-            left: 0;
-        }
-        20% {
-            left: 0%;
-        }
-        25% {
-            left: -100%;
-        }
-        45% {
-            left: -100%;
-        }
-        50% {
-            left: -200%;
-        }
-        70% {
-            left: -200%;
-        }
-        75% {
-            left: -300%;
-        }
-        95% {
-            left: -300%;
-        }
-        100% {
-            left: -400%;
-        }
+    .fl {
+        display: inline-block;
     }
-    
-    .slideshow-container {
-        margin: 0;
-        overflow: hidden;
-    }
-    
-    .slideshow-container figure img {
-        width: 20%;
-        float: left;
-    }
-    
-    .slideshow-container figure {
-        width: 500%;
-        margin-top: 0px;
-        position: relative;
-        left: 0;
-        text-align: left;
-        animation: 20s slideshow-container infinite;
-    }
-    
-    .scroll-ico {
-        text-align: center;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        position: absolute;
-        color: #fff;
-        margin-top: 300px;
-        height: 36px;
-        border: 2px solid #fff;
-        border-radius: 20%;
-    }
-    /*ABOUT GREY HOTEL style*/
-    
-    .About-hotel-container {
-        margin: 60px;
-        border: 5px solid #000;
-    }
-    
-    .About-greyHotel {
-        text-decoration: none;
-        text-align: left;
-        font-family: "Montserrat-Regular";
-        font-size: 30px;
-        color: #000;
-    }
-    
-    .abouthotel-temp-content {
-        font-size: 20px;
-        color: #000;
+
+    .adminHeader h1  {
         font-family: "Roboto-Light";
         text-decoration: none;
+        color: #fff;
+        padding-top: 30px;
+        padding-left: 250px;
+        border: 0 none;
+        position: relative;
+        outline: none;
     }
-    /*FOOTER style*/
+
+    .sidebar {
+        position: relative;
+        background-color:#eeeeee;
+        height: auto;
+        width: 300px;
+        float: left;
+        padding: 5px; 
+        
+}
+
+
+    .sidebar h4{
+        font-family: "Roboto-Light";
+        text-decoration: none;
+        color: #555f70;
+        padding-top: 70px; 
+        font-weight: bold;
+    }
+        
     
-    .Footer {
-        background-color: dimgray;
-        background-size: cover;
-        margin: 0;
-        height: 200px;
+
+    .sidebar_links{
+        padding-left: 30px;
     }
+
+
+    .sidebar li {
+        font-family: "Roboto-Light";
+        font-size: 18px;
+        text-decoration: none;
+        color: #555f70;
+        font-weight: 100;
+        position: relative;
+    }
+
+    .sidebar a {
+        font-family: "Roboto-Light";
+        font-size: 18px;
+        text-decoration: none;
+        color: #555f70;
+        font-weight: 100;
+        position: relative;
+    }
+
+    .content {
+        width: 1000px;
+        height: auto;
+        float: left;
+        padding: 10px;   
+        
+          
+    }
+
+    .roomType h3 {
+        margin-top: 180px;
+        margin-left: 40px; 
+    }
+
+    .roomType img {
+        width: 350px;
+        height: 230px;
+        margin-top: 50px;
+        margin-left: 40px; 
+        display: inline;
+    }
+
+
+    .imgRow{
+        display: inline;
+    }
+
+    .imgDescription{
+        display: inline-block;
+    }
+
+    .imgDescription p{
+        text-align: left;
+        margin-left: 50px;
+    }
+
+
+
+
+
+    

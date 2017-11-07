@@ -1,0 +1,583 @@
+@font-face {
+    font-family: "Strait-Regular";
+    src: url(../Fonts/strait/Strait-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Roboto-Light";
+    src: url("../Fonts/Roboto/Roboto-Light.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat-Regular";
+    src: url("../Fonts/Montserrat/Montserrat-Regular.otf");
+}
+
+.body {
+    margin: 0;
+    background-color: rgb( 248, 244, 244);
+    padding: 0;
+}
+
+.body-inline {
+    display: inline;
+}
+
+.top-bg-color {
+    background-color: #555f70;
+    background-size: cover;
+    height: 100px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    display: block;
+    z-index: 1000;
+}
+
+.ico {
+    float: left;
+    display: block;
+    margin: -13px;
+    width: 100px;
+}
+    
+.ico-image {
+    float: left;
+    margin-top: 18px;
+    margin-left: 30px;
+    box-shadow: 2px 2px #1e1414;
+    border-radius: 50%;
+}
+
+.link-head-text {
+    font-family: "Roboto-Light";
+    font-size: 19px;
+    text-decoration: none;
+    color: #fff;
+    margin-right: 20px;
+    position: relative;
+    outline: none;
+    border: 0 none;
+}
+
+.topnav {
+    float: right;
+    margin-left: 100px;
+    width: 100%;
+    top: 0;
+    position: fixed;
+    display: inline;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+#myTopNav {
+    margin-top: 70px;
+    margin-left: 100px;
+    margin-bottom: 12px;
+}
+
+.nav-text {
+    cursor: pointer;
+    display: inline;
+    text-decoration: none;
+}
+
+.dropdown-content {
+    display: none;
+    text-decoration: none;
+    position: absolute;
+    background-color: #555f70;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #fff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-family: "Roboto-Light";
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+@keyframes downdown {
+    0 {
+        margin-top: 0;
+    }
+    50% {
+        margin-top: 12px;
+    }
+    100% {
+        margin-top: 0px;
+    }
+}
+
+.moving-down {
+    animation-name: downdown;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+}
+
+.scroll-ico {
+    text-align: center;
+    top: 94%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    color: #fff;
+    margin-top: 20px;
+    height: 36px;
+    border: 2px solid #fff;
+    border-radius: 20%;
+    -webkit-appearance: none;
+    -moz-transition: background-color .25s ease-in-out;
+    -webkit-transition: background-color .25s ease-in-out;
+    -ms-transition: background-color .25s ease-in-out;
+    transition: background-color .25s ease-in-out;
+}
+
+
+/*login-page style-------------------------------------*/
+.log-container {
+    height: auto;
+    padding: 25px 50px 60px 90px;
+    background-color: #efefef;
+    margin-right: 420px;
+    margin-left: 450px;
+    margin-top: 120px;
+    margin-bottom: 50px;
+    padding-bottom: 20px;
+}
+#log-text {
+    color: #000;
+    text-decoration: none;
+    font-family: "Montserrat-Regular";
+}
+.form-size {
+    width: 280px;
+    height: 6px;
+}
+.item {
+    height: 200px;
+    background: RED;
+    width: 100%;
+    color: #000;
+}
+.reset-margin {
+    margin: 0;
+}
+.font-log {
+    font-size: 14.5px;
+    margin: 0;
+    padding: 0;
+}
+.log-butt {
+    font-family: "Roboto-Light";
+    text-decoration: none;
+    background: #424242;
+    color: #fff;
+    padding: 12px 25px 12px 25px;
+    font-size: 13px;
+}
+.notAmember-yet {
+    font-size: 18px;
+    color: #424242;
+    text-decoration: none;
+    font-family: "Montserrat-Regular";
+    margin-left: 10px;
+}
+#create-acc {
+    text-align: center;
+    font-family: "Roboto-Light";
+}
+.not-member-container p {
+    padding-right: 0;
+}
+.head-image {
+    height: 480px;
+    background-size: contain;
+}
+.font-Roboto {
+    font-family: "Roboto-Light";
+}
+
+/* register-page style ---------------------------------------*/
+.Create-acc-container {
+    background-color: #efefef;
+    display: inline-block;
+    padding-right: 100px;
+    padding-left: 50px;
+    padding-bottom: 50px;
+    margin-top: 150px;
+    margin-left: 400px;
+}
+.log-details {
+    font-size: 24px;
+    padding-top: 10px;
+    padding-left: 10px;
+    font-family: "Montserrat-Regular";
+}
+#reg-width {
+    width: 280px;
+}
+.form-margin {
+    margin-left: 15px;
+}
+.form-left {
+    float: left;
+}
+.personal-att {
+    margin-left: 65px;
+}
+.personal-details {
+    margin-left: 53px;
+}
+.form-style {
+    border-left: 2px solid #000;
+    margin-left: 70px;
+    padding-left: 24px;
+}
+.date-form {
+    width: 50px;
+    height: 35px;
+}
+
+/* RESERVE -------------------------------*/
+#loggedIn {
+    float: right;
+    margin-top: 70px;
+    margin-right: 100px;
+}
+
+
+    .sidebar {
+        position: relative;
+        background-color:#eeeeee;
+        height: 530px;
+        width: 300px;
+        float: left;
+        padding: 5px; 
+        padding-top: 20px;
+        margin-top: 100px;
+    }
+
+  
+    .sidebar h3{
+        font-family: Calibri;
+        text-decoration: none;
+        color: #555f70;
+        padding-top: 30px; 
+        font-weight: bold;
+    }
+        
+    
+    .sidebar_links{
+        padding-left: 30px;
+    }
+
+    .sidebar li {
+        font-family: Calibri;
+        font-size: 18px;
+        text-decoration: none;
+        color: #555f70;
+        font-weight: 100;
+        position: relative;
+    }
+
+    .sidebar a {
+        font-family: Calibri;
+        font-size: 18px;
+        text-decoration: none;
+        color: #555f70;
+        font-weight: 100;
+        position: relative;
+    }
+
+    .sidebar a:hover {
+        font-family: Calibri;
+        font-size: 18px;
+        text-decoration: none;
+        color: white;
+        font-weight: 100;
+        position: relative;
+    }
+
+    .content {
+        margin-top: 100px;
+        width: 1000px;
+        height: auto;
+        float: left;
+        padding: 15px;   
+        margin-left: 2px;    
+        display: block;         
+    }
+
+    .content p {
+        font-family: Calibri;
+        font-size: 40px;
+        text-decoration: none;
+        color: #555f70;
+        font-weight: 100;
+        position: relative;
+    }
+
+    .content iframe{
+        border-style: solid;
+        border-width: 2px;
+        border-color: #eeeeee;
+        height: 530px;
+    }
+
+.reserve-container {
+    background-color: #efefef;
+    display: inline-block;
+    padding-right: 100px;
+    padding-left: 50px;
+    padding-bottom: 50px;
+    margin-top: 150px;
+    margin-left: 450px;
+}
+
+.reserve-content {
+    display: block;
+}
+
+.reserve-form-contain {
+    display: inline;
+    margin-top: 50px;
+}
+
+.reserve-details {
+    font-family: "Roboto-Light";
+    font-size: 13px;
+    margin-top: 5px;
+    margin-left: 40px;
+    
+}
+.reserve-width-form {
+    width: 300px;
+}
+.reserve-head {
+    font-family: "Montserrat-Regular";
+    font-size: 25px;
+    padding-top: 15px;
+    margin-left: 40px;
+    margin-bottom: 25px;
+}
+.reserve-log-butt {
+    font-family: "Roboto-Light";
+    text-decoration: none;
+    background: #424242;
+    color: #fff;
+    padding: 12px 25px 12px 25px;
+    font-size: 13px;
+    margin-left: 45px;
+}
+.reserve-log-butt a {
+    text-decoration: none;
+}
+.reserve-link {
+    text-decoration: none;
+}
+.reserv-butt {
+    margin-left: 140px;
+    margin-top: 25px;
+    display: block;
+}
+.reserve-form-contain input {
+    float: right;
+}
+.reserv-select{
+    height: 50px;
+    margin-left: 60px;
+}
+.tex-area-float {
+    float: right;
+    width: 300px;
+    height: 80px;
+    margin-bottom: 25px;
+}
+
+/*invoice-page css------------------------------------------*/
+.inv-container {
+    background-color: #efefef;
+    margin: 120px 100px 40px 370px;
+    display: inline-block;
+    padding-right: 200px;
+    padding-left: 100px;
+    padding-bottom: 50px;
+}
+.inv-content {
+    display: inline-block;
+}
+.inv-head {
+    margin-top: 30px;
+    margin-left: 40px;
+    margin-bottom: 40px;
+    font-family: "Montserrat-Regular";
+    font-size: 25px;
+    color: #000;
+}
+.inv-greyHotel-text {
+    font-family: "Roboto-Light";
+    font-size: 20px;
+    text-decoration: none;
+    color: #000;
+    text-align: center;
+    margin-left: 100px;
+}
+.inv-information {
+    font-family: "Roboto-Light";
+    font-size: 14px;
+    color: #000;
+}
+.inv-content-margin {
+    margin-left: 40px;
+}
+.inv-function {
+    font-family: "Roboto-Light";
+    font-size: 13px;
+    color: #000;
+    float: right;
+    display: inline;
+    margin-left: 50px;
+}
+.inv-information-desc {
+    font-family: "Montserrat-Regular";
+    color: #000;
+    font-size: 16px;
+}
+.inv-total-border {
+    border-top: 4px solid #000;
+    display: block;
+}
+.inv-icon img {
+    display: block;
+    height: 90px;
+    z-index: 1000;
+    margin-left: 50%;
+    margin-right: 50%;
+}
+.inv-log-butt {
+    font-family: "Roboto-Light";
+    text-decoration: none;
+    background: #424242;
+    color: #fff;
+    padding: 12px 25px 12px 25px;
+    font-size: 13px;
+}
+
+/* SLIDESHOW*/
+@keyframes slideshow-container {
+    0% {
+        left: 0;
+    }
+    
+    20% {
+        left: 0%;
+    }
+    
+    25% {
+        left: -100%;
+    }
+    
+    45% {
+        left: -100%;
+    }
+    
+    50% {
+        left: -200%;
+    }
+    
+    70% {
+        left: -200%;
+    }
+    
+    75% {
+        left: -300%;
+    }
+    
+    95% {
+        left: -300%;
+    }
+    
+    100% {
+        left: -400%;
+    }
+}
+.slideshow-container {
+    margin: 0;
+    overflow: hidden;
+}
+.slideshow-container figure img {
+    width: 20%;
+    float: left;
+}
+.slideshow-container figure {
+    width: 500%;
+    margin-top: 0px;
+    position: relative;
+    left: 0;
+    text-align: left;
+    animation: 20s slideshow-container infinite;
+}
+
+/*ABOUT GREY HOTEL style*/
+.About-hotel-container {
+    margin: 60px;
+    display: inline-block;
+}
+.grey-img {
+    height: 500px;
+    width: auto;
+    position: relative;
+}
+.About-greyHotel {
+    text-decoration: none;
+    text-align: left;
+    font-family: "Montserrat-Regular";
+    font-size: 35px;
+    color: #000;
+    display: inline;
+}
+.abouthotel-temp-content {
+    font-size: 20px;
+    color: #000;
+    padding: 20px 240px 10px 0px;
+    font-family: "Roboto-Light";
+    text-decoration: none;
+}
+.grey-hotel-dav {
+    font-family: "Strait-Regular";
+    font-size: 25px;
+    color: #000;
+}
+
+/* TABLES */
+.table th, td{
+    width: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/*FOOTER style
+
+.Footer {
+    background-color: dimgray;
+    background-size: cover;
+    margin: 0;
+    height: 200px;
+}*/
