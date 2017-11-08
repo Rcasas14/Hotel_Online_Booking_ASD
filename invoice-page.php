@@ -60,7 +60,10 @@
                             <div class="inv-total-border">
                                 <p class="inv-information">TOTAL:<span class="inv-function">(Total)</span></p>
                             </div>
+                            <div class="inv-butt-container">
                             <a href="reserve-form-page.php" class=" uk-button-default inv-log-butt">EDIT</a>
+                            <a href="reserve-form-page.php" class=" uk-button-default inv-log-butt">DONE</a>
+                            </div>
                         </div>
                     </div>
                 </fieldset>

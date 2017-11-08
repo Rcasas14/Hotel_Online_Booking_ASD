@@ -42,14 +42,18 @@
             <img src="Images/welcome.jpeg" class="Headlog-image">
         </div>-->
         <div class="log-container uk-clearfix">
+            <div class="log-center-logo">
+                <img src="Images/logo.png">
+            </div>
             <!-- must have action_page.php-->
-            <form class="form-size uk-horizontal">
+            <form class="log-form-size uk-horizontal">
                 <fieldset class="uk-fieldset">
-                    <legend class="uk-legend" id="log-text">LOGIN AS OUR CLIENT</legend>
+                    <legend class="uk-legend" id="log-text">Welcome Back!</legend>
+                    <p class="uk-margin log-signIn">Sign in with your account on Grey Hotel to Continue!</p>
                     <div class="uk-margin">
-                        <label class="uk-form-label form-horizontal-text font-Roboto">Email Address *</label>
+                        <label class="uk-form-label form-horizontal-text font-Roboto">Username *</label>
                         <div class="uk-form-controls">
-                            <input class="uk-input uk-form-small" id="form-horizontal-text" type="Email" placeholder="name@example.com">
+                            <input class="uk-input uk-form-small" id="form-horizontal-text" type="text">
                             <br>
                             <br>
                             <label class="uk-form-label form-horizontal-text font-Roboto">Password *</label>
