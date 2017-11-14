@@ -147,6 +147,14 @@
     transition: background-color .25s ease-in-out;
 }
 
+.subtopic{
+    display: inline;
+    text-decoration: none;
+    font-size: 30px;
+    font-family: "Montserrat-Regular";
+    text-align: center;
+    color: #000;
+}
 
 /*login-page style*/
 
@@ -519,6 +527,7 @@
     height: 500px;
     width: auto;
     position: relative;
+    margin-bottom: 20px;
 }
 
 .About-greyHotel {

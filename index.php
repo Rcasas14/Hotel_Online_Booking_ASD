@@ -55,25 +55,27 @@
             <div class="grey-hotel-image">
                 <img src="Images/Grey-Hotel.png" class="grey-img">
             </div>
-            <p class="aboutHotel-temp-content ">Lorem ipsum dolor sit amet, conse ctetuer. Duis autem vemeu iriure dolor adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat wisi enim.</p>
+            <p class="subtopic"> GREATNESS, RELAXATION, EXPERCIENCE the YOUTH in GREY HOTEL</p>
+            <p class="aboutHotel-temp-content ">While the Philippines is one of the largest archipelago in the world, The Grey Hotel also one of the most known sophisticated luxury hotel in the world. With the most satisfactory hotel according to people reviews.
+                <br>
+                <br> Grey Hotel is located in most largest and safest city in the philippines. The city of Davao.
+                <br> While providing the perfect setting to connect you to this vibrant and inspiring destination </p>
         </div>
     </div>
     <div class="Footer">
         <footer class="footer-distributed">
             <div class="footer-right">
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-linkedin"></i></a>
-                <a href="#"><i class="fa fa-github"></i></a>
+                <a href="#"><img src="Images/facebook-logo.png"><i class="fa fa-facebook"></i></a>
+                <a href="#"><img src="Images/github-logo.png"><i class="fa fa-github"></i></a>
             </div>
             <div class="footer-left">
                 <p class="footer-links">
                     <a href="index.php" uk-scroll>Home</a>.
                     <a href="#">Pricing</a> .
-                    <a href="#about-hotel">About</a> .
+                    <a href="#about-hotel" uk-scroll>About</a> .
                     <a href="#">Contact</a> .
                 </p>
-                <p>Grey Hotel &copy; 2015</p>
+                <p>Grey Hotel &copy; 2017</p>
             </div>
 
         </footer>

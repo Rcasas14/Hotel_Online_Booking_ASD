@@ -83,19 +83,17 @@
     <div class="Footer">
         <footer class="footer-distributed">
             <div class="footer-right">
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-linkedin"></i></a>
-                <a href="#"><i class="fa fa-github"></i></a>
+                <a href="#"><img src="Images/facebook-logo.png"><i class="fa fa-facebook"></i></a>
+                <a href="#"><img src="Images/github-logo.png"><i class="fa fa-github"></i></a>
             </div>
             <div class="footer-left">
                 <p class="footer-links">
                     <a href="index.php" uk-scroll>Home</a>.
                     <a href="#">Pricing</a> .
-                    <a href="#about-hotel">About</a> .
+                    <a href="#about-hotel" uk-scroll>About</a> .
                     <a href="#">Contact</a> .
                 </p>
-                <p>Grey Hotel &copy; 2015</p>
+                <p>Grey Hotel &copy; 2017</p>
             </div>
 
         </footer>
