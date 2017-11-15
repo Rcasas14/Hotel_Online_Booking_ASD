@@ -43,7 +43,7 @@
 				<th> City </th>
 				<th> Actions </th>  
 			</tr>
-		<?php while($client = mysqli_fetch_assoc($client_set)) { ?>
+			<?php while($client = mysqli_fetch_assoc($client_set)) { ?>
 			<tr>
 				<td><?php echo htmlentities($client["First_Name"]); ?> </td>
 				<td><?php echo htmlentities($client["Last_Name"]); ?> </td>
@@ -51,13 +51,11 @@
 				<td><?php echo htmlentities($client["Email"]); ?> </td>
 				<td><?php echo htmlentities($client["Address"]); ?> </td>
 				<td><?php echo htmlentities($client["City"]); ?> </td>
-				<td><a href="delete_client.php?id=<?php echo urlencode($client["id"]); ?>" onclick="return confirm('Are you sure you want to delete this client record?');" class="a">Delete</a></td>
+				<td><a href="delete_client.php?id=<?php echo urlencode($client["id"]); ?>" onclick="return confirm('Are you sure you want to delete this client record?');" class="delete">Delete</a></td>
 			</tr>
-		<?php } ?>
+			<?php } ?>
 
 		</table>
-
-		<br/>
 
 	</div>		
 </body>

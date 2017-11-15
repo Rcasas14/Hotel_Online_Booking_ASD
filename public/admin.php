@@ -60,7 +60,7 @@
                 <img src="Images/logo.png" alt="Grey Hotel" class="ico-image">
             </div>
             <div class="adminHeader">
-                <h1>Grey Hotel ADMIN</h1>
+                <h2>Grey Hotel ADMIN</h2>
             </div>
         </div>
 
@@ -73,22 +73,27 @@
 
             <!-- must have action_page.php-->
             <form class="form-size uk-horizontal" action="admin.php" method="POST">
-                <fieldset class="uk-fieldset">
+                    
                     <legend class="uk-legend" id="log-text"><center>LOG IN AS ADMIN</center></legend>
+                    
                     <div class="uk-margin">
-                        <label class="uk-form-label form-horizontal-text">Username:</label>
                         <div class="uk-form-controls">
-                            <input class="uk-input uk-form-small" id="form-horizontal-text" type="text" name="username" value="<?php echo htmlentities($username); ?>" />
-                            <br>
-                            <br>
+                            <label class="uk-form-label form-horizontal-text">Username:</label>
+                        
+                            <input class="uk-input uk-form-small" id="form-horizontal-text" type="text" required="required" name="username" value="<?php echo htmlentities($username); ?>" />
+                            
+                            <br><br>                        
+                            
                             <label class="uk-form-label form-horizontal-text">Password:</label>
-                            <input class="uk-input uk-form-small" id="form-horizontal-text" type="password" name="password" value="">
-                            <br>
-                            <br>
+                            <input class="uk-input uk-form-small" id="form-horizontal-text" type="password" required="required" name="password" value="">
+                            
+                            <br><br>
+
                             <center><input class=" uk-button-default log-butt" type="submit" name="submit" value="LOG IN"/></center> 
                         </div>
                     </div>
             </form>
+
         </div>
         
     </div>
@@ -96,6 +101,7 @@
     <script src="Jquery/jquery.min.js"></script>
     <script src="UIKIT/js/uikit.js"></script>
     <script src="UIKIT/js/uikit-icons.js"></script>
+
 </body>
 
 </html>

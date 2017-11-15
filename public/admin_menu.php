@@ -15,6 +15,7 @@
     <title>Grey Hotel</title>
     <link href="UIKIT/css/uikit.css" rel="stylesheet">
     <link href="stylesheets/admin.css" rel="stylesheet" type="text/css">
+    
 </head>
 
 <body class="body">
@@ -24,7 +25,7 @@
                 <img src="Images/logo.png" alt="Grey Hotel" class="ico-image">
             </div>
             <div class="adminHeader">
-                <h1>Grey Hotel ADMIN</h1>
+                <h2>Grey Hotel ADMIN</h2>
                 <p class="welcome">Welcome to the admin area, <?php echo htmlentities($_SESSION["username"]); ?>! </p>
             </div>
         <div>
@@ -34,11 +35,19 @@
             <hr>
             <div class="sidebar_links">
                 <ul>
-                    <li><a href="manage_rooms.php" target="iframe_content" class="h">Manage Rooms Information</a></li>
-                    <br>
                     <li><a href="manage_admins.php" target="iframe_content" class="h">Manage Admins</a></li>
                     <br>
                     <li><a href="manage_clients.php" target="iframe_content" class="h">Manage Clients</a></li>
+                    <br>
+                    <li><a href="manage_rooms.php" target="iframe_content" class="h">Manage Room Information</a></li>
+                    <br>
+                    <li><a href="pending_reservations.php" target="iframe_content" class="h">Pending Reservations</a></li>
+                    <br>
+                    <li><a href="approved_reservations.php" target="iframe_content" class="h">Approved Reservations</a></li>
+                    <br>
+                    <li><a href="declined_reservations.php" target="iframe_content" class="h">Declined Reservations</a></li>
+                    <br>
+                    <li><a href="archived_reservations.php" target="iframe_content" class="h">Archived Reservations</a></li>
                     <br>
                     <li><a href="logout.php" class="h">Log out</a></li>
                 </ul>

@@ -19,8 +19,10 @@
 	
 	if(isset($_POST['submit'])){
 
+        /*
 		$required_fields = array("firstname", "lastname", "username", "password");
 		validate_presences($required_fields);
+        */
 
 		$fields_with_max_lengths = array("username" => 25, "firstname" => 25, "lastname" => 25, "password" => 25,);
 		validate_max_lengths($fields_with_max_lengths);
@@ -97,36 +99,40 @@
 
                 <fieldset class="uk-fieldset">
 
-                    <center><h2 class="log-details personal-details">Edit Admin</h2></center>
+                    <center><h2 class="form_title_header personal-details">Edit Admin</h2></center>
+                    <hr style="width: 450px;">
 
                     <div class="uk-form-controls  form-margin personal-att" id="reg-width">
 
-                        <label class="uk-form-label form-horizontal-text width">First Name</label>
-                        <input class="uk-input uk-form-small reg-width" id="form-horizontal-text" type="text" name="firstname">
+                        <label class="edit_admin_details">First Name:</label>
+                        <input class="uk-input uk-form-small edit_admin_form" type="text" required="required" name="firstname">
 
-                        <br>
+                        <br><br>
 
-                        <label class="uk-form-label form-horizontal-text">Last Name</label>
-                        <input class="uk-input uk-form-small reg-width" id="form-horizontal-text" type="text" name="lastname">
+                        <label class="edit_admin_details">Last Name:</label>
+                        <input class="uk-input uk-form-small edit_admin_form" type="text" required="required" name="lastname">
 
-                        <br>
+                        <br><br>
 
-                        <label class="uk-form-label form-horizontal-text">Username</label>
-                        <input class="uk-input uk-form-small reg-width" id="form-horizontal-text" type="text" name="username">
+                        <label class="edit_admin_details">Username:</label>
+                        <input class="uk-input uk-form-small edit_admin_form" type="text" required="required" name="username">
 
-                        <br>
+                        <br><br>
 
-                        <label class="uk-form-label form-horizontal-text">Password</label>
-                        <input class="uk-input uk-form-small reg-width" id="form-horizontal-text" type="password" name="password">
+                        <label class="edit_admin_details" style="margin-left:30px;">Password:</label>
+                        <input class="uk-input uk-form-small edit_admin_form" type="password" required="required" name="password">
 
-                        <input class=" uk-button-default Save_button_edit_admin" type="submit" name="submit" value="Save"/>
-                       
+                        <br><br>
+                        <div class="edit_admin_buttons">
+                            <input class=" uk-button-default Save_button_edit_admin" type="submit" name="submit" value="Save"/>
+
+                            <a href="manage_admins.php" class="a"><input class=" uk-button-default Cancel_button_edit_admin" type="button" onclick="return confirm('Are you sure you want to cancel?')" name="cancel" value="Cancel"/></a>    
+                        </div>
+
                     </div>
 
                 </fieldset>
-            </form>   
-
-            <a href="manage_admins.php"><button class=" uk-button-default Cancel_button_edit_admin" onclick="return confirm('Are you sure you want to cancel?')">Cancel</button></a>         
+            </form>    
             
         </div>
 
@@ -135,6 +141,7 @@
     <script src="UIKIT/js/uikit.js"></script>
     <script src="UIKIT/js/uikit-icons.js"></script>
     <script src="UIKIT/js/uikit-icons.min.js"></script>
+    
 </body>
 
 </html>

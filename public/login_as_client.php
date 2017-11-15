@@ -26,7 +26,7 @@
                 //success, Mark user as logged in
                 $_SESSION["client_id"] = $found_client["id"];
                 $_SESSION["username"] = $found_client["Username"];
-                $_SESSION["password"] = $found_client["password"];
+                $_SESSION["password"] = $found_client["hashed_password"];
 
                 redirect_to("reserve.php");
             }else{
@@ -72,7 +72,7 @@
                 <div class="dropdown">
                     <p class="nav-text"><a href="index.php" class="link-head-text" uk-scroll>HOME</a></p>
                     <div class="dropdown-content">
-                        <a href="index.php" uk-scroll>About Grey Hotel</a>
+                        <a href="index.php#about-hotel" uk-scroll>About Grey Hotel</a>
                         <a href="index.php#contact">Contact Us</a>
                     </div>
                 </div>
@@ -83,45 +83,53 @@
     
         <div class="log-container uk-clearfix">
 
+        
              <div class="error_message">
                 <?php echo message(); ?>
                 <?php echo form_errors($errors); ?>
-            </div>    
-
-            <!-- must have action_page.php-->
+            </div>  
+ 
             <form class="form-size uk-horizontal" action="login_as_client.php" method="POST">
                 <fieldset class="uk-fieldset">
+
                     <center><legend class="uk-legend" id="log-text">LOG IN</legend></center>
+                    
                     <div class="uk-margin">
-                        <label class="uk-form-label form-horizontal-text font-Roboto">Username:</label>
                         <div class="uk-form-controls">
-                            <input class="uk-input uk-form-small" id="form-horizontal-text" type="text" name="username" value="<?php echo htmlentities($username); ?>" />
-                            <br>
-                            <br>
+                            <label class="uk-form-label form-horizontal-text font-Roboto">Username:</label>
+                        
+                            <input class="uk-input uk-form-small" id="form-horizontal-text" type="text" required="required" name="username" value="<?php echo htmlentities($username); ?>" />
                             
+                            <br><br>
+                                                    
                             <label class="uk-form-label form-horizontal-text font-Roboto">Password:</label>
-                            <input class="uk-input uk-form-small" id="form-horizontal-text" type="password" name="password">
+                            <input class="uk-input uk-form-small" id="form-horizontal-text" type="password" required="required" name="password">
                             
-                            <br>
-                            <br>
+                            <br><br>
+
                             <center><input class=" uk-button-default log-butt" type="submit" name="submit" value="LOG IN"/></center> 
-                            <br>
-                            <br>
+                            
+                            <br><br>
                         </div>
+
                         <div class="not-member-container">
                             <p class="notAmember-yet">Doesn't have an account yet?</p>
                             <p id="create-acc"> Sign Up <span class="font-Roboto"><a class="a" href="sign_up.php">here!</a></span></p>
                         </div>
+
                     </div>
+
+                </fieldset>
+            </form>
         </div>
-        </fieldset>
-        </form>
+
     </div>
-    </div>
+
     <script src="UIKIT/js/uikit.min.js"></script>
     <script src="UIKIT/js/uikit.js"></script>
     <script src="UIKIT/js/uikit-icons.js"></script>
     <script src="UIKIT/js/uikit-icons.min.js"></script>
+
 </body>
 
 </html>

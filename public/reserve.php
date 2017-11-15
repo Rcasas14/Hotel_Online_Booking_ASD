@@ -4,51 +4,11 @@
 <?php require_once("../includes/validation_functions.php"); ?>
 <?php client_confirm_logged_in(); ?>
 
-<?php
-    
-    if(isset($_POST['submit'])){
-
-        $required_fields = array("firstname", "lastname", "username", "password", "email", "address", "city");
-        validate_presences($required_fields);
-
-        $fields_with_max_lengths = array("firstname" => 25, "lastname" => 25, "username" => 25, "password" => 25,);
-        validate_max_lengths($fields_with_max_lengths);
-
-        $fields_with_min_lengths = array("firstname" => 3, "lastname" => 3, "username" => 5, "password" => 6,);
-        validate_min_lengths($fields_with_min_lengths);
-
-        if(empty($errors)){
-            //perform create
-
-            $firstname = mysql_prep($_POST["firstname"]);
-            $lastname = mysql_prep($_POST["lastname"]);
-            $username = mysql_prep($_POST["username"]);
-            $hashed_password = password_encrypt($_POST["password"]);
-            $email = mysql_prep($_POST["email"]);
-            $address = mysql_prep($_POST["address"]);
-            $city = mysql_prep($_POST["city"]);
-
-            $query  = "INSERT INTO clients (";
-            $query .= " First_Name, Last_Name, Username, hashed_password, Email, Address, City";
-            $query .= ") VALUES (";
-            $query .= " '{$firstname}', '{$lastname}', '{$username}', '{$hashed_password}', '{$email}', '{$address}', '{$city}'";
-            $query .= ")";
-
-            $result = mysqli_query($connection, $query);
-
-            if($result){
-                // success
-                $_SESSION["message"] = "Client Profile successfully created.";
-                redirect_to("login_as_client.php");
-            }else{
-                //failure
-                $_SESSION["message"] = "Client Profile creation failed.";
-            }
-        }
-    }
-
+<?php 
+    $category_set = find_all_categories(); 
+    $_SESSION["Category"] = null;
+    $_SESSION["Payment"] = null;
 ?>
-
 
 
 </!DOCTYPE html>
@@ -61,6 +21,7 @@
     <title>Grey Hotel</title>
     <link href="UIKIT/css/uikit.css" rel="stylesheet">
     <link href="UIKIT/css/uikit-rtl.css" rel="stylesheet">
+    <link href="stylesheets/style.css" rel="stylesheet" type="text/css">
     <link href="stylesheets/style2.css" rel="stylesheet" type="text/css">
     <link href="stylesheets/footer-distributed.css" rel="stylesheet" type="text/css">
 </head>
@@ -76,14 +37,14 @@
                 <div class="dropdown">
                     <p class="nav-text"><a href="index.php" class="link-head-text" uk-scroll>HOME</a></p>
                     <div class="dropdown-content">
-                        <a href="index.php" uk-scroll>About Grey Hotel</a>
+                        <a href="index.php#about-hotel" uk-scroll>About Grey Hotel</a>
                         <a href="index.php#contact">Contact Us</a>
                     </div>
                 </div>
                 <p class="nav-text"><a href="rooms.php" class="link-head-text">ROOMS</a></p>
                 <p class="nav-text"><a href="reserve.php" class="link-head-text">RESERVE NOW</a></p>
               
-            </div>          
+            </div>             
          </div>
    
         <aside class="sidebar">
@@ -94,14 +55,23 @@
                 <ul>
                     <li><a href="client_profile.php" target="iframe_content" class="h">Profile</a></li>
                     <br>
-                    <li><a href="reservation_form.php" target="iframe_content" class="h">Reserve a Room</a></li>
-                    <br>
-                    <li><a href="client_reservations.php" target="iframe_content" class="h">Recent Reservation</a></li>
+
+                    <?php while($category = mysqli_fetch_assoc($category_set)) { ?>
+
+                        <li><a href="reservation_form.php?Category=<?php echo urlencode($category["Category"]);?>" target="iframe_content" class="h">Reserve <?php echo htmlentities($category["Category"]); ?></a></li>
+                        <br>
+
+                    <?php } ?>
+                               
+                               
+                    <li><a href="recent_reservation.php" target="iframe_content" class="h">Recent Reservation</a></li>
                     <br>
                     <li><a href="client_logout.php" class="h">Log out</a></li>
                 </ul>
             </div>
+
         </aside>
+
     </div>
 
     <div class="content">

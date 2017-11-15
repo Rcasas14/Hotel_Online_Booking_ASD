@@ -31,30 +31,17 @@
 
 		<?php echo message(); ?>
 
-	<!--	<a href="reserve.php">RESERVE</a> -->
-
 		<br>
 		<center><h2> Your Profile </h2></center>
 		<a href="edit_client_profile.php" class="a">+ Edit Profile</a>
 		<hr/>
 			
-		<p style="font-weight: bold;"> First Name: </p>
-		<p> &nbsp; &nbsp; &nbsp; &nbsp;<?php echo htmlentities($client["First_Name"]); ?></p>
-
-		<p style="font-weight: bold;"> Last Name </p>
-		<p> &nbsp; &nbsp; &nbsp; &nbsp;<?php echo htmlentities($client["Last_Name"]); ?></p> 
-
-		<p style="font-weight: bold;"> Username </p>
-		<p> &nbsp; &nbsp; &nbsp; &nbsp;<?php echo htmlentities($client["Username"]); ?></p>
-
-		<p style="font-weight: bold;"> E-mail </p>
-		<p> &nbsp; &nbsp; &nbsp; &nbsp;<?php echo htmlentities($client["Email"]); ?></p> 
-
-		<p style="font-weight: bold;"> Address </p>
-		<p> &nbsp; &nbsp; &nbsp; &nbsp;<?php echo htmlentities($client["Address"]); ?></p> 
-
-		<p style="font-weight: bold;"> City </p>
-		<p> &nbsp; &nbsp; &nbsp; &nbsp;<?php echo htmlentities($client["City"]); ?></p>	
+		<p> <b>First Name:</b> <span style="margin-left: 30px;"><?php echo htmlentities($client["First_Name"]); ?> </span></p>
+		<p> <b>Last Name:</b> <span style="margin-left: 30px;"><?php echo htmlentities($client["Last_Name"]); ?></span></p>
+		<p> &nbsp;<b>Username:</b> <span style="margin-left: 30px;"><?php echo htmlentities($client["Username"]); ?></span></p>
+		<p> <span style="margin-left: 30px;"><b>E-mail:</b></span> <span style="margin-left: 30px;"><?php echo htmlentities($client["Email"]); ?></span></p>
+		<p> <span style="margin-left: 17px;"><b>Address:</b></span> <span style="margin-left: 30px;"> <?php echo htmlentities($client["Address"]); ?></span></p>
+		<p> <span style="margin-left: 50px;"><b>City:</b></span> <span style="margin-left: 30px;"><?php echo htmlentities($client["City"]); ?></span></p>	
 		<br>
 		<br>
 		
@@ -62,7 +49,7 @@
 	</div>
 
 	<script src="UIKIT/js/uikit.min.js"></script>
-    <script src="UIKIT/js/uikit.js"></script>
+    <script src="UIKIT/js/uikit.js"></script> 
     <script src="UIKIT/js/uikit-icons.js"></script>
     <script src="UIKIT/js/uikit-icons.min.js"></script>
 

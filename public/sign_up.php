@@ -6,9 +6,10 @@
 <?php
     
     if(isset($_POST['submit'])){
-
+        /*
         $required_fields = array("firstname", "lastname", "username", "password", "email", "address", "city");
         validate_presences($required_fields);
+        */
 
         $fields_with_max_lengths = array("firstname" => 25, "lastname" => 25, "username" => 25, "password" => 25,);
         validate_max_lengths($fields_with_max_lengths);
@@ -71,7 +72,7 @@
 </head>
 
 <body>
-     <div class="top-bg-color">
+        <div class="top-bg-color">
             <div class="ico">
                 <a href="index.php"><img src="Images/logo.png" alt="Grey Hotel" class="ico-image"></a>
             </div>
@@ -80,18 +81,19 @@
                 <div class="dropdown">
                     <p class="nav-text"><a href="index.php" class="link-head-text" uk-scroll>HOME</a></p>
                     <div class="dropdown-content">
-                        <a href="index.php" uk-scroll>About Grey Hotel</a>
+                        <a href="index.php#about-hotel" uk-scroll>About Grey Hotel</a>
                         <a href="index.php#contact">Contact Us</a>
                     </div>
                 </div>
                 <p class="nav-text"><a href="rooms.php" class="link-head-text">ROOMS</a></p>
                 <p class="nav-text"><a href="reserve.php" class="link-head-text">RESERVE NOW</a></p>
             </div>       
-    </div>
+        </div>
 
-        <div class="Create-acc-container">
+        <div class="sign_up_page">
 
             <div class="error_message"> 
+                <br>
                 <?php echo message(); ?>
                 <?php echo form_errors($errors); ?>
             </div>
@@ -99,44 +101,64 @@
             <form class="form-size uk-horizontal" action="sign_up.php" method="post">
                 <fieldset class="uk-fieldset">
                     <br>
-                    <center><h2 class="log-details personal-details">Sign Up</h2></center>
-                    <div class="uk-form-controls  form-margin personal-att" id="reg-width">
-                        <label class="uk-form-label form-horizontal-text width">First Name</label>
-                        <input class="uk-input uk-form-small reg-width" id="form-horizontal-text" type="text" name="firstname">
-                        <br>
-                        <label class="uk-form-label form-horizontal-text">Last Name</label>
-                        <input class="uk-input uk-form-small reg-width" id="form-horizontal-text" type="text" name="lastname">
+                    <center><h1 class="log-details personal-details" style="margin-left:-35px;">SIGN UP</h1></center>
+                    <hr style="width:450px; margin-left: -60px;"><br>
 
+                    <div class="uk-form-controls  form-margin personal-att">
 
-                        <label class="uk-form-label form-horizontal-text">Username</label>
-                        <input class="uk-input uk-form-small reg-width" id="form-horizontal-text" type="text" name="username">
+                        <label class="sign_up_details">First Name:</label>
+                        <input class="uk-input uk-form-small sign_up_form" type="text" required="required" name="firstname">
+                        
+                        <br><br>
 
-                        <label class="uk-form-label form-horizontal-text">Password</label>
-                        <input class="uk-input uk-form-small reg-width" id="form-horizontal-text" type="password" name="password">
+                        <label class="sign_up_details">Last Name:</label>
+                        <input class="uk-input uk-form-small sign_up_form" type="text" required="required" name="lastname">
 
-                        <label class="uk-form-label form-horizontal-text width">E-mail</label>
-                        <input class="uk-input uk-form-small reg-width" id="form-horizontal-text" type="email" placeholder="name@example.com" name="email">
+                        <br><br>
 
-                        <label class="uk-form-label form-horizontal-text width">Address</label>
-                        <input class="uk-input uk-form-small reg-width" id="form-horizontal-text" type="text" name="address">
-                        <br>
-                        <label class="uk-form-label form-horizontal-text">City</label>
-                        <input class="uk-input uk-form-small reg-width" id="form-horizontal-text" type="text" name="city">
-                        <br>
-                        <input class=" uk-button-default Save_button_sign_up" type="submit" name="submit" value="Submit"/>
+                        <label class="sign_up_details">Username:</label>
+                        <input class="uk-input uk-form-small sign_up_form" type="text" required="required" name="username">
+
+                        <br><br>
+
+                        <label class="sign_up_details" style="margin-left:-35px;">Password:</label>
+                        <input class="uk-input uk-form-small sign_up_form" type="password" required="required" name="password">
+
+                        <br><br>
+
+                        <label class="sign_up_details" style="margin-left:-15px;">E-mail:</label>
+                        <input class="uk-input uk-form-small sign_up_form" type="email" placeholder="name@example.com" required="required" name="email">
+     
+                        <br><br>
+
+                        <label class="sign_up_details" style="margin-left:-25px;">Address:</label>
+                        <input class="uk-input uk-form-small sign_up_form" type="text" required="required" name="address">
+                        
+                        <br><br>
+
+                        <label class="sign_up_details" style="margin-left:2px;">City:</label>
+                        <input class="uk-input uk-form-small sign_up_form" type="text" required="required" name="city">
+                        
+                        <br><br>
+
+                        <div class="sign_up_buttons" style="margin-left:45px;">
+                            <input class=" uk-button-default Save_button_sign_up" type="submit" name="submit" value="Submit"/>
+
+                            <a href="login_as_client.php" class="a"><input class=" uk-button-default Cancel_button_sign_up" type="button" onclick="return confirm('Are you sure you want to cancel?')" name="cancel" value="Cancel"/></a>   
+                        </div>
+
                     </div>
+
                 </fieldset>
             </form>
 
-            <a href="login_as_client.php"><button class=" uk-button-default Cancel_button_sign_up" onclick="return confirm('Are you sure you want to cancel?')">Cancel</button></a> 
-            <br>
-            
         </div>
 
     <script src="UIKIT/js/uikit.min.js"></script>
     <script src="UIKIT/js/uikit.js"></script>
     <script src="UIKIT/js/uikit-icons.js"></script>
     <script src="UIKIT/js/uikit-icons.min.js"></script>
+
 </body>
 
 </html>

@@ -37,6 +37,8 @@ function form_errors($errors = array()){
 }
 
 
+// ADMINS -------------------------------------------------------------------------
+
 function find_all_admins() {
 	global $connection;
 
@@ -89,6 +91,8 @@ function find_admin_by_username($username){
 	}
 }
 
+
+//CLIENTS -------------------------------------------------------------------------
 
 function find_all_clients() {
 	global $connection;
@@ -165,6 +169,334 @@ function find_client_by_username_password($username, $password){
 	}
 }
 
+
+
+//ROOMS --------------------------------------------------------------------
+
+function find_all_rooms() {
+	global $connection;
+
+	$query  = "SELECT * ";
+	$query .= "FROM rooms";
+
+	$room_set = mysqli_query($connection, $query);
+	confirm_query($room_set);
+
+	return $room_set;  
+}
+
+function find_room_by_id($room_id) {
+	global $connection;
+
+	$safe_room_id = mysqli_real_escape_string($connection, $room_id);
+
+	$query  = "SELECT * ";
+	$query .= "FROM rooms ";
+	$query .= "WHERE room_id = {$safe_room_id} ";
+	$query .= "LIMIT 1";
+	
+	$room_set = mysqli_query($connection, $query);
+	confirm_query($room_set);
+
+	if($room = mysqli_fetch_assoc($room_set)) {
+		return $room;
+	}else{
+		return null;
+	}
+}
+
+function find_room_by_category($category) {
+	global $connection;
+
+	$safe_category = mysqli_real_escape_string($connection, $category);
+
+	$query  = "SELECT * ";
+	$query .= "FROM rooms ";
+	$query .= "WHERE Category = {$safe_category}";
+	
+	$category_set = mysqli_query($connection, $query);
+	confirm_query($category_set);
+
+	return $category_set;
+}
+
+function find_all_categories() {
+	global $connection;
+
+	$query  = "SELECT distinct Category ";
+	$query .= "FROM rooms";
+
+	$category_set = mysqli_query($connection, $query);
+	confirm_query($category_set);
+
+	return $category_set;  
+}
+
+
+
+//RESERVATIONS ------------------------------------------------------------------------
+
+function is_Available($room_type) {
+	global $connection;
+
+	$safe_room_type = mysqli_real_escape_string($connection, $room_type);
+
+	$query  = "SELECT * ";
+    $query .= "FROM rooms ";
+    $query .= "WHERE Room_Type = '{$safe_room_type}' AND ";
+    $query .= "Available = 'Yes' ";
+    $query .= "LIMIT 1";
+
+    $available_set = mysqli_query($connection, $query);
+    confirm_query($available_set);
+
+    if($available = mysqli_fetch_assoc($available_set)) {
+		return $available;
+	}else{
+		return false;
+	}
+}
+
+function valid_date($check_in, $check_out){
+	$night_in = new DateTime($check_in);
+	$night_out = new DateTime($check_out);
+    $now = new DateTime();
+
+    if($night_in < $now || $night_out < $now){
+        return false;
+    }elseif($night_in > $night_out || $night_in == $night_out){
+    	return false;
+    }else{
+    	return true;
+    }
+}
+
+
+function dateDiff($check_in, $check_out) {
+    $start_check_in = strtotime($check_in);
+    $end_check_out = strtotime($check_out);
+    $diff = $end_check_out - $start_check_in;
+
+    return round($diff / 86400);
+}
+
+
+
+
+//PENDING RESERVATIONS -------------------------------------------------------
+
+function find_all_pendings() {
+	global $connection;
+
+	$query  = "SELECT * ";
+	$query .= "FROM pending ";
+
+	$pending_set = mysqli_query($connection, $query);
+	confirm_query($pending_set);
+
+	return $pending_set;  
+}
+
+function find_pending_reservation_by_id($reservation_id) {
+	global $connection;
+
+	$safe_reservation_id = mysqli_real_escape_string($connection, $reservation_id);
+
+	$query  = "SELECT * ";
+	$query .= "FROM pending ";
+	$query .= "WHERE id = {$safe_reservation_id} ";
+	$query .= "LIMIT 1";
+	
+	$reservation_set = mysqli_query($connection, $query);
+	confirm_query($reservation_set);
+
+	if($reservation = mysqli_fetch_assoc($reservation_set)) {
+		return $reservation;
+	}else{
+		return null;
+	}
+}
+
+
+
+
+//APPROVED RESERVATIONS ----------------------------------------------------------------
+
+function find_all_approved() {
+	global $connection;
+
+	$query  = "SELECT * ";
+	$query .= "FROM approved ";
+
+	$approved_set = mysqli_query($connection, $query);
+	confirm_query($approved_set);
+
+	return $approved_set;  
+}
+
+function find_approved_reservation_by_id($reservation_id) {
+	global $connection;
+
+	$safe_reservation_id = mysqli_real_escape_string($connection, $reservation_id);
+
+	$query  = "SELECT * ";
+	$query .= "FROM approved ";
+	$query .= "WHERE id = {$safe_reservation_id} ";
+	$query .= "LIMIT 1";
+	
+	$reservation_set = mysqli_query($connection, $query);
+	confirm_query($reservation_set);
+
+	if($reservation = mysqli_fetch_assoc($reservation_set)) {
+		return $reservation;
+	}else{
+		return null;
+	}
+}
+
+
+
+//DECLINED RESERVATIONS ----------------------------------------------------------------
+
+function find_all_declined() {
+	global $connection;
+
+	$query  = "SELECT * ";
+	$query .= "FROM declined ";
+
+	$declined_set = mysqli_query($connection, $query);
+	confirm_query($declined_set);
+
+	return $declined_set;  
+}
+
+function find_declined_reservation_by_id($reservation_id) {
+	global $connection;
+
+	$safe_reservation_id = mysqli_real_escape_string($connection, $reservation_id);
+
+	$query  = "SELECT * ";
+	$query .= "FROM declined ";
+	$query .= "WHERE id = {$safe_reservation_id} ";
+	$query .= "LIMIT 1";
+	
+	$reservation_set = mysqli_query($connection, $query);
+	confirm_query($reservation_set);
+
+	if($reservation = mysqli_fetch_assoc($reservation_set)) {
+		return $reservation;
+	}else{
+		return null;
+	}
+}
+
+
+
+
+//ARCHIVED RESERVATIONS ----------------------------------------------------------------
+
+function find_all_archived() {
+	global $connection;
+
+	$query  = "SELECT * ";
+	$query .= "FROM archived ";
+
+	$archived_set = mysqli_query($connection, $query);
+	confirm_query($archived_set);
+
+	return $archived_set;  
+}
+
+function find_archived_reservation_by_id($reservation_id) {
+	global $connection;
+
+	$safe_reservation_id = mysqli_real_escape_string($connection, $reservation_id);
+
+	$query  = "SELECT * ";
+	$query .= "FROM archived ";
+	$query .= "WHERE id = {$safe_reservation_id} ";
+	$query .= "LIMIT 1";
+	
+	$reservation_set = mysqli_query($connection, $query);
+	confirm_query($reservation_set);
+
+	if($reservation = mysqli_fetch_assoc($reservation_set)) {
+		return $reservation;
+	}else{
+		return null;
+	}
+}
+
+
+
+
+/* RECENT RESERVATION (INVOICE/RECEIPT) ------------------------------------------------------ */
+
+function find_client_recent_reservation($username){
+	global $connection;
+
+	$safe_username = mysqli_real_escape_string($connection, $username);
+
+	$query  = "SELECT * ";
+	$query .= "FROM pending ";
+	$query .= "WHERE Username = '{$safe_username}' ";
+	$query .= "LIMIT 1";
+
+	$pending_set = mysqli_query($connection, $query);
+	confirm_query($pending_set);
+
+	if($pending = mysqli_fetch_assoc($pending_set)){
+
+		return $pending;
+
+	}elseif(!$pending = mysqli_fetch_assoc($pending_set)){
+
+		$query  = "SELECT * ";
+		$query .= "FROM approved ";
+		$query .= "WHERE Username = '{$safe_username}' ";
+		$query .= "LIMIT 1";
+
+		$approved_set = mysqli_query($connection, $query);
+		confirm_query($approved_set);
+
+		if($approved = mysqli_fetch_assoc($approved_set)){
+
+			return $approved;
+
+		}elseif(!$approved = mysqli_fetch_assoc($approved_set)){
+
+			$query  = "SELECT * ";
+			$query .= "FROM declined ";
+			$query .= "WHERE Username = '{$safe_username}' ";
+			$query .= "LIMIT 1";
+
+			$declined_set = mysqli_query($connection, $query);
+			confirm_query($declined_set);
+
+			if($declined = mysqli_fetch_assoc($declined_set)){
+
+				return $declined;
+
+			}else{
+				return null;
+			}
+
+		}
+
+
+	}
+
+}
+
+
+function rate($rate) {
+	$rate_value = str_replace("Php", "", $rate);
+
+	return $rate_value;
+}
+
+
+//AUTHENTICATION ----------------------------------------------------------------------
 
 function logged_in(){
 	return isset($_SESSION["admin_id"]);

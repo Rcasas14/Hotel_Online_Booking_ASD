@@ -23,15 +23,16 @@
         background-color: #555f70;
         background-size: cover;
         display: block;
-        height: 100px;
+        height: 80px;
         margin: 0;
+        z-index: 1;
     }
     
     .ico {
         float: left;
         display: block;
         margin: -13px;
-        width: 100px;
+        width: 80px;
     }
     
     .ico-image {
@@ -43,7 +44,7 @@
         position: relative;
     }
     
-    .adminHeader h1  {
+    .adminHeader h2  {
         font-family: Calibri;
         text-decoration: none;
         color: #fff;
@@ -120,11 +121,13 @@
     .sidebar {
         position: relative;
         background-color:#eeeeee;
-        height: 548px;
+        height: 560px;
         width: 300px;
         float: left;
-        padding: 5px; 
+        margin-top: -15px;
+        z-index: -1;
         padding-top: 20px;
+
     }
   
     .sidebar h3{
@@ -154,16 +157,15 @@
         font-size: 18px;
         text-decoration: none;
         color: #555f70;
-        font-weight: 100;
         position: relative;
     }
 
     .sidebar a:hover {
+        color: #555f70;
         font-family: Calibri;
         font-size: 18px;
         text-decoration: none;
-        color: white;
-        font-weight: 100;
+        font-weight: bold;
         position: relative;
     }
 
@@ -189,5 +191,7 @@
         border-style: solid;
         border-width: 2px;
         border-color: #eeeeee;
-        height: 530px;
+        height: 548px;
+        margin-top: -10px;
+        padding: 5px;
     }

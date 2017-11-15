@@ -22,21 +22,8 @@
     <link href="stylesheets/style.css" rel="stylesheet" type="text/css">
 </head>
 
-<body class="body">
+<body>
 
-<!--	
-    <div class="top-bg-color">
-
-        <div class="ico">
-            <img src="Images/logo.png" alt="Grey Hotel" class="ico-image">
-        </div>
-
-        <div class="adminHeader">
-            <h1>Grey Hotel ADMIN</h1>
-        </div>
-
-    <div>
--->
 	<div class="manage_admins">
 		<?php echo message(); ?>
 
@@ -53,22 +40,19 @@
 				<th> Username </th>
 				<th colspan="2"> Actions </th>  
 			</tr>
-		<?php while($admin = mysqli_fetch_assoc($admin_set)) { ?>
+			<?php while($admin = mysqli_fetch_assoc($admin_set)) { ?>
 			<tr>
 				<td><?php echo htmlentities($admin["First_Name"]); ?> </td>
 				<td><?php echo htmlentities($admin["Last_Name"]); ?> </td>
 				<td><?php echo htmlentities($admin["Username"]); ?> </td>
-				<td><a href="edit_admin.php?id=<?php echo urlencode($admin["id"]); ?>" class="a">Edit</a> /
-					<a href="delete_admin.php?id=<?php echo urlencode($admin["id"]); ?>" onclick="return confirm('Are you sure you want to delete this admin?');" class="a">Delete</a></td>
+				<td><a href="edit_admin.php?id=<?php echo urlencode($admin["id"]); ?>" class="a">Edit</a> |
+					<a href="delete_admin.php?id=<?php echo urlencode($admin["id"]); ?>" onclick="return confirm('Are you sure you want to delete this admin?');" class="delete">Delete</a></td>
 			</tr>
-		<?php } ?>	
+			<?php } ?>	
 
 		</table>
 
-		<br/>
-
 	</div>		
-<!-- </div> -->
 
 </body>
 </html>

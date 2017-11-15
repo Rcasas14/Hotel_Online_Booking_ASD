@@ -27,39 +27,28 @@
         padding: 0;
     }
     
-    .top-bg-color {
-        background-color: #555f70;
-        background-size: cover;
-        display: block;
-        height: 100px;
-        margin: 0;
-    }
-    
-    .ico {
-        float: left;
-        display: block;
-        margin: -13px;
-        width: 100px;
-    }
-    
-    .ico-image {
-        float: left;
-        margin-top: 18px;
-        margin-left: 30px;
-        box-shadow: 2px 2px #1e1414;
-        border-radius: 50%;
-    }
     
     .login-but {
         float: right;
         margin-top: 70px;
         margin-right: 20px;
     }
-    
+
     .topnav {
-        float: right;
-        margin-top: 70px;
-    }
+    margin-top: 50px;
+    float: right;
+    margin-left: 100px;
+    width: 100%;
+    top: 0;
+    position: fixed;
+    display: inline;
+}
+
+    .topnav a:hover{
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
     
     .h {
         font-family: Calibri;
@@ -108,7 +97,7 @@
     }
     
     #myTopNav {
-        margin-top: 70px;
+        margin-top: 50px;
         margin-left: 100px;
         margin-bottom: 12px;
     }
@@ -196,57 +185,13 @@
         font-size: 13px;
     }
 
-    .Cancel-butt {
-        font-family: Calibri;
-        text-decoration: none;
-        background: #424242;
-        color: #fff;
-        padding: 11px 15px 10px 15px;
-        font-size: 15px;
-        margin-left: 120px;
-        margin-top: 313px;
-        margin-right: 10px;
-        position: relative;
-    }
-
-    .Save-butt {
-        font-family: Calibri;
-        text-decoration: none;
-        background: #424242;
-        color: #fff;
-        padding: 11px 22px 11px 22px;
-        font-size: 15px;
-        margin-left: -125px;
-        margin-top: 78px;
-        margin-right: 10px;
-        position: absolute;
-    }
 
     .head-image {
         height: 480px;
         background-size: contain;
     }
-    
-    /* register-page style */
-    
-    .Create-acc-container {
-        height: auto;
-        width: 410px;
-        padding-bottom: 100px;
-        padding-left: 70px;
-        background-color: #efefef;
-        margin-right: 420px;
-        margin-left: 400px;
-        margin-top: 150px;
-        margin-bottom: 50px;
-    }
-    
-    .log-details {
-        font-size: 24px;
-        padding-top: 10px;
-        padding-left: 10px;
-        font-family: Calibri;
-    }
+   
+
     
     #reg-width {
         width: 300px;
@@ -261,18 +206,21 @@
     }
     
     .personal-att {
-        margin-left: 65px;
-    }
-    
-    .personal-details {
-        margin-left: 53px;
+        margin-left: 0px;
     }
 
 
 
 
 
-/*---------------------------------- */
+
+
+
+
+
+
+
+/* COMMON STYLES --------------------------------------------------------- */
 .error_message {
     color: red;
     font-size: 13px;
@@ -282,13 +230,12 @@
 }
 
 .table th, td{
-    width: 200px;
+    width: 250px;
     padding: 10px;
     text-align: center;
     border-style: solid;
     border-width: 1px;
-    margin: 0px;
-    font-size: 15px;
+    font-size: 13px;
 }
 
 .a{
@@ -299,6 +246,17 @@
     color: #555f70;
     text-decoration: none;
 }
+
+.delete{
+    text-decoration: none;
+    color: red;
+}
+
+.delete:hover{
+    color: #555f70;
+    text-decoration: none;
+}
+
 
 .link{
     margin-left: 500px;
@@ -314,18 +272,190 @@
     text-decoration: none;
 }
 
+.form_title_header {
+    font-size: 30px;
+    padding-top: 10px;
+    padding-left: 0px;
+    font-family: Calibri;
+}
+
+
+
+/* RESERVE -------------------------------*/
+#loggedIn {
+    float: right;
+    margin-top: 70px;
+    margin-right: 100px;
+}
+
+
+    .sidebar {
+        position: relative;
+        background-color:#eeeeee;
+        height: 550px;
+        width: 300px;
+        float: left;
+        padding: 5px; 
+        padding-top: 20px;
+        margin-top: 80px;
+    }
+
+  
+    .sidebar h3{
+        font-family: Calibri;
+        text-decoration: none;
+        color: #555f70;
+        padding-top: 30px; 
+        font-weight: bold;
+    }
+        
+    
+    .sidebar_links{
+        padding-left: 30px;
+    }
+
+    .sidebar li {
+        font-family: Calibri;
+        font-size: 18px;
+        text-decoration: none;
+        color: #555f70;
+        font-weight: 100;
+        position: relative;
+    }
+
+    .sidebar a {
+        font-family: Calibri;
+        font-size: 18px;
+        text-decoration: none;
+        color: #555f70;
+        font-weight: 100;
+        position: relative;
+    }
+
+    .sidebar a:hover {
+        font-family: Calibri;
+        font-size: 18px;
+        text-decoration: none;
+        color: #555f70;
+        font-weight: bold;
+        position: relative;
+    }
+
+    .content {
+        margin-top: 80px;
+        width: 1000px;
+        height: auto;
+        float: left;
+        padding: 15px;   
+        margin-left: 2px;    
+        display: block;         
+    }
+
+    .content p {
+        font-family: Calibri;
+        font-size: 40px;
+        text-decoration: none;
+        color: #555f70;
+        font-weight: 100;
+        position: relative;
+    }
+
+    .content iframe{
+        border-style: solid;
+        border-width: 2px;
+        border-color: #eeeeee;
+        height: 550px;
+    }
+
+
+
+
+/* ROOMS (USER AREA)-------------------------------------------- */
+
+.roomType{
+        margin-top: 180px;
+      
+    }
+
+    .roomType h3 {
+        font-size: 40px;
+        font-weight: bold;
+        margin-top: 50px;
+        margin-left: 40px;
+        font-family: "Lucida Calligraphy";
+    }
+
+    .roomType img {
+        width: 400px;
+        height: 230px;
+        margin-top: 50px;
+        margin-left: 20px; 
+        display: inline;
+    }
+
+
+    .imgRow{
+        display: inline;
+    }
+
+    .imgDescription{
+        display: inline-block;
+    }
+
+    .imgDescription p{
+        text-align: left;
+        margin-left: 30px;
+        font-style: Calibri;
+    }
+
+
+
 /* SIGN UP ------------------------------------------*/
+
+    .sign_up_page {
+        height: 700px;
+        width: 700px;
+        padding-bottom: 100px;
+        padding-left: 70px;
+        margin-right: 420px;
+        margin-left: 450px;
+        margin-top: 100px;
+        margin-bottom: 50px;
+    }
+
+    .sign_up_details {
+    font-family: Calibri;
+    font-size: 16px;
+    position: absolute;
+    margin-left: -40px;
+}
+
+.sign_up_form {
+    font-family: Calibri;
+    font-size: 16px;
+    margin-left: 60px;
+    position: absolute;
+    width: 300px;
+    height: 90px;
+}
+
+.sign_up_buttons {
+    margin-left: 60px;
+    margin-top: 25px;
+    display: inline;
+}
+
 .Cancel_button_sign_up {
         font-family: Calibri;
         text-decoration: none;
         background: #424242;
         color: #fff;
-        padding: 11px 15px 11px 15px;
+        padding: 11px 23px 11px 23px;
         font-size: 15px;
-        margin-left: 240px;
-        margin-top: 495px;
         margin-right: 10px;
-        position: relative;
+        position: absolute;
+        margin-top: 40px;
+        margin-left: 35px;
 }
 
     .Save_button_sign_up {
@@ -335,14 +465,14 @@
         color: #fff;
         padding: 11px 22px 11px 22px;
         font-size: 15px;
-        margin-left: 50px;
+        margin-left: 45px;
         margin-top: 40px;
-        margin-right: 10px;
-        position: absolute;
-        float: left;
     }
 
+
+
 /* CLIENT PROFILE ------------------------------------*/
+
 .client_profile {
     float: left;
     margin-left: 100px;
@@ -350,35 +480,63 @@
     padding-right: 100px;
     padding-left: 100px;
     padding-bottom: 50px;
-    margin-top: 30px;
+    margin-top: 40px;
     width: 600px;
 }
 
+
+
 /* EDIT CLIENT PROFILE ------------------------------------*/
+h2, p {
+    color: #424242;
+}
+
+
 .edit_client_profile {
     height: 620px;
     width: 410px;
     margin-right: 420px;
     float: left;
-    margin-left: 170px;
-    margin-top: 30px;
+    margin-left: 200px;
+    margin-top: 50px;
     margin-bottom: 50px;
     padding-left: 100px;
     padding-right: 100px;
 }
+ 
+.edit_client_details {
+    font-family: Calibri;
+    font-size: 16px;
+    position: absolute;
+    margin-left: -40px;
+}
 
+.edit_client_form {
+    font-family: Calibri;
+    font-size: 16px;
+    margin-left: 60px;
+    position: absolute;
+    width: 300px;
+    height: 90px;
+}
+
+.edit_client_buttons {
+    margin-left: 110px;
+    margin-top: 25px;
+    display: inline;
+}
 
 .Cancel_button_edit_profile {
         font-family: Calibri;
         text-decoration: none;
         background: #424242;
         color: #fff;
-        padding: 11px 15px 11px 15px;
+        padding: 11px 18px 11px 18px;
         font-size: 15px;
-        margin-left: 230px;
-        margin-top: 520px;
+        margin-left: 110px;
+        margin-top: 40px;
         margin-right: 10px;
-        position: relative;
+        position: absolute;
 }
 
     .Save_button_edit_profile {
@@ -388,30 +546,222 @@
         color: #fff;
         padding: 11px 22px 11px 22px;
         font-size: 15px;
-        margin-left: 50px;
-        margin-top: 39px;
+        margin-left: -10px;
+        margin-top: 40px;
         margin-right: 10px;
         position: absolute;
     }
 
+
+
+/* CONFIRM LOG OUT SA EDIT PROFILE --------------------------------- */
+
+.confirm_logout{
+    margin-top: 100px;
+}
+
+.confirm_logout button {
+    font-family: Calibri;
+    text-decoration: none;
+    background: #424242;
+    color: #fff;
+    padding: 11px 22px 11px 22px;
+    font-size: 15px;
+    margin-top: 39px;
+    position: relative;
+}  
+
+.confirm_logout button:hover{
+    color: #424242;
+    background: #fff;
+    text-decoration: none;
+}  
+
+
+
 /* RESERVATION FORM -------------------------------------*/
+
 .reservation_form {
     display: inline-block;
-   padding-right: 100px;
-    padding-left: 150px;
+    padding-right: 100px;
+    padding-left: 100px;
+    padding-bottom: 150px;
+    margin-top: 40px;
+    margin-left: 40px;
+}
+
+.reserve-head{
+    font-family: Calibri;
+    font-size: 35px;
+    padding-top: 15px;
+    margin-left: 250px;
+    margin-bottom: 25px;
+}
+
+.reserve-content {
+    display: block;
+}
+
+.reserve-form-contain {
+    display: inline;
+    margin-top: 50px;
+}
+
+.reserve-details {
+    font-family: Calibri;
+    font-size: 16px;
+    margin-left: 20px;
+}
+
+.reserve-width-form {
+    width: 350px;
+}
+
+.reserve-log-butt {
+    font-family: Calibri;
+    text-decoration: none;
+    background: #424242;
+    color: #fff;
+    padding: 12px 25px 12px 25px;
+    font-size: 13px;
+    margin-left: 45px;
+}
+
+.reserve-form-contain input {
+    float:right;
+    margin-right: 30px;
+}
+.reserve-select{
+    height: 50px;
+    margin-left: 25px;
+    margin-right: 10px;
+}
+.select-form{
+    height: 50px;
+    margin-left: 50px;
+    margin-right: 30px;
+}
+
+.buttons {
+    margin-top: 25px;
+    display: inline;
+}
+
+.Save_button_reserve {
+        font-family: Calibri;
+        text-decoration: none;
+        background: #424242;
+        color: #fff;
+        padding: 11px 17px 11px 17px;
+        font-size: 15px;
+        margin-top: 30px;
+        position: absolute;
+        margin-left: 40px;
+    
+}
+
+    .Cancel_button_reserve {
+        font-family: Calibri;
+        text-decoration: none;
+        background: #424242;
+        color: #fff;
+        padding: 11px 22px 11px 22px;
+        font-size: 15px;
+        margin-right: 10px;
+        position: absolute;
+        margin-top: 30px;
+        margin-left: -80px;
+    }
+
+
+/* RESERVATION (PAYMENT INFORMATION) ---------------------------------------------------- */
+
+.payment_information {
+    height: 620px;
+    width: 410px;
+    margin-right: 420px;
+    float: left;
+    margin-left: 200px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+
+
+
+/* RECENT RESERVATION (INVOICE/RECEIPT) ---------------------------------- */
+
+.recent_reservation {
+    float: left;
+    margin-left: 100px;
+    display: inline-block;
+    padding-right: 100px;
+    padding-left: 100px;
     padding-bottom: 50px;
-    margin-top: 30px;
-    margin-left: 80px;
+    margin-top: 40px;
+    width: 600px;
+}
+
+
+
+/* MANAGE ROOMS ----------------------------------- */
+
+.manage_rooms {
+    display: inline-block;
+    padding-right: 100px;
+    padding-left: 50px;
+    padding-bottom: 50px;
+    margin-top: 50px;
+    margin-left: 50px;
     float: left;
 }
 
-/* MANAGE CLIENTS ----------------------------------- */
-.manage_clients {
+
+/* EDIT ROOM --------------------------------------- */
+.edit_room {
+    width: 500px;
     display: inline-block;
     padding-right: 100px;
     padding-left: 50px;
     padding-bottom: 50px;
     margin-top: 30px;
+    margin-left: 220px;
+}
+
+.edit_room_details {
+    font-family: Calibri;
+    font-size: 16px;
+    position: absolute;
+    margin-left: 10px;
+}
+
+.edit_room_form {
+    font-family: Calibri;
+    font-size: 16px;
+    margin-left: 130px;
+    position: absolute;
+    width: 300px;
+    height: 90px;
+}
+
+
+.edit_room_buttons {
+    margin-left: 70px;
+    margin-top: 25px;
+    display: inline;
+}
+
+
+/* MANAGE CLIENTS ----------------------------------- */
+
+.manage_clients {
+    display: inline-block;
+    padding-right: 100px;
+    padding-left: 50px;
+    padding-bottom: 50px;
+    margin-top: 50px;
     margin-left: 50px;
     float: left;
 }
@@ -423,10 +773,11 @@
     padding-right: 100px;
     padding-left: 50px;
     padding-bottom: 50px;
-    margin-top: 30px;
+    margin-top: 50px;
     margin-left: 50px;
     float: left;
 }
+
 
 /* EDIT ADMINS ------------------------------------*/
 .edit_admin {
@@ -439,17 +790,39 @@
     float: left;
 }
 
+.edit_admin_details {
+    font-family: Calibri;
+    font-size: 16px;
+    position: absolute;
+    margin-left: 25px;
+}
+
+.edit_admin_form {
+    font-family: Calibri;
+    font-size: 16px;
+    margin-left: 130px;
+    position: absolute;
+    width: 300px;
+    height: 90px;
+}
+
+.edit_admin_buttons {
+    margin-left: 70px;
+    margin-top: 25px;
+    display: inline;
+}
+
 .Cancel_button_edit_admin {
         font-family: Calibri;
         text-decoration: none;
         background: #424242;
         color: #fff;
-        padding: 11px 15px 11px 15px;
+        padding: 11px 17px 11px 17px;
         font-size: 15px;
-        margin-left: 230px;
-        margin-top: 310px;
         margin-right: 10px;
-        position: relative;
+        position: absolute;
+        margin-top: 40px;
+        margin-left: 35px;
 }
 
     .Save_button_edit_admin {
@@ -459,12 +832,12 @@
         color: #fff;
         padding: 11px 22px 11px 22px;
         font-size: 15px;
-        margin-left: -240px;
-        margin-top: 70px;
-        margin-right: 10px;
-        position: absolute;
-        float: left;
+        margin-left: 60px;
+        margin-top: 40px;
+        position: relative;
     }
+
+
 
 /* ADD NEW ADMINS ------------------------------------*/
 .add_new_admin {
@@ -473,8 +846,30 @@
     padding-left: 50px;
     padding-bottom: 50px;
     margin-top: 30px;
-    margin-left: 250px;
+    margin-left: 220px;
     float: left;
+}
+
+.add_admin_details {
+    font-family: Calibri;
+    font-size: 16px;
+    position: absolute;
+    margin-left: 25px;
+}
+
+.add_admin_form {
+    font-family: Calibri;
+    font-size: 16px;
+    margin-left: 130px;
+    position: absolute;
+    width: 300px;
+    height: 90px;
+}
+
+.add_admin_buttons {
+    margin-left: 70px;
+    margin-top: 25px;
+    display: inline;
 }
 
 .Cancel_button_add_admin {
@@ -482,12 +877,12 @@
         text-decoration: none;
         background: #424242;
         color: #fff;
-        padding: 11px 15px 11px 15px;
+        padding: 11px 17px 11px 17px;
         font-size: 15px;
-        margin-left: 230px;
-        margin-top: 310px;
         margin-right: 10px;
-        position: relative;
+        position: absolute;
+        margin-top: 40px;
+        margin-left: 35px;
 }
 
     .Save_button_add_admin {
@@ -497,9 +892,19 @@
         color: #fff;
         padding: 11px 22px 11px 22px;
         font-size: 15px;
-        margin-left: -240px;
-        margin-top: 70px;
-        margin-right: 10px;
-        position: absolute;
-        float: left;
+        margin-left: 60px;
+        margin-top: 40px;
+        position: relative;
     }
+
+
+/* RESERVATIONS (ADMIN AREA) ----------------------------------------------*/
+.reservations {
+    display: inline-block;
+    padding-right: 100px;
+    padding-left: 50px;
+    padding-bottom: 50px;
+    margin-top: 50px;
+    margin-left: 50px;
+    float: left;
+}
