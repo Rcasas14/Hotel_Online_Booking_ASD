@@ -1,0 +1,122 @@
+
+/* ROOMS (USER AREA)-------------------------------------------- */
+
+	.accommodations{
+        margin-top: 50px;
+      
+    }
+
+    .accommodations h3 {
+        font-size: 40px;
+        font-weight: bold;
+        padding-top: 60px;
+        margin-left: 40px;
+        font-family: "Lucida Calligraphy";
+    }
+
+    .accommodation_info {
+        font-size: 20px;
+        margin-left: 80px;
+        margin-right: 80px;
+        font-style: italic; 
+        font-family: "Calibri";
+    }
+
+    .imgRow{
+    	width: 100%;
+    	height: auto;
+    	margin-top: 0px;
+    	padding-bottom: 20px;
+        
+    }
+
+    .imgRow hr{
+    	width: 80%;
+    	margin-left: 10%;
+
+    }
+
+    .imgDescription{
+    	height: 330px;
+        display: block;
+        background-color: #d2d2d2;
+        margin: 30px 80px 30px 100px;
+        /*margin-left: 100px;
+        margin-right: 80px;
+        margin-top: 30px;
+        margin-bottom: 30px;*/
+        box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .imgDescription img {
+        width: 530px;
+        height: 330px;
+        margin: 0 10px 0px 0px;
+        /*margin-left: 0px;
+        margin-right: 10px; 
+        margin-bottom: 0px; */
+        
+    }
+
+    .imgDescription p{
+        text-align: left;
+        margin-left: 50px;
+        font-style: Calibri;
+        color: #333;
+        
+    }
+
+
+    .roomDescription{
+    	position: absolute;
+    	margin: -310px 80px 0 530px;
+    	/*margin-top: -310px;
+    	margin-left: 530px;
+    	margin-right: 80px;*/
+    }
+
+    .imgDescription_right{
+    	height: 330px;
+        display: block;
+        background-color: #d2d2d2;
+        margin: 30px 80px 30px 100px;
+        /*margin-left: 100px;
+        margin-right: 80px;
+        margin-top: 30px;
+        margin-bottom: 30px;*/
+        box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.3);
+    }
+    
+    .imgDescription_right img {
+    	position: absolute;
+        width: 530px;
+        height: 330px;
+        margin: 0px 10px 0 623px;
+        /*margin-top: 0px;
+        margin-left: 623px;
+        margin-right: 10px; */ 
+        
+    }
+
+    .roomDescription_right{
+  		margin: 50px 550px 0 10px;
+    	/*margin-top: 50px;
+        margin-left: 10px;
+        margin-right: 550px; */
+        padding-bottom: 13px;
+        
+    }
+
+
+    .roomTypeName{
+    	margin: 0 0 30px 250px;
+    	/*margin-left: 250px; 
+    	margin-bottom: 30px;*/
+    	font-family: "Lucida Calligraphy";
+    	font-weight: bold;
+
+    }
+
+    .roomFeatures{
+    	font-style: italic; 
+    }
