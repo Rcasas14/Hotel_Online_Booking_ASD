@@ -1,0 +1,91 @@
+/*reserve-form-page css*/
+@font-face {
+    font-family: "Strait-Regular";
+    src: url(../Fonts/strait/Strait-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Roboto-Light";
+    src: url("../Fonts/Roboto/Roboto-Light.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat-Regular";
+    src: url("../Fonts/Montserrat/Montserrat-Regular.otf");
+}
+
+
+.reserve-container {
+    background-color: #efefef;
+    margin: 120px 100px 40px 370px;
+    display: inline-block;
+    padding-right: 200px;
+    padding-bottom: 50px;
+}
+
+.reserve-content {
+    display: block;
+}
+
+.reserve-form-contain {
+    display: inline;
+    margin-top: 50px;
+}
+
+.reserve-details {
+    font-family: "Roboto-Light";
+    font-size: 13px;
+    margin-top: 5px;
+    margin-left: 40px;
+}
+
+.reserve-width-form {
+    width: 300px;
+}
+
+.reserve-head {
+    font-family: "Montserrat-Regular";
+    font-size: 25px;
+    padding-top: 15px;
+    margin-left: 40px;
+    margin-bottom: 25px;
+}
+
+.reserve-log-butt {
+    font-family: "Roboto-Light";
+    text-decoration: none;
+    background: #424242;
+    color: #fff;
+    padding: 12px 25px 12px 25px;
+    font-size: 13px;
+    margin-left: 45px;
+}
+
+.reserve-log-butt a {
+    text-decoration: none;
+}
+
+.reserve-link {
+    text-decoration: none;
+}
+
+.reserv-butt {
+    margin-left: 140px;
+    margin-top: 25px;
+    display: block;
+}
+
+.reserve-form-contain input {
+    float: right;
+}
+
+.reserv-select {
+    height: 50px;
+}
+
+.tex-area-float {
+    float: right;
+    width: 300px;
+    height: 80px;
+    margin-bottom: 25px;
+}

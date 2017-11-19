@@ -8,8 +8,8 @@
     <title>Grey Hotel</title>
     <link href="UIKIT/css/uikit.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet" type="text/css">
-    <link href="../tes-css.css" rel="stylesheet" type="text/css">
     <link href="css/footer-distributed.css" rel="stylesheet" type="text/css">
+    
 </head>
 
 <body class="body">
@@ -26,7 +26,7 @@
                         <a href="#contact">Contact Us</a>
                     </div>
                 </div>
-                <p class="nav-text"><a href="#rooms" class="link-head-text">ROOMS</a></p>
+                <p class="nav-text"><a href="rooms.php" class="link-head-text">ROOMS</a></p>
                 <div class="dropdown">
                     <p class="nav-text"><a href="login-page.php" class="link-head-text">RESERVE NOW</a></p>
                     <div class="dropdown-content">
@@ -50,17 +50,62 @@
         <br>
 
         <div class="About-hotel-container" id="about-hotel">
-            <p class="About-greyHotel">ABOUT GREY HOTEL</p>
-            <p class="grey-hotel-dav">GREY HOTEL DAVAO</p>
+            <center>
+                <p class="About-greyHotel">ABOUT GREY HOTEL</p>
+            </center>
+            <center>
+                <p class="grey-hotel-dav">GREY HOTEL DAVAO</p>
+            </center>
             <div class="grey-hotel-image">
-                <img src="Images/Grey-Hotel.png" class="grey-img">
+                <center><img src="Images/Grey-Hotel.png" class="grey-img"></center>
             </div>
-            <p class="subtopic"> GREATNESS, RELAXATION, EXPERCIENCE the YOUTH in GREY HOTEL</p>
-            <p class="aboutHotel-temp-content ">While the Philippines is one of the largest archipelago in the world, The Grey Hotel also one of the most known sophisticated luxury hotel in the world. With the most satisfactory hotel according to people reviews.
-                <br>
-                <br> Grey Hotel is located in most largest and safest city in the philippines. The city of Davao.
-                <br> While providing the perfect setting to connect you to this vibrant and inspiring destination </p>
+            <br>
+
         </div>
+        <div class="about-bg-container">
+            <div class="aboutHotel-content">
+                <p>
+                    WELCOME TO THE GREY HOTEL, WHERE YOU CAN EXPERIENCE &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GREATNESS, RELAXATION, AND YOUTHFULNESS!</p>
+            </div>
+            <div class="about-content-cont">
+                <div class="about-content">
+                    <img src="Images/hotel.jpg" class="content-one-img">
+                    <p>Complete your perfect stay in Davao City with Grey Hotel and its great experience. Grey hotel is located in the heart of Davao, where peace and modern city life can be found.</p>
+                </div>
+            </div>
+            <div class="about-sec-content">
+                <div class="about-content">
+                    <img src="Images/suite.jpg" class="content-one-img">
+                    <p>Feel at home in our rooms and suites which are elegantly designed with Filipino and a touch of Western styles. With its 5-storey building design and structure and 9 elegant guest rooms and suites offered, we can assure that guests can enjoy their privacy and solitude. All rooms are also equipped with broadband internet and other amenities.</p>
+                </div>
+            </div>
+            <div class="about-sec-content">
+                <div class="about-content">
+                    <img src="Images/functionHall.jpg" class="content-one-img">
+                    <p>Grey Hotel can also be a great venue for meetings and seminars with its versatile function halls equipped with modern technologies needed. From the airport, Grey Hotel is just 12 kms away and can be reach with 20-minute drive by car.</p>
+                </div>
+            </div>
+        </div>
+        <h2 class="facility">FACILITIES</h2>
+        <div class="facility-container">
+            <div class="facility-cont">
+                <img src="Images/functionhall.png">
+                <p>Function Hall</p>
+            </div>
+            <div class="facility-cont-sec">
+                <img src="Images/minibarGlass.png">
+                <p>Mini Bar</p>
+            </div>
+            <div class="facility-cont-sec">
+                <img src="Images/parking%20lot.png">
+                <p>Parking Lot</p>
+            </div>
+            <div class="facility-cont-sec">
+                <img src="Images/swimmingpool.png">
+                <p>Swimming Area</p>
+            </div>
+        </div>
+
     </div>
     <div class="Footer">
         <footer class="footer-distributed">

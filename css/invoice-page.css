@@ -1,0 +1,98 @@
+/*invoice-page css*/
+
+@font-face {
+    font-family: "Strait-Regular";
+    src: url(../Fonts/strait/Strait-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Roboto-Light";
+    src: url("../Fonts/Roboto/Roboto-Light.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat-Regular";
+    src: url("../Fonts/Montserrat/Montserrat-Regular.otf");
+}
+.inv-container {
+    background-color: #efefef;
+    margin: 120px 100px 40px 370px;
+    display: inline-block;
+    padding-right: 200px;
+    padding-left: 100px;
+    padding-bottom: 50px;
+}
+
+.inv-content {
+    display: inline-block;
+}
+
+.inv-head {
+    margin-top: 30px;
+    margin-left: 40px;
+    margin-bottom: 40px;
+    font-family: "Montserrat-Regular";
+    font-size: 25px;
+    color: #000;
+}
+
+.inv-greyHotel-text {
+    font-family: "Roboto-Light";
+    font-size: 20px;
+    text-decoration: none;
+    color: #000;
+    text-align: center;
+    margin-left: 100px;
+}
+
+.inv-information {
+    font-family: "Roboto-Light";
+    font-size: 14px;
+    color: #000;
+}
+
+.inv-content-margin {
+    margin-left: 40px;
+}
+
+.inv-function {
+    font-family: "Roboto-Light";
+    font-size: 13px;
+    color: #000;
+    float: right;
+    display: inline;
+    margin-left: 50px;
+}
+
+.inv-information-desc {
+    font-family: "Montserrat-Regular";
+    color: #000;
+    font-size: 16px;
+}
+
+.inv-total-border {
+    border-top: 4px solid #000;
+    display: block;
+}
+
+.inv-icon img {
+    display: block;
+    height: 90px;
+    z-index: 1000;
+    margin-left: 50%;
+    margin-right: 50%;
+}
+
+.inv-log-butt {
+    font-family: "Roboto-Light";
+    text-decoration: none;
+    background: #424242;
+    color: #fff;
+    padding: 12px 25px 12px 25px;
+    font-size: 13px;
+}
+
+.inv-butt-container {
+    margin-top: 2px;
+    display: inline-block;
+}
