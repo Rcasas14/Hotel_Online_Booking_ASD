@@ -8,8 +8,6 @@
 	$admin = find_admin_by_id($_GET["id"]);
 
 	if(!$admin) {
-		//admin ID was missing or invalid or
-		//admin couldn't be found in database
 		echo "Sorry, we couldn't find it.";
 		redirect_to("manage_admins.php");
 	}
@@ -51,13 +49,22 @@
 
 			if($result && mysqli_affected_rows($connection) == 1){
 				// success
-				$_SESSION["message"] = "Admin successfully updated!";
-				redirect_to("manage_admins.php");
-			}else{
+				//$_SESSION["message"] = "Admin successfully updated!";
+				//redirect_to("manage_admins.php");
+                $message = "Admin successfully updated!";
+                echo "<script type='text/javascript'>alert('$message'); window.location.replace(\"manage_admins.php\");</script>"; 
+            }else{
 				//failure
-				$_SESSION["message"] = "Admin update failed!";
+				//$_SESSION["message"] = "Admin update failed!";
+                $message = "Admin update failed!";
+                echo "<script type='text/javascript'>alert('$message');</script>";
 			}
-		}
+
+		}else{
+            $message = form_errors($errors);
+            echo "<script type='text/javascript'>alert('$message');</script>";
+        }
+
 	}
 ?>
 
@@ -80,20 +87,8 @@
 </head>
 
 <body>
-    <!--
-    <div class="top-bg-color">
-        <div class="ico">
-            <img src="Images/logo.png" alt="Grey Hotel" class="ico-image">
-        </div>
-    </div>
-    -->
 
         <div class="edit_admin">
-
-        	<div class="error_message"> 
-                <?php echo message(); ?>
-                <?php echo form_errors($errors); ?>
-            </div>
 
             <form action="edit_admin.php?id=<?php echo urlencode($admin["id"]); ?>" method="post" class="form-size uk-horizontal">
 
@@ -105,22 +100,22 @@
                     <div class="uk-form-controls  form-margin personal-att" id="reg-width">
 
                         <label class="edit_admin_details">First Name:</label>
-                        <input class="uk-input uk-form-small edit_admin_form" type="text" required="required" name="firstname">
+                        <input class="uk-input uk-form-small edit_admin_form" type="text" required="required" value="<?php echo isset($_POST["firstname"]) ? $_POST["firstname"] : htmlentities($admin["First_Name"]); ?>" name="firstname">
 
                         <br><br>
 
                         <label class="edit_admin_details">Last Name:</label>
-                        <input class="uk-input uk-form-small edit_admin_form" type="text" required="required" name="lastname">
+                        <input class="uk-input uk-form-small edit_admin_form" type="text" required="required" value="<?php echo isset($_POST["lastname"]) ? $_POST["lastname"] : htmlentities($admin["Last_Name"]); ?>" name="lastname">
 
                         <br><br>
 
                         <label class="edit_admin_details">Username:</label>
-                        <input class="uk-input uk-form-small edit_admin_form" type="text" required="required" name="username">
+                        <input class="uk-input uk-form-small edit_admin_form" type="text" required="required" value="<?php echo isset($_POST["username"]) ? $_POST["username"] : htmlentities($admin["Username"]); ?>" name="username">
 
                         <br><br>
 
                         <label class="edit_admin_details" style="margin-left:30px;">Password:</label>
-                        <input class="uk-input uk-form-small edit_admin_form" type="password" required="required" name="password">
+                        <input class="uk-input uk-form-small edit_admin_form" type="password" required="required" value="<?php echo isset($_POST["password"]) ? $_POST["password"] : ""; ?>" name="password">
 
                         <br><br>
                         <div class="edit_admin_buttons">

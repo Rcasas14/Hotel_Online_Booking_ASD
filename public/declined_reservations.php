@@ -2,6 +2,8 @@
 <?php require_once("../includes/session.php"); ?>
 <?php require_once("../includes/functions.php"); ?>
 <?php require_once("../includes/validation_functions.php"); ?>
+<?php confirm_logged_in(); ?>
+
 
 <?php
 	$declined_set = find_all_declined();
@@ -25,8 +27,10 @@
 
 <body>
 
+
+<?php if($declined_set && mysqli_num_rows($declined_set) >= 1) {	?>
+
 	<div class="reservations">
-		<?php echo message(); ?>
 
 		<center><h2> Declined Reservations </h2></center>
 		<br/>
@@ -70,7 +74,14 @@
 
 		</table>
 
-	</div>		
+	</div>
+
+<?php }else{	
+
+			$message = "There are no declined reservations in Grey Hotel.";
+       		echo "<script type='text/javascript'>alert('$message'); window.top.location.replace(\"admin_menu.php\"); window.close();</script>"; 
+
+	  }	?>		
 
 </body>
 </html>

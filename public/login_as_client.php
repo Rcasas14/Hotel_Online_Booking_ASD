@@ -31,9 +31,14 @@
                 redirect_to("reserve.php");
             }else{
                  //failure
-                $_SESSION["message"] = "Username/Password not found!";
+                //$_SESSION["message"] = "Username/Password not found!";
+                $message = "Username/Password not found!";
+                echo "<script type='text/javascript'>alert('$message');</script>";
             }
 
+        }else{
+            $message = form_errors($errors);
+            echo "<script type='text/javascript'>alert('$message');</script>";
         }
     }    
 
@@ -82,12 +87,6 @@
         </div>
     
         <div class="log-container uk-clearfix">
-
-        
-             <div class="error_message">
-                <?php echo message(); ?>
-                <?php echo form_errors($errors); ?>
-            </div>  
  
             <form class="form-size uk-horizontal" action="login_as_client.php" method="POST">
                 <fieldset class="uk-fieldset">
@@ -98,7 +97,7 @@
                         <div class="uk-form-controls">
                             <label class="uk-form-label form-horizontal-text font-Roboto">Username:</label>
                         
-                            <input class="uk-input uk-form-small" id="form-horizontal-text" type="text" required="required" name="username" value="<?php echo htmlentities($username); ?>" />
+                            <input class="uk-input uk-form-small" id="form-horizontal-text" type="text" required="required" name="username" value="<?php echo isset($_POST["username"]) ? $_POST["username"] : "" ?>" />
                             
                             <br><br>
                                                     

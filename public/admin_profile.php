@@ -2,10 +2,10 @@
 <?php require_once("../includes/session.php"); ?>
 <?php require_once("../includes/functions.php"); ?>
 <?php require_once("../includes/validation_functions.php"); ?>
-<?php client_confirm_logged_in(); ?>
+<?php confirm_logged_in(); ?>
 
 <?php      
-    $client = find_client_by_username($_SESSION["username"]);
+    $admin = find_admin_by_username($_SESSION["username"]);
 ?>  
 
 <!DOCTYPE html>
@@ -27,23 +27,17 @@
 
 <body>
 
-	<div class="client_profile">
+	<div class="admin_profile">
 
 		<br>
-		<center><h2> Your Profile </h2></center>
-		<a href="edit_client_profile.php" class="a">+ Edit Profile</a>
+		<center><h2> Admin Profile </h2></center>
+		<a href="edit_admin_profile.php" class="a">+ Edit Profile</a>
 		<hr/>
 			
-		<p> <b>First Name:</b> <span style="margin-left: 30px;"><?php echo htmlentities($client["First_Name"]); ?> </span></p>
-		<p> <b>Last Name:</b> <span style="margin-left: 30px;"><?php echo htmlentities($client["Last_Name"]); ?></span></p>
-		<p> &nbsp;<b>Username:</b> <span style="margin-left: 30px;"><?php echo htmlentities($client["Username"]); ?></span></p>
-		<p> <span style="margin-left: 30px;"><b>E-mail:</b></span> <span style="margin-left: 30px;"><?php echo htmlentities($client["Email"]); ?></span></p>
-		<p> <span style="margin-left: 17px;"><b>Address:</b></span> <span style="margin-left: 30px;"> <?php echo htmlentities($client["Address"]); ?></span></p>
-		<p> <span style="margin-left: 50px;"><b>City:</b></span> <span style="margin-left: 30px;"><?php echo htmlentities($client["City"]); ?></span></p>	
-		<br>
-		<br>
-		
-		
+		<p> <b>First Name:</b> <span style="margin-left: 30px;"><?php echo htmlentities($admin["First_Name"]); ?> </span></p>
+		<p> <b>Last Name:</b> <span style="margin-left: 30px;"><?php echo htmlentities($admin["Last_Name"]); ?></span></p>
+		<p> &nbsp;<b>Username:</b> <span style="margin-left: 30px;"><?php echo htmlentities($admin["Username"]); ?></span></p>
+
 	</div>
 
 	<script src="UIKIT/js/uikit.min.js"></script>

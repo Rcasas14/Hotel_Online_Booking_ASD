@@ -27,6 +27,45 @@
         padding: 0;
     }
     
+
+    .ico {
+    float: left;
+    display: block;
+    margin: -13px;
+    width: 80px;
+}
+    
+.ico-image {
+    float: left;
+    margin-top: 18px;
+    margin-left: 30px;
+    box-shadow: 2px 2px #1e1414;
+    border-radius: 50%;
+}
+
+.top-bg-color {
+    background-color: #383d41;
+    background-size: cover;
+    height: 80px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    display: block;
+    z-index: 1000;
+}
+
+.dropdown-content {
+    display: none;
+    text-decoration: none;
+    position: absolute;
+    background-color: #383d41;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+
+
     
     .login-but {
         float: right;
@@ -102,6 +141,7 @@
         margin-bottom: 12px;
     }
     
+
     .login-but {
         -webkit-appearance: none;
         display: inline-block;
@@ -372,11 +412,6 @@
 
 /* ROOMS (USER AREA)-------------------------------------------- */
 
-.roomType{
-        margin-top: 180px;
-      
-    }
-
     .roomType h3 {
         font-size: 40px;
         font-weight: bold;
@@ -385,28 +420,120 @@
         font-family: "Lucida Calligraphy";
     }
 
-    .roomType img {
-        width: 400px;
-        height: 230px;
+.accommodations{
         margin-top: 50px;
-        margin-left: 20px; 
-        display: inline;
+      
     }
 
+    .accommodations h3 {
+        font-size: 40px;
+        font-weight: bold;
+        padding-top: 60px;
+        margin-left: 40px;
+        font-family: "Lucida Calligraphy";
+    }
+
+    .accommodation_info {
+        font-size: 20px;
+        margin-left: 80px;
+        margin-right: 80px;
+        font-style: italic; 
+        font-family: "Calibri";
+    }
 
     .imgRow{
-        display: inline;
+        width: 100%;
+        height: auto;
+        margin-top: 0px;
+        padding-bottom: 20px;
+        
+    }
+
+    .imgRow hr{
+        width: 80%;
+        margin-left: 10%;
+
     }
 
     .imgDescription{
+        height: 330px;
+        display: block;
+        background-color: #d2d2d2;
+        margin: 30px 80px 30px 100px;
+        box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.3);
+    }
+
+     .imgDescription_res{
         display: inline-block;
+        margin: 15px;
+        margin-left: 25px;
+    }
+
+
+    .imgDescription_res p{
+        text-align: left;
+        margin-left: 0px;
+        font-style: Calibri;
+        color: #333;
+        
+    }
+
+    .imgDescription img {
+        width: 530px;
+        height: 330px;
+        margin: 0 10px 0px 0px;
+        
     }
 
     .imgDescription p{
         text-align: left;
-        margin-left: 30px;
+        margin-left: 50px;
         font-style: Calibri;
+        color: #333;
+        
     }
+
+
+    .roomDescription{
+        position: absolute;
+        margin: -310px 80px 0 530px;
+        
+    }
+
+    .imgDescription_right{
+        height: 330px;
+        display: block;
+        background-color: #d2d2d2;
+        margin: 30px 80px 30px 100px;
+        box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.3);
+    }
+    
+    .imgDescription_right img {
+        position: absolute;
+        width: 530px;
+        height: 330px;
+        margin: 0px 10px 0 623px;
+        
+    }
+
+    .roomDescription_right{
+        margin: 50px 550px 0 10px;
+        padding-bottom: 13px;
+        
+    }
+
+
+    .roomTypeName{
+        margin: 0 0 30px 250px;
+        font-family: "Lucida Calligraphy";
+        font-weight: bold;
+
+    }
+
+    .roomFeatures{
+        font-style: italic; 
+    }
+
 
 
 
@@ -486,13 +613,13 @@
 
 
 
-/* EDIT CLIENT PROFILE ------------------------------------*/
+/* EDIT PROFILE ------------------------------------*/
 h2, p {
     color: #424242;
 }
 
 
-.edit_client_profile {
+.edit_profile {
     height: 620px;
     width: 410px;
     margin-right: 420px;
@@ -504,14 +631,14 @@ h2, p {
     padding-right: 100px;
 }
  
-.edit_client_details {
+.edit_details {
     font-family: Calibri;
     font-size: 16px;
     position: absolute;
     margin-left: -40px;
 }
 
-.edit_client_form {
+.edit_form {
     font-family: Calibri;
     font-size: 16px;
     margin-left: 60px;
@@ -520,7 +647,7 @@ h2, p {
     height: 90px;
 }
 
-.edit_client_buttons {
+.edit_buttons {
     margin-left: 110px;
     margin-top: 25px;
     display: inline;
@@ -584,10 +711,10 @@ h2, p {
 .reservation_form {
     display: inline-block;
     padding-right: 100px;
-    padding-left: 100px;
+    padding-left: 80px;
     padding-bottom: 150px;
-    margin-top: 40px;
-    margin-left: 40px;
+    margin-top: 10px;
+    margin-left: 30px;
 }
 
 .reserve-head{
@@ -766,6 +893,19 @@ h2, p {
     float: left;
 }
 
+/* ADMIN PROFILE ------------------------------------*/
+
+.admin_profile {
+    float: left;
+    margin-left: 100px;
+    display: inline-block;
+    padding-right: 100px;
+    padding-left: 100px;
+    padding-bottom: 50px;
+    margin-top: 40px;
+    width: 600px;
+}
+
 
 /* MANAGE ADMINS ------------------------------------*/
 .manage_admins {
@@ -867,7 +1007,7 @@ h2, p {
 }
 
 .add_admin_buttons {
-    margin-left: 70px;
+    margin-left: 100px;
     margin-top: 25px;
     display: inline;
 }

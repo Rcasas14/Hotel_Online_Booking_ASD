@@ -2,6 +2,8 @@
 <?php require_once("../includes/session.php"); ?>
 <?php require_once("../includes/functions.php"); ?>
 <?php require_once("../includes/validation_functions.php"); ?>
+<?php //client_confirm_logged_in(); ?>
+
 
 <!DOCTYPE html>
 <html>

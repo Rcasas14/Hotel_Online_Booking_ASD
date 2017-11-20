@@ -2,6 +2,8 @@
 <?php require_once("../includes/session.php"); ?>
 <?php require_once("../includes/functions.php"); ?>
 <?php require_once("../includes/validation_functions.php"); ?>
+<?php confirm_logged_in(); ?>
+
 
 <?php
 	$room_set = find_all_rooms();
@@ -24,8 +26,6 @@
 <body>
 
 	<div class="manage_rooms">
-		
-		<?php echo message(); ?>
 		
 		<center><h2> Manage Room Information </h2></center>
 		<br/>

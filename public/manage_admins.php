@@ -2,6 +2,8 @@
 <?php require_once("../includes/session.php"); ?>
 <?php require_once("../includes/functions.php"); ?>
 <?php require_once("../includes/validation_functions.php"); ?>
+<?php confirm_logged_in(); ?>
+
 
 <?php
 	$admin_set = find_all_admins();
@@ -25,7 +27,6 @@
 <body>
 
 	<div class="manage_admins">
-		<?php echo message(); ?>
 
 		<center><h2> Manage Admins </h2></center>
 		
@@ -38,15 +39,24 @@
 				<th> First Name </th>
 				<th> Last Name </th>
 				<th> Username </th>
-				<th colspan="2"> Actions </th>  
+				<th> Actions </th>  
 			</tr>
 			<?php while($admin = mysqli_fetch_assoc($admin_set)) { ?>
 			<tr>
+
 				<td><?php echo htmlentities($admin["First_Name"]); ?> </td>
 				<td><?php echo htmlentities($admin["Last_Name"]); ?> </td>
 				<td><?php echo htmlentities($admin["Username"]); ?> </td>
-				<td><a href="edit_admin.php?id=<?php echo urlencode($admin["id"]); ?>" class="a">Edit</a> |
-					<a href="delete_admin.php?id=<?php echo urlencode($admin["id"]); ?>" onclick="return confirm('Are you sure you want to delete this admin?');" class="delete">Delete</a></td>
+
+				<?php 
+
+					if($admin["Username"] != $_SESSION["username"]){	?>
+						<td><a href="delete_admin.php?id=<?php echo urlencode($admin["id"]); ?>" onclick="return confirm('Are you sure you want to delete this admin?');" class="delete">Delete</a></td>
+				
+				<?php	}else{	?>
+						<td> Logged In </td>
+				<?php }	?>
+				
 			</tr>
 			<?php } ?>	
 

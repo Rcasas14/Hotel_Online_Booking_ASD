@@ -2,6 +2,8 @@
 <?php require_once("../includes/session.php"); ?>
 <?php require_once("../includes/functions.php"); ?>
 <?php require_once("../includes/validation_functions.php"); ?>
+<?php confirm_logged_in(); ?>
+
 
 <?php
 	$client_set = find_all_clients();
@@ -24,39 +26,48 @@
 
 <body>
 
-	<div class="manage_clients">
+<?php if($client_set && mysqli_num_rows($client_set) >= 1) {	?>
 
-		<?php echo message(); ?>
-		
-		<center><h2> Manage Clients </h2></center>
-		<br/>
-		<hr/>
+		<div class="manage_clients">
+			
+			<center><h2> Manage Clients </h2></center>
+			<br/>
+			<hr/>
 
-		<table class="table">
+			<table class="table">
 
-			<tr>
-				<th> First Name </th>
-				<th> Last Name </th>
-				<th> Username </th>
-				<th> E-mail </th>
-				<th> Address </th>
-				<th> City </th>
-				<th> Actions </th>  
-			</tr>
-			<?php while($client = mysqli_fetch_assoc($client_set)) { ?>
-			<tr>
-				<td><?php echo htmlentities($client["First_Name"]); ?> </td>
-				<td><?php echo htmlentities($client["Last_Name"]); ?> </td>
-				<td><?php echo htmlentities($client["Username"]); ?> </td>
-				<td><?php echo htmlentities($client["Email"]); ?> </td>
-				<td><?php echo htmlentities($client["Address"]); ?> </td>
-				<td><?php echo htmlentities($client["City"]); ?> </td>
-				<td><a href="delete_client.php?id=<?php echo urlencode($client["id"]); ?>" onclick="return confirm('Are you sure you want to delete this client record?');" class="delete">Delete</a></td>
-			</tr>
-			<?php } ?>
+				<tr>
+					<th> First Name </th>
+					<th> Last Name </th>
+					<th> Username </th>
+					<th> E-mail </th>
+					<th> Address </th>
+					<th> City </th>
+					<th> Actions </th>  
+				</tr>
+				<?php while($client = mysqli_fetch_assoc($client_set)) { ?>
+				<tr>
+					<td><?php echo htmlentities($client["First_Name"]); ?> </td>
+					<td><?php echo htmlentities($client["Last_Name"]); ?> </td>
+					<td><?php echo htmlentities($client["Username"]); ?> </td>
+					<td><?php echo htmlentities($client["Email"]); ?> </td>
+					<td><?php echo htmlentities($client["Address"]); ?> </td>
+					<td><?php echo htmlentities($client["City"]); ?> </td>
+					<td><a href="delete_client.php?id=<?php echo urlencode($client["id"]); ?>" onclick="return confirm('Are you sure you want to delete this client record?');" class="delete">Delete</a></td>
+				</tr>
+				<?php } ?>
 
-		</table>
+			</table>
 
-	</div>		
+		</div>	
+
+<?php }else{	
+
+			$message = "There are no clients registered in Grey Hotel.";
+       		echo "<script type='text/javascript'>alert('$message'); window.top.location.replace(\"admin_menu.php\"); window.close();</script>"; 
+
+	  }	?>
+
+
 </body>
 </html>

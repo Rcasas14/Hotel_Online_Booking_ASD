@@ -56,6 +56,9 @@
                     <li><a href="client_profile.php" target="iframe_content" class="h">Profile</a></li>
                     <br>
 
+                    <li><a href="room_availability.php" target="iframe_content" class="h">Reserved Rooms Checker</a></li>
+                    <br>
+
                     <?php while($category = mysqli_fetch_assoc($category_set)) { ?>
 
                         <li><a href="reservation_form.php?Category=<?php echo urlencode($category["Category"]);?>" target="iframe_content" class="h">Reserve <?php echo htmlentities($category["Category"]); ?></a></li>

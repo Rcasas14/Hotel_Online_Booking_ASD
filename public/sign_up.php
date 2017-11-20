@@ -6,15 +6,11 @@
 <?php
     
     if(isset($_POST['submit'])){
-        /*
-        $required_fields = array("firstname", "lastname", "username", "password", "email", "address", "city");
-        validate_presences($required_fields);
-        */
 
-        $fields_with_max_lengths = array("firstname" => 25, "lastname" => 25, "username" => 25, "password" => 25,);
+        $fields_with_max_lengths = array("firstname" => 25, "lastname" => 25, "username" => 25, "password" => 25, "address" => 25, "city" => 25);
         validate_max_lengths($fields_with_max_lengths);
 
-        $fields_with_min_lengths = array("firstname" => 3, "lastname" => 3, "username" => 5, "password" => 6,);
+        $fields_with_min_lengths = array("firstname" => 3, "lastname" => 3, "username" => 5, "password" => 6, "address" => 3, "city" => 3);
         validate_min_lengths($fields_with_min_lengths);
 
         if(empty($errors)){
@@ -38,12 +34,20 @@
 
             if($result){
                 // success
-                $_SESSION["message"] = "Client Profile successfully created!";
-                redirect_to("login_as_client.php");
+                //$_SESSION["message"] = "Client Profile successfully created!";
+                //redirect_to("login_as_client.php");
+                $message = "Client Profile successfully created! Please log in to continue.";
+                echo "<script type='text/javascript'>alert('$message'); window.location.replace(\"login_as_client.php\");</script>"; 
             }else{
                 //failure
-                $_SESSION["message"] = "Client Profile creation failed!";
+                //$_SESSION["message"] = "Client Profile creation failed!";
+                $message = "Client Profile creation failed!";
+                echo "<script type='text/javascript'>alert('$message');</script>";
             }
+
+        }else{
+            $message = form_errors($errors);
+            echo "<script type='text/javascript'>alert('$message');</script>";
         }
     }
 
@@ -92,12 +96,8 @@
 
         <div class="sign_up_page">
 
-            <div class="error_message"> 
-                <br>
-                <?php echo message(); ?>
-                <?php echo form_errors($errors); ?>
-            </div>
-
+        <br>
+        
             <form class="form-size uk-horizontal" action="sign_up.php" method="post">
                 <fieldset class="uk-fieldset">
                     <br>
@@ -107,37 +107,37 @@
                     <div class="uk-form-controls  form-margin personal-att">
 
                         <label class="sign_up_details">First Name:</label>
-                        <input class="uk-input uk-form-small sign_up_form" type="text" required="required" name="firstname">
+                        <input class="uk-input uk-form-small sign_up_form" type="text" required="required" value="<?php echo isset($_POST["firstname"]) ? $_POST["firstname"] : "" ?>" name="firstname">
                         
                         <br><br>
 
                         <label class="sign_up_details">Last Name:</label>
-                        <input class="uk-input uk-form-small sign_up_form" type="text" required="required" name="lastname">
+                        <input class="uk-input uk-form-small sign_up_form" type="text" required="required" value="<?php echo isset($_POST["lastname"]) ? $_POST["lastname"] : "" ?>" name="lastname">
 
                         <br><br>
 
                         <label class="sign_up_details">Username:</label>
-                        <input class="uk-input uk-form-small sign_up_form" type="text" required="required" name="username">
+                        <input class="uk-input uk-form-small sign_up_form" type="text" required="required" value="<?php echo isset($_POST["username"]) ? $_POST["username"] : "" ?>" name="username">
 
                         <br><br>
 
                         <label class="sign_up_details" style="margin-left:-35px;">Password:</label>
-                        <input class="uk-input uk-form-small sign_up_form" type="password" required="required" name="password">
+                        <input class="uk-input uk-form-small sign_up_form" type="password" required="required" value="<?php echo isset($_POST["password"]) ? $_POST["password"] : "" ?>" name="password">
 
                         <br><br>
 
                         <label class="sign_up_details" style="margin-left:-15px;">E-mail:</label>
-                        <input class="uk-input uk-form-small sign_up_form" type="email" placeholder="name@example.com" required="required" name="email">
+                        <input class="uk-input uk-form-small sign_up_form" type="email" placeholder="name@example.com" required="required" value="<?php echo isset($_POST["email"]) ? $_POST["email"] : "" ?>" name="email">
      
                         <br><br>
 
                         <label class="sign_up_details" style="margin-left:-25px;">Address:</label>
-                        <input class="uk-input uk-form-small sign_up_form" type="text" required="required" name="address">
+                        <input class="uk-input uk-form-small sign_up_form" type="text" required="required" value="<?php echo isset($_POST["address"]) ? $_POST["address"] : "" ?>" name="address">
                         
                         <br><br>
 
                         <label class="sign_up_details" style="margin-left:2px;">City:</label>
-                        <input class="uk-input uk-form-small sign_up_form" type="text" required="required" name="city">
+                        <input class="uk-input uk-form-small sign_up_form" type="text" required="required" value="<?php echo isset($_POST["city"]) ? $_POST["city"] : "" ?>" name="city">
                         
                         <br><br>
 

@@ -14,7 +14,7 @@ function fieldname_as_text($fieldname) {
 // use === to avoid false positives
 // empty() would consider "0" to be empty
 function has_presence($value) {
-	return isset($value) && $value !== "";
+	return isset($value) && $value !== "" && $value !== " ";
 }
 
 function validate_presences($required_fields){
@@ -22,6 +22,8 @@ function validate_presences($required_fields){
 
 	foreach($required_fields as $field) {
 		$value = trim($_POST[$field]);
+	//	$value = str_replace(" ", "", $_POST[$field]);
+
 		if(!has_presence($value)){
 			$errors[$field] = fieldname_as_text($field) . " can't be blank";
 		}
@@ -41,9 +43,12 @@ function validate_min_lengths($fields_with_min_lengths){
 	foreach($fields_with_min_lengths as $field => $min){
 
 		$value = trim($_POST[$field]);
+	//	$value = str_replace(" ", "", $_POST[$field]);
 
 		if(!has_min_length($value, $min)){
-			$errors[$field] = fieldname_as_text($field) . " is too short";
+			$errors[$field] = fieldname_as_text($field) . " is too short ";
+			$message = fieldname_as_text($field) . " is too short ";
+		//	echo "<script type='text/javascript'>alert('$message');</script>";
 		}
 	}
 }
@@ -63,15 +68,11 @@ function validate_max_lengths($fields_with_max_lengths){
 		$value = trim($_POST[$field]);
 
 		if(!has_max_length($value, $max)){
-			$errors[$field] = fieldname_as_text($field) . " is too long";
+			$errors[$field] = fieldname_as_text($field) . " is too long ";
 		}
 	}
 }
 
-// inclusion in a set
-function has_inclusion_in($value, $set){
-	return in_array($value, $set);
-}
 
 
 ?>

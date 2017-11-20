@@ -30,10 +30,15 @@
                 redirect_to("admin_menu.php");
             }else{
                  //failure
-                $_SESSION["message"] = "Username/Password not found!";
+                //$_SESSION["message"] = "Username/Password not found!";
+                $message = "Username/Password not found!";
+                echo "<script type='text/javascript'>alert('$message');</script>";
             }
 
-        }
+        }else{
+             $message = form_errors($errors);
+            echo "<script type='text/javascript'>alert('$message');</script>";
+        }    
     }    
 
 ?>
@@ -64,12 +69,7 @@
             </div>
         </div>
 
-        <div class="log-container uk-clearfix" id="page">
-
-            <div class="error_message">
-                <?php echo message(); ?>
-                <?php echo form_errors($errors); ?>
-            </div>    
+        <div class="log-container uk-clearfix" id="page"> 
 
             <!-- must have action_page.php-->
             <form class="form-size uk-horizontal" action="admin.php" method="POST">
@@ -80,12 +80,12 @@
                         <div class="uk-form-controls">
                             <label class="uk-form-label form-horizontal-text">Username:</label>
                         
-                            <input class="uk-input uk-form-small" id="form-horizontal-text" type="text" required="required" name="username" value="<?php echo htmlentities($username); ?>" />
+                            <input class="uk-input uk-form-small" id="form-horizontal-text" type="text" required="required" name="username" value="<?php echo isset($_POST["username"]) ? $_POST["username"] : "" ?>" />
                             
                             <br><br>                        
                             
                             <label class="uk-form-label form-horizontal-text">Password:</label>
-                            <input class="uk-input uk-form-small" id="form-horizontal-text" type="password" required="required" name="password" value="">
+                            <input class="uk-input uk-form-small" id="form-horizontal-text" type="password" required="required" name="password">
                             
                             <br><br>
 

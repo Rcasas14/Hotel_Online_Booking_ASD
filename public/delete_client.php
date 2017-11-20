@@ -2,6 +2,7 @@
 <?php require_once("../includes/session.php"); ?>
 <?php require_once("../includes/functions.php"); ?>
 <?php require_once("../includes/validation_functions.php"); ?>
+<?php confirm_logged_in(); ?>
 
 <?php 
 	$client = find_client_by_id($_GET["id"]);
@@ -18,12 +19,16 @@
 
 	if($result && mysqli_affected_rows($connection) == 1){
 		// success
-		$_SESSION["message"] = "Client successfully deleted!";
-		redirect_to("manage_clients.php");
+		//$_SESSION["message"] = "Client successfully deleted!";
+		//redirect_to("manage_clients.php");
+		$message = "Client successfully deleted!";
+        echo "<script type='text/javascript'>alert('$message'); window.location.replace(\"manage_clients.php\");</script>"; 
 	}else{
 		//failure
-		$_SESSION["message"] = "Client deletion failed!";
-		redirect_to("manage_clients.php");
+		//$_SESSION["message"] = "Client deletion failed!";
+		//redirect_to("manage_clients.php");
+		$message = "Client deletion failed!";
+        echo "<script type='text/javascript'>alert('$message'); window.location.replace(\"manage_clients.php\");</script>"; 
 	}
 
 ?>

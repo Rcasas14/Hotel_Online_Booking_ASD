@@ -2,6 +2,7 @@
 <?php require_once("../includes/session.php"); ?>
 <?php require_once("../includes/functions.php"); ?>
 <?php require_once("../includes/validation_functions.php"); ?>
+<?php client_confirm_logged_in(); ?>
   
 
 <?php 
@@ -18,7 +19,7 @@
         validate_presences($required_fields);
         */
         
-        $fields_with_max_lengths = array("accountname" => 25, "accountnumber" => 25);
+        $fields_with_max_lengths = array("accountname" => 30, "accountnumber" => 25);
         validate_max_lengths($fields_with_max_lengths);
 
         $fields_with_min_lengths = array("accountname" => 5, "accountnumber" => 5);
@@ -49,7 +50,6 @@
                 $status = $temp["Status"];
 
 
-
                     if($temp_set){
 
                         $query  = "INSERT INTO pending (";
@@ -69,23 +69,32 @@
 
                             if($result){
                                 // success
-                                $_SESSION["message"] = "Reservation has been successfully submitted!";
-                                redirect_to("reservation_form.php?Category=<?php echo urlencode ($category); ?>");
+                                //$_SESSION["message"] = "Reservation has been successfully submitted!";
+                                //redirect_to("reservation_form.php?Category=$category");
+                                $message = "Reservation has been successfully submitted!";
+                                echo "<script type='text/javascript'>alert('$message'); window.location.replace(\"reservation_form.php?Category=$category\");</script>"; 
                             }else{
                                 //failure
-                                $_SESSION["message"] = "Sorry, Reservation failed!";
-                                redirect_to("reservation_form.php?Category=<?php echo urlencode ($category); ?>");
+                                //$_SESSION["message"] = "Sorry, Reservation failed!";
+                                //redirect_to("reservation_form.php?Category=$category");
+                                $message = "Sorry, Reservation failed!";
+                                echo "<script type='text/javascript'>alert('$message'); window.location.replace(\"reservation_form.php?Category=$category\");</script>"; 
                             }
                                 
                         }else{
                             //failure
-                            $_SESSION["message"] = "Sorry, Reservation failed!";
+                            //$_SESSION["message"] = "Sorry, Reservation failed!";
+                            $message = "Sorry, Reservation failed!";
+                            echo "<script type='text/javascript'>alert('$message'); window.location.replace(\"reservation_form.php?Category=$category\");</script>"; 
                         } 
 
                     }
 
             }
           
+        }else{
+            $message = form_errors($errors);
+            echo "<script type='text/javascript'>alert('$message');</script>";
         }
 
     }
@@ -113,12 +122,6 @@
 
       <div class="payment_information">
 
-            
-                <?php echo message(); ?>
-            <div class="error_message">  
-                <?php echo form_errors($errors); ?>
-            </div>
-
             <form class="form-size uk-horizontal" action="payment_information.php?Payment=<?php echo urlencode($_SESSION["Payment"]); ?>" method="post">
                 <fieldset class="uk-fieldset">
 
@@ -128,17 +131,17 @@
 
                     <div class="uk-form-controls  form-margin personal-att" id="reg-width">
 
-                        <label class="edit_client_details">&nbsp;&nbsp;&nbsp; Account Name:</label>
-                        <input class="uk-input uk-form-small edit_client_form" style="margin-left: 100px" type="text" required="required" name="accountname">
+                        <label class="edit_details">&nbsp;&nbsp;&nbsp; Account Name:</label>
+                        <input class="uk-input uk-form-small edit_form" style="margin-left: 100px" type="text" required="required" value="<?php echo isset($_POST["accountname"]) ? $_POST["accountname"] : "" ?>" name="accountname">
                         
                         <br><br>
 
-                        <label class="edit_client_details">Account Number:</label>
-                        <input class="uk-input uk-form-small edit_client_form" style="margin-left: 100px" type="text" required="required" name="accountnumber">
+                        <label class="edit_details">Account Number:</label>
+                        <input class="uk-input uk-form-small edit_form" style="margin-left: 100px" type="text" required="required" value="<?php echo isset($_POST["accountnumber"]) ? $_POST["accountnumber"] : "" ?>" name="accountnumber">
 
                         <br><br>
                        
-                        <div class="edit_client_buttons">
+                        <div class="edit_buttons">
                            <input class=" uk-button-default Save_button_edit_profile" type="submit" name="submit" value="Submit"/>
 
                            <a href="reservation_form.php?Category=<?php echo urlencode ($_SESSION["Category"]); ?>" class="a"><input class=" uk-button-default Cancel_button_edit_profile" type="button" onclick="return confirm('Are you sure you want to cancel?')" name="cancel" value="Cancel"/></a>      

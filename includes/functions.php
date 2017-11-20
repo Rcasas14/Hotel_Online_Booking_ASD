@@ -23,7 +23,7 @@ function form_errors($errors = array()){
 
 	if(!empty($errors)){
 		$output .= "<div class =\"error\">";
-		$output .= "Please fix the following errors:";
+		$output .= "Please fix the following errors: ";
 		$output .= "<ul>";
 			foreach($errors as $key => $error) {
 				$output .= "<li>";
@@ -33,7 +33,12 @@ function form_errors($errors = array()){
 		$output .= "</ul>";
 		$output .= "</div>";
 	}
-	return $output;
+
+	$message = strip_tags($output);
+
+  // echo "<script type='text/javascript'>alert('$message');</script>";
+
+	return $message;
 }
 
 
@@ -81,6 +86,7 @@ function find_admin_by_username($username){
 	$query .= "FROM admins ";
 	$query .= "WHERE username = '{$safe_username}' ";
 	$query .= "LIMIT 1";
+
 	$admin_set = mysqli_query($connection, $query);
 	confirm_query($admin_set);
 
@@ -260,7 +266,7 @@ function is_Available($room_type) {
 function valid_date($check_in, $check_out){
 	$night_in = new DateTime($check_in);
 	$night_out = new DateTime($check_out);
-    $now = new DateTime();
+    $now = new DateTime(date("Y-m-d"));
 
     if($night_in < $now || $night_out < $now){
         return false;
@@ -281,6 +287,42 @@ function dateDiff($check_in, $check_out) {
 }
 
 
+function already_reserved($room_type, $check_in, $check_out) {
+	global $connection;
+
+	$safe_room_type = mysqli_real_escape_string($connection, $room_type);
+
+	$start_check_in = date($check_in);
+    $end_check_out = date($check_out);
+
+
+			$query  = "SELECT * ";
+			$query .= "FROM approved ";
+			$query .= "WHERE (Check_in <= '$end_check_out' AND Check_out >= '$start_check_in') AND ";
+			$query .= "Room_Type = '{$safe_room_type}' ";
+
+
+    $reserved_set = mysqli_query($connection, $query);
+    confirm_query($reserved_set);
+
+    if($reserved = mysqli_fetch_assoc($reserved_set)){
+    	return true;
+    }else{
+    	return false;
+    }
+	
+}
+
+
+function datesOverlap($start_one,$end_one,$start_two,$end_two) {
+
+   if($start_one <= $end_two && $end_one >= $start_two) { //If the dates overlap
+        return min($end_one,$end_two)->diff(max($start_two,$start_one))->days + 1; //return how many days overlap
+   }
+
+   return 0; //Return 0 if there is no overlap
+}
+
 
 
 //PENDING RESERVATIONS -------------------------------------------------------
@@ -295,6 +337,7 @@ function find_all_pendings() {
 	confirm_query($pending_set);
 
 	return $pending_set;  
+
 }
 
 function find_pending_reservation_by_id($reservation_id) {
@@ -488,12 +531,6 @@ function find_client_recent_reservation($username){
 
 }
 
-
-function rate($rate) {
-	$rate_value = str_replace("Php", "", $rate);
-
-	return $rate_value;
-}
 
 
 //AUTHENTICATION ----------------------------------------------------------------------

@@ -2,6 +2,8 @@
 <?php require_once("../includes/session.php"); ?>
 <?php require_once("../includes/functions.php"); ?>
 <?php require_once("../includes/validation_functions.php"); ?>
+<?php confirm_logged_in(); ?>
+
 
 <?php 
      
@@ -102,8 +104,11 @@
     <div>
         <div class="Create-acc-container">
 
-            <?php echo message(); ?>
-            <?php echo form_errors($errors); ?>
+           <?php echo message(); ?>
+
+            <div class="error_message">     
+                <?php echo form_errors($errors); ?>
+            </div>
 
             <form class="form-size uk-horizontal" action="edit_client.php" method="post">
                 <fieldset class="uk-fieldset">

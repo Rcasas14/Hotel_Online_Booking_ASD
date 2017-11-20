@@ -26,10 +26,10 @@
 		validate_presences($required_fields);
 		*/
 
-		$fields_with_max_lengths = array("room_type" => 50, "room_rate" => 11, "room_number" => 10);
+		$fields_with_max_lengths = array("room_type" => 50, "room_rate" => 15, "room_number" => 10, "availability" => 3);
 		validate_max_lengths($fields_with_max_lengths);
 
-		$fields_with_min_lengths = array("room_type" => 5, "room_rate" => 2, "room_number" => 1);
+		$fields_with_min_lengths = array("room_type" => 5, "room_rate" => 4, "room_number" => 3, "availability" => 2);
 		validate_min_lengths($fields_with_min_lengths);
 
 		if(empty($errors)){
@@ -54,13 +54,22 @@
 
 			if($result && mysqli_affected_rows($connection) == 1){
 				// success
-				$_SESSION["message"] = "Room Information successfully updated!";
-				redirect_to("manage_rooms.php");
+				//$_SESSION["message"] = "Room Information successfully updated!";
+				//redirect_to("manage_rooms.php");
+				$message = "Room information successfully updated!";
+                echo "<script type='text/javascript'>alert('$message'); window.location.replace(\"manage_rooms.php\");</script>"; 
 			}else{
 				//failure
-				$_SESSION["message"] = "Room Information update failed!";
+				//$_SESSION["message"] = "Room Information update failed!";
+				$message = "Room information update failed!";
+                echo "<script type='text/javascript'>alert('$message');</script>"; 
 			}
-		}
+
+		}else{
+            $message = form_errors($errors);
+            echo "<script type='text/javascript'>alert('$message');</script>";
+        }
+
 	}
 ?>
 
@@ -87,11 +96,6 @@
 
         <div class="edit_room">
 
-        	<div class="error_message"> 
-                <?php echo message(); ?>
-                <?php echo form_errors($errors); ?>
-            </div>
-
             <form action="edit_room.php?room_id=<?php echo urlencode($room["room_id"]); ?>" method="post" class="form-size uk-horizontal">
 
                 <fieldset class="uk-fieldset">
@@ -104,22 +108,22 @@
                     <div class="uk-form-controls  form-margin personal-att" id="reg-width">
 
                         <label class="edit_room_details" style="margin-left:34px;">Room Type:</label>
-                        <input class="uk-input uk-form-small edit_room_form"  type="text" required="required" name="room_type">
+                        <input class="uk-input uk-form-small edit_room_form"  type="text" required="required" value="<?php echo isset($_POST["room_type"]) ? $_POST["room_type"] : htmlentities($room["Room_Type"]); ?>" name="room_type">
 
                         <br><br>
 
                         <label class="edit_room_details" style="margin-left:34px;">Room Rate:</label>
-                        <input class="uk-input uk-form-small edit_room_form" type="text" required="required" name="room_rate">
+                        <input class="uk-input uk-form-small edit_room_form" type="text" required="required" value="<?php echo isset($_POST["room_rate"]) ? $_POST["room_rate"] : htmlentities($room["Room_Rate"]); ?>" name="room_rate">
 
                         <br><br>
 
                         <label class="edit_room_details">Room Number:</label>
-                        <input class="uk-input uk-form-small edit_room_form" type="text" required="required" name="room_number">
+                        <input class="uk-input uk-form-small edit_room_form" type="text" required="required" value="<?php echo isset($_POST["room_number"]) ? $_POST["room_number"] : htmlentities($room["Room_Number"]); ?>" name="room_number">
 
                         <br><br>
 
                         <label class="edit_room_details" style="margin-left:34px;">Availability:</label>
-                        <input class="uk-input uk-form-small edit_room_form" required="required" name="availability">
+                        <input class="uk-input uk-form-small edit_room_form" required="required" value="<?php echo isset($_POST["availability"]) ? $_POST["availability"] : htmlentities($room["Available"]); ?>" name="availability">
 
                         <br><br>
 
@@ -141,6 +145,7 @@
     <script src="UIKIT/js/uikit.js"></script>
     <script src="UIKIT/js/uikit-icons.js"></script>
     <script src="UIKIT/js/uikit-icons.min.js"></script>
+    
 </body>
 
 </html>

@@ -5,7 +5,8 @@
 <?php confirm_logged_in(); ?>
 
 <?php
-	
+
+
 	if(isset($_POST['submit'])){
         /*
 		$required_fields = array("firstname", "lastname", "username", "password");
@@ -20,7 +21,7 @@
 
 		if(empty($errors)){
 			//perform create
-
+            
 			$firstname = mysql_prep($_POST["firstname"]);
 			$lastname = mysql_prep($_POST["lastname"]);
 			$username = mysql_prep($_POST["username"]);
@@ -36,13 +37,21 @@
 
 			if($result){
 				// success
-				$_SESSION["message"] = "Admin successfully created!";
-				redirect_to("manage_admins.php");
+				//$_SESSION["message"] = "Admin successfully created!";
+                $message = "Admin successfully created!";
+                echo "<script type='text/javascript'>alert('$message'); window.location.replace(\"manage_admins.php\");</script>"; 
 			}else{
 				//failure
-				$_SESSION["message"] = "Admin creation failed!";
+				//$_SESSION["message"] = "Admin creation failed!";
+                $message = "Admin creation failed!";
+                echo "<script type='text/javascript'>alert('$message');</script>";
 			}
-		}
+
+		}else{
+            $message = form_errors($errors);
+            echo "<script type='text/javascript'>alert('$message');</script>";
+        }
+
 	}
 
 ?>
@@ -66,20 +75,9 @@
 </head>
 
 <body>
-    <!--
-    <div class="top-bg-color">
-        <div class="ico">
-            <img src="Images/logo.png" alt="Grey Hotel" class="ico-image">
-        </div>
-    </div>
-    -->
+    
 
         <div class="add_new_admin">
-             
-            <div class="error_message"> 
-                <?php echo message(); ?>
-                <?php echo form_errors($errors); ?>
-            </div>
 
             <form action="new_admin.php" method="post" class="form-size uk-horizontal">
 
@@ -90,23 +88,25 @@
                     <br>
                     <div class="uk-form-controls  form-margin personal-att" id="reg-width">
 
+                        <?php global $firstname, $lastname, $username ?>
+
                         <label class="add_admin_details">First Name:</label>
-                        <input class="uk-input uk-form-small add_admin_form" type="text" required="required" name="firstname">
+                        <input class="uk-input uk-form-small add_admin_form" type="text" required="required" value="<?php echo isset($_POST["firstname"]) ? $_POST["firstname"] : "" ?>" name="firstname">
 
                         <br><br>
 
                         <label class="add_admin_details">Last Name:</label>
-                        <input class="uk-input uk-form-small add_admin_form" type="text" required="required" name="lastname">
+                        <input class="uk-input uk-form-small add_admin_form" type="text" required="required" value="<?php echo isset($_POST["lastname"]) ? $_POST["lastname"] : "" ?>" name="lastname">
 
                         <br><br>
 
                         <label class="add_admin_details">Username:</label>
-                        <input class="uk-input uk-form-small add_admin_form" type="text" required="required" name="username">
+                        <input class="uk-input uk-form-small add_admin_form" type="text" required="required" value="<?php echo isset($_POST["username"]) ? $_POST["username"] : "" ?>" name="username">
 
                         <br><br>
 
                         <label class="add_admin_details" style="margin-left:30px;">Password:</label>
-                        <input class="uk-input uk-form-small add_admin_form" type="password" required="required" name="password">
+                        <input class="uk-input uk-form-small add_admin_form" type="password" required="required" value="<?php echo isset($_POST["password"]) ? $_POST["password"] : "" ?>" name="password">
 
                         <br><br>
 

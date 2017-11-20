@@ -7,6 +7,7 @@
 
 	$_SESSION["client_id"] =  null;
 	$_SESSION["username"] = null;
+	$_SESSION["password"] = null;
 
 	redirect_to("login_as_client.php");
 ?>

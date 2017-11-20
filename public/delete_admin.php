@@ -8,8 +8,6 @@
 	$admin = find_admin_by_id($_GET["id"]);
 
 	if(!$admin) {
-		//admin ID was missing or invalid or
-		//admin couldn't be found in database
 		redirect_to("manage_admins.php");
 	}
 
@@ -19,12 +17,16 @@
 
 	if($result && mysqli_affected_rows($connection) == 1){
 		// success
-		$_SESSION["message"] = "Admin successfully deleted!";
-		redirect_to("manage_admins.php");
+		//$_SESSION["message"] = "Admin successfully deleted!";
+		//redirect_to("manage_admins.php");
+		$message = "Admin successfully deleted!";
+        echo "<script type='text/javascript'>alert('$message'); window.location.replace(\"manage_admins.php\");</script>"; 
 	}else{
 		//failure
-		$_SESSION["message"] = "Admin deletion failed!";
-		redirect_to("manage_admins.php");
+		//$_SESSION["message"] = "Admin deletion failed!";
+		//redirect_to("manage_admins.php");
+		$message = "Admin deletion failed!";
+        echo "<script type='text/javascript'>alert('$message'); window.location.replace(\"manage_admins.php\");</script>"; 
 	}
 
 ?>

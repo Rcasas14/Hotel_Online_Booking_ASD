@@ -2,6 +2,7 @@
 <?php require_once("../includes/session.php"); ?>
 <?php require_once("../includes/functions.php"); ?>
 <?php require_once("../includes/validation_functions.php"); ?>
+<?php client_confirm_logged_in(); ?>
 
 
 <?php      
@@ -27,13 +28,17 @@
 
 <body>
 
-	<div class="recent_reservation">
+<?php
+    if($client == null){
+    	$message = "You have no recent reservation.";
+        echo "<script type='text/javascript'>alert('$message'); window.top.location.replace(\"reserve.php\"); window.close();</script>"; 
+    
+    }else{	?>
 
-		<?php echo message(); ?>
+	<div class="recent_reservation">
 
 		<br>
 		<center><h2> Your Recent Reservation </h2></center> <br>
-	<!--	<a href="edit_client_profile.php" class="a">+ Edit Profile</a>	-->
 	
 		<p> <span style="margin-left: 20px;" style="margin-left: 30px;"><b>Reservation Details:</b></span></p>
 		<hr/>
@@ -97,6 +102,9 @@
 
 		
 	</div>
+
+
+<?php } ?>
 
 	<script src="UIKIT/js/uikit.min.js"></script>
     <script src="UIKIT/js/uikit.js"></script> 

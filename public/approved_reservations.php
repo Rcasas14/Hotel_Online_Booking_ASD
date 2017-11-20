@@ -2,6 +2,8 @@
 <?php require_once("../includes/session.php"); ?>
 <?php require_once("../includes/functions.php"); ?>
 <?php require_once("../includes/validation_functions.php"); ?>
+<?php confirm_logged_in(); ?>
+
 
 <?php
 	$approved_set = find_all_approved();
@@ -25,8 +27,10 @@
 
 <body>
 
+
+<?php if($approved_set && mysqli_num_rows($approved_set) >= 1) {	?>
+
 	<div class="reservations">
-		<?php echo message(); ?>
 
 		<center><h2> Approved Reservations </h2></center>
 		<br/>
@@ -70,7 +74,15 @@
 
 		</table>
 
-	</div>		
+	</div>	
+
+<?php }else{	
+
+			$message = "There are no approved reservations in Grey Hotel.";
+       		echo "<script type='text/javascript'>alert('$message'); window.top.location.replace(\"admin_menu.php\"); window.close();</script>"; 
+
+	  }	?>
+
 
 </body>
 </html>

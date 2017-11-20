@@ -35,6 +35,8 @@
             <hr>
             <div class="sidebar_links">
                 <ul>
+                    <li><a href="admin_profile.php" target="iframe_content" class="h">Admin Profile</a></li>
+                    <br>
                     <li><a href="manage_admins.php" target="iframe_content" class="h">Manage Admins</a></li>
                     <br>
                     <li><a href="manage_clients.php" target="iframe_content" class="h">Manage Clients</a></li>

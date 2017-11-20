@@ -2,6 +2,8 @@
 <?php require_once("../includes/session.php"); ?>
 <?php require_once("../includes/functions.php"); ?>
 <?php require_once("../includes/validation_functions.php"); ?>
+<?php confirm_logged_in(); ?>
+
 
 <?php
 	$pending = find_pending_reservation_by_id($_GET["id"]);
@@ -43,16 +45,22 @@
 
 					if($result && mysqli_affected_rows($connection) == 1){
 						// success
-						 $_SESSION["message"] = "Reservation has been successfully declined!";
-						redirect_to("pending_reservations.php");
+						//$_SESSION["message"] = "Reservation has been successfully declined!";
+						//redirect_to("pending_reservations.php");
+						$message = "Reservation has been successfully declined!";
+               			echo "<script type='text/javascript'>alert('$message'); window.location.replace(\"pending_reservations.php\");</script>"; 
 					}else{
 						//failure
-						redirect_to("pending_reservations.php");
+						//redirect_to("pending_reservations.php");
+						$message = "Sorry, an error occured while declining the reservation. ";
+               			echo "<script type='text/javascript'>alert('$message'); window.location.replace(\"pending_reservations.php\");</script>"; 
 					}
              
                 }else{
                     //failure
-                    $_SESSION["message"] = "Sorry, an error occured while declining the reservation. ";
+                    //$_SESSION["message"] = "Sorry, an error occured while declining the reservation. ";
+                    $message = "Sorry, an error occured while declining the reservation. ";
+               		echo "<script type='text/javascript'>alert('$message'); window.location.replace(\"pending_reservations.php\");</script>"; 
                 }
 
 		?>

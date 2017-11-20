@@ -2,6 +2,8 @@
 <?php require_once("../includes/session.php"); ?>
 <?php require_once("../includes/functions.php"); ?>
 <?php require_once("../includes/validation_functions.php"); ?>
+<?php confirm_logged_in(); ?>
+
 
 <?php
 	$archived_set = find_all_archived();
@@ -25,8 +27,9 @@
 
 <body>
 
+<?php if($archived_set && mysqli_num_rows($archived_set) >= 1) {	?>
+
 	<div class="reservations">
-		<?php echo message(); ?>
 
 		<center><h2> Archived Reservations </h2></center>
 		<br/>
@@ -69,7 +72,14 @@
 
 		</table>
 
-	</div>		
+	</div>	
+
+<?php }else{	
+
+			$message = "There are no archived reservations in Grey Hotel.";
+       		echo "<script type='text/javascript'>alert('$message'); window.top.location.replace(\"admin_menu.php\"); window.close();</script>"; 
+
+	  }	?>			
 
 </body>
 </html>
