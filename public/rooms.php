@@ -41,7 +41,24 @@
                 <p class="nav-text"><a href="rooms.php" class="link-head-text">ROOMS</a></p>
                 <p class="nav-text"><a href="reserve.php" class="link-head-text">RESERVE NOW</a></p>
               
-            </div>          
+            </div>
+
+    
+        <?php if(logged_in()==true || client_logged_in()==true){   ?>
+
+                <div class="login">
+                    <p class="nav-text"><a href="client_logout.php" class="link-head-text" >LOG OUT</a></p>
+                </div>  
+
+        <?php }else{    ?>
+
+                <div class="login">
+                    <p class="nav-text"><a href="log_in.php" class="link-head-text">LOG IN</a></p>
+                </div> 
+
+        <?php }   ?>
+        
+
          </div>
 
         <div class="accommodations">
@@ -57,7 +74,6 @@
                                     <div class="roomTypeName"><p><?php echo htmlentities($room["Room_Type"]); ?></p></div>
                                     <p><b>Room Rate: &nbsp; </b><?php echo htmlentities($room["Room_Rate"]);?>/night</p>
                                     <p><b>Room Number: &nbsp; </b><?php echo htmlentities($room["Room_Number"]); ?></p>
-                                    <p><b>Available: &nbsp; </b><?php echo htmlentities($room["Available"]); ?></p>
                                     <p class="roomFeatures">Superior room is equipped with Wi-Fi internet service, electronic guestroom lock, telephone with voicemail,  executive desk, LCD colour TV with cable channels, refrigerator, coffee and tea making facilities, and bathtub.</p>
                                 </div> 
                         </div>
@@ -71,7 +87,6 @@
                                     <div class="roomTypeName" style="padding-top: 20px;"><p><?php echo htmlentities($room["Room_Type"]); ?></p></div>
                                     <p><b>Room Rate: &nbsp; </b><?php echo htmlentities($room["Room_Rate"]);?>/night</p>
                                     <p><b>Room Number: &nbsp; </b><?php echo htmlentities($room["Room_Number"]); ?></p>
-                                    <p><b>Available: &nbsp; </b><?php echo htmlentities($room["Available"]); ?></p>
                                     <p class="roomFeatures">Deluxe room is equipped with Wi-Fi internet service, iPod dock, electronic guestroom lock, telephone with voicemail, desktop computer, executive desk, LCD colour TV with cable channels, refrigerator, coffee and tea making facilities, and bathtub.</p>
                                 </div>
                         </div>
@@ -86,7 +101,6 @@
                                     <div class="roomTypeName"><p><?php echo htmlentities($room["Room_Type"]); ?></p></div>
                                     <p><b>Room Rate: &nbsp; </b><?php echo htmlentities($room["Room_Rate"]);?>/night</p>
                                     <p><b>Room Number: &nbsp; </b><?php echo htmlentities($room["Room_Number"]); ?></p>
-                                    <p><b>Available: &nbsp; </b><?php echo htmlentities($room["Available"]); ?></p>
                                     <p class="roomFeatures">Premier room is equipped with Wi-Fi internet service, Clock radio with iPod dock, electronic guestroom lock, data points for fax and computer, telephone with voicemail,  executive desk, LCD colour TV with cable channels, mini-bar and refrigerator, coffee machine pods, deep soaking tub, glass-partitioned hot and cold shower, and soft cotton bathrobes and towels.</p>
                                 </div>
                                 
@@ -105,7 +119,6 @@
                                     <div class="roomTypeName"><p><?php echo htmlentities($room["Room_Type"]); ?></p></div>
                                     <p><b>Room Rate: &nbsp; </b><?php echo htmlentities($room["Room_Rate"]);?>/night</p>
                                     <p><b>Room Number: &nbsp; </b><?php echo htmlentities($room["Room_Number"]); ?></p>
-                                    <p><b>Available: &nbsp; </b><?php echo htmlentities($room["Available"]); ?></p>
                                     <p class="roomFeatures">Deluxe suite includes afternoon tea, breakfast, Cocktails, Butler Service, Desktop computer, telephone with voicemail, Electronic guestroom lock, Executive desk, LCD colour TV with cable channels, Mini-bar and refrigerator, Personalised check-in/check-out, Pressing service of one set of suit or dress per stay, Private Reception Area, Queen bed, Separate bath and shower, Wi-Fi internet service.</p>
                                 </div>
 
@@ -121,7 +134,6 @@
                                     <div class="roomTypeName" style="padding-top: 20px";><p><?php echo htmlentities($room["Room_Type"]); ?></p></div>
                                     <p><b>Room Rate: &nbsp; </b><?php echo htmlentities($room["Room_Rate"]);?>/night</p>
                                     <p><b>Room Number: &nbsp; </b><?php echo htmlentities($room["Room_Number"]); ?></p>
-                                    <p><b>Available: &nbsp; </b><?php echo htmlentities($room["Available"]); ?></p>
                                     <p class="roomFeatures">Cabana suite of Grey Hotel includes afternoon tea, breakfast, Cocktails, Butler Service, Desktop computer, telephone with voicemail, Electronic guestroom lock, Executive desk, LCD colour TV with cable channels, Mini-bar and refrigerator, Personalised check-in/check-out, Pressing service of one set of suit or dress per stay, Private Reception Area, Separate bath and shower, Wi-Fi internet service.</p>
                                 </div>
 
@@ -138,7 +150,6 @@
                                     <div class="roomTypeName"><p><?php echo htmlentities($room["Room_Type"]); ?></p></div>
                                     <p><b>Room Rate: &nbsp; </b><?php echo htmlentities($room["Room_Rate"]);?>/night</p>
                                     <p><b>Room Number: &nbsp; </b><?php echo htmlentities($room["Room_Number"]); ?></p>
-                                    <p><b>Available: &nbsp; </b><?php echo htmlentities($room["Available"]); ?></p>
                                     <p class="roomFeatures">Presidential suite includes Desktop computer, telephone with voicemail, Electronic guestroom lock, iPod dock, LCD colour TV with cable channels, Mini-bar and refrigerator, Personal Office, King bed, Separate bath and shower, Wi-Fi internet service.</p>    
                                 </div>
                                 
@@ -159,7 +170,6 @@
                                     <div class="roomTypeName"><p><?php echo htmlentities($room["Room_Type"]); ?></p></div>
                                     <p><b>Room Rate: &nbsp; </b><?php echo htmlentities($room["Room_Rate"]);?>/night</p>
                                     <p><b>Room Number: &nbsp; </b><?php echo htmlentities($room["Room_Number"]); ?></p>
-                                    <p><b>Available: &nbsp; </b><?php echo htmlentities($room["Available"]); ?></p>
                                     <p class="roomFeatures">Continental Club Benefits includes afternoon tea, breakfast, Cocktails, Butler Service, Express check in/outIn-room, Personalised check-in/check-out, Pressing service of one set of suit or dress per stay, Private Reception Area.</p>
                                 </div>
                                 
@@ -175,7 +185,6 @@
                                    <div class="roomTypeName" style="padding-top: 20px"><p><?php echo htmlentities($room["Room_Type"]); ?></p></div>
                                     <p><b>Room Rate: &nbsp; </b><?php echo htmlentities($room["Room_Rate"]);?>/night</p>
                                     <p><b>Room Number: &nbsp; </b><?php echo htmlentities($room["Room_Number"]); ?></p>
-                                    <p><b>Available: &nbsp; </b><?php echo htmlentities($room["Available"]); ?></p>
                                     <p class="roomFeatures">Continental Deluxe Room includes Coffee and tea making facilities, telephone with voicemail, Electronic guestroom lock, Executive desk, LCD colour TV with cable channels, Mini-bar and refrigerator, Separate bath and shower.</p>
                                 </div>
 
@@ -189,7 +198,6 @@
                                     <div class="roomTypeName"><p><?php echo htmlentities($room["Room_Type"]); ?></p></div>
                                     <p><b>Room Rate: &nbsp; </b><?php echo htmlentities($room["Room_Rate"]);?>/night</p>
                                     <p><b>Room Number: &nbsp; </b><?php echo htmlentities($room["Room_Number"]); ?></p>
-                                    <p><b>Available: &nbsp; </b><?php echo htmlentities($room["Available"]); ?></p>
                                     <p class="roomFeatures">Continental Superior Room includes Coffee and tea making facilities, Connectable rooms, Desktop computer, telephone with voicemail, Electronic guestroom lock, Executive desk, LCD colour TV with cable channels, Mini-bar and refrigerator, Queen bed, Separate bath and shower.</p>
                                 </div>
 
@@ -207,7 +215,6 @@
                                     <div class="roomTypeName"><p><?php echo htmlentities($room["Room_Type"]); ?></p></div>
                                     <p><b>Room Rate: &nbsp; </b><?php echo htmlentities($room["Room_Rate"]);?>/night</p>
                                     <p><b>Room Number: &nbsp; </b><?php echo htmlentities($room["Room_Number"]); ?></p>
-                                    <p><b>Available: &nbsp; </b><?php echo htmlentities($room["Available"]); ?></p>
                                     <p class="roomFeatures">Grey Ballroom is perfect for weddings, birthdays, and debuts. This room is equipped with Built-in LCD projectors, Wi-Fi internet service, Latest audio-visual equipment, Lighting System, and Stage.</p>
                                 </div>
 
@@ -221,7 +228,6 @@
                                     <div class="roomTypeName" style="padding-top: 20px"><p><?php echo htmlentities($room["Room_Type"]); ?></p></div>
                                     <p><b>Room Rate: &nbsp; </b><?php echo htmlentities($room["Room_Rate"]);?>/night</p>
                                     <p><b>Room Number: &nbsp; </b><?php echo htmlentities($room["Room_Number"]); ?></p>
-                                    <p><b>Available: &nbsp; </b><?php echo htmlentities($room["Available"]); ?></p>
                                     <p class="roomFeatures">Grey Function Hall can accommodate a variety of set-ups including cocktail, classroom, banquet and theatre, gatherings, conferences and conventions.</p>
                                 </div>
                                 

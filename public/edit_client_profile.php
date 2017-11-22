@@ -56,7 +56,7 @@
                 // success
                 //$_SESSION["message"] = "Profile successfully updated!";
                 $message = "Profile successfully updated! Please log out your account to save some changes.";
-                echo "<script type='text/javascript'>alert('$message'); window.top.location.replace(\"login_as_client.php\");</script>"; 
+                echo "<script type='text/javascript'>alert('$message'); window.top.location.replace(\"client_logout.php\");</script>"; 
                 
             }else{
                 //failure      

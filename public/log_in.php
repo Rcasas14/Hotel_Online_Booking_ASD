@@ -27,7 +27,7 @@
                 //success, Mark user as logged in
                 $_SESSION["admin_id"] = $found_admin["id"];
                 $_SESSION["username"] = $found_admin["Username"];
-                $_SESSION["password"] = $found_client["hashed_password"];
+                $_SESSION["password"] = $found_admin["hashed_password"];
 
                 redirect_to("admin_menu.php");
 
@@ -98,7 +98,7 @@
     
         <div class="log-container uk-clearfix">
  
-            <form class="form-size uk-horizontal" action="login_as_client.php" method="POST">
+            <form class="form-size uk-horizontal" action="log_in.php" method="POST">
                 <fieldset class="uk-fieldset">
 
                     <center><legend class="uk-legend" id="log-text">LOG IN</legend></center>

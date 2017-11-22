@@ -20,10 +20,10 @@
         validate_presences($required_fields);
         
         
-        $fields_with_max_lengths = array("firstname" => 25, "lastname" => 25, "username" => 25, "password" => 25);
+        $fields_with_max_lengths = array("firstname" => 25, "lastname" => 25, "username" => 25, "password" => 25, "address" => 25, "city" => 25);
         validate_max_lengths($fields_with_max_lengths);
 
-        $fields_with_min_lengths = array("firstname" => 3, "lastname" => 3, "username" => 5, "password" => 6);
+        $fields_with_min_lengths = array("firstname" => 3, "lastname" => 3, "username" => 5, "password" => 6, "address" => 3, "city" => 3);
         validate_min_lengths($fields_with_min_lengths);
         
         if(empty($errors)){
@@ -34,12 +34,19 @@
             $lastname = mysql_prep($_POST["lastname"]);
             $username = mysql_prep($_POST["username"]);
             $hashed_password = password_encrypt($_POST["password"]);
+            $email = mysql_prep($_POST["email"]);
+            $address = mysql_prep($_POST["address"]);
+            $city = mysql_prep($_POST["city"]);
+
 
             $query  = "UPDATE admins SET ";
             $query .= "First_Name = '{$firstname}', ";
             $query .= "Last_Name = '{$lastname}', ";
             $query .= "Username = '{$username}', ";
-            $query .= "hashed_password = '{$hashed_password}' ";
+            $query .= "hashed_password = '{$hashed_password}', ";
+            $query .= "Email = '{$email}', ";
+            $query .= "Address = '{$address}', ";
+            $query .= "City = '{$city}' ";
             $query .= "WHERE id = {$id} ";
             $query .= "LIMIT 1";
 
@@ -50,7 +57,7 @@
                 // success
                 //$_SESSION["message"] = "Profile successfully updated!";
                 $message = "Profile successfully updated! Please log out your account to save some changes.";
-                echo "<script type='text/javascript'>alert('$message'); window.top.location.replace(\"admin.php\");</script>"; 
+                echo "<script type='text/javascript'>alert('$message'); window.top.location.replace(\"logout.php\");</script>"; 
 
             }else{
                 //failure      
@@ -116,7 +123,6 @@
 
                         <br><br>
 
-                    <!-- 
                         <label class="edit_details" style="margin-left: -14px;">E-mail:</label>
                         <input class="uk-input uk-form-small edit_form" type="email" placeholder="name@example.com" required="required" value="<?php echo isset($_POST["email"]) ? $_POST["email"] : htmlentities($admin["Email"]); ?>"  name="email">
 
@@ -131,7 +137,7 @@
                         <input class="uk-input uk-form-small edit_form" type="text" required="required" value="<?php echo isset($_POST["city"]) ? $_POST["city"] : htmlentities($admin["City"]); ?>"  name="city">
                         
                         <br><br>
-                     -->  
+ 
                         <div class="edit_buttons">
                            <input class=" uk-button-default Save_button_edit_profile" type="submit" name="submit" value="Save"/>
 

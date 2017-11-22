@@ -242,27 +242,6 @@ function find_all_categories() {
 
 //RESERVATIONS ------------------------------------------------------------------------
 
-function is_Available($room_type) {
-	global $connection;
-
-	$safe_room_type = mysqli_real_escape_string($connection, $room_type);
-
-	$query  = "SELECT * ";
-    $query .= "FROM rooms ";
-    $query .= "WHERE Room_Type = '{$safe_room_type}' AND ";
-    $query .= "Available = 'Yes' ";
-    $query .= "LIMIT 1";
-
-    $available_set = mysqli_query($connection, $query);
-    confirm_query($available_set);
-
-    if($available = mysqli_fetch_assoc($available_set)) {
-		return $available;
-	}else{
-		return false;
-	}
-}
-
 function valid_date($check_in, $check_out){
 	$night_in = new DateTime($check_in);
 	$night_out = new DateTime($check_out);
@@ -533,7 +512,7 @@ function find_client_recent_reservation($username){
 
 
 
-//AUTHENTICATION ----------------------------------------------------------------------
+//AUTHENTICATION (PASSWORD HASHING) ----------------------------------------------------------------------
 
 function logged_in(){
 	return isset($_SESSION["admin_id"]);
@@ -541,7 +520,9 @@ function logged_in(){
 
 function confirm_logged_in(){
 	if(!logged_in()){
-		redirect_to("admin.php");
+		redirect_to("log_in.php");
+	}else{
+		return true;
 	}
 }
 
@@ -550,8 +531,10 @@ function client_logged_in(){
 }
 
 function client_confirm_logged_in(){
-	if(!client_logged_in()){
-		redirect_to("login_as_client.php");
+	if(!client_logged_in()){		
+		redirect_to("log_in.php");
+	}else{
+		return true;
 	}
 }
 
@@ -615,7 +598,7 @@ function client_attempt_login($username, $password){
 	$client = find_client_by_username($username);
 
 	if($client){
-		//found admin, check password
+		//found client, check password
 		if(password_check($password, $client["hashed_password"])){
 			//password matches
 			return $client;
@@ -625,7 +608,7 @@ function client_attempt_login($username, $password){
 		}
 
 	}else{
-		//admin not found
+		//client not found
 		return false;
 	}
 }

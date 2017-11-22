@@ -31,6 +31,8 @@
 
         if(empty($errors)){
             //perform create
+            $_SESSION["client_id"] =  $client["id"];
+            $_SESSION["username"] =  $client["Username"];
             $username = $_SESSION["username"];
 
             $firstname = htmlentities($client["First_Name"]);
@@ -49,7 +51,6 @@
             $_SESSION["Payment"] = mysql_prep($_POST["payment"]);
 
             $date = valid_date($check_in, $check_out);
-            $available = is_Available($room_type);
             $already_reserved = already_reserved($room_type, $check_in, $check_out);
             
 
@@ -59,13 +60,6 @@
                 echo "<script type='text/javascript'>alert('$message');window.location.href=\"#reserve\";</script>";
 
             //   $_SESSION["message"] = "Sorry '{$room_type}' is already reserved within the date specified.";
-
-            }elseif(!$available){
-
-                $message = "Sorry $room_type is not available.";
-                echo "<script type='text/javascript'>alert('$message');window.location.href=\"#reserve\";</script>";
-
-            //   $_SESSION["message"] = "Sorry '{$room_type}' is not available!";
 
             }elseif(!$date){
 
@@ -160,7 +154,7 @@
 
     <div style="margin-left: -20px; margin-top: -20px;" class="roomType">
 
-        <h3>&nbsp;Rooms in Grey Hotel</h3><hr>
+        <h4>&nbsp;Rooms in Grey Hotel</h4><hr>
         
         <center>
             <div class="imgRow">
@@ -191,12 +185,21 @@
 
             </div>
         </center>
+
+        <div class="check_availability">   
+            <center>        
+                 <a href="available_rooms.php" class="a"><input style=" margin-left: -110px;" class=" uk-button-default availability_button" type="button" value="Check <?php echo $category ?> Availability"/></a>    
+            </center>           
+        </div>
+
     </div>
 
-    <br><hr>
-                
-<?php }elseif($category == 'Suites'){ ?>
+    <br><br><br><br>
+    
 
+
+<?php }elseif($category == 'Suites'){ ?>
+<hr>
     <div style="margin-left: -20px; margin-top: -20px;" class="roomType">
     
         <h3>&nbsp;Suites in Grey Hotel</h3><hr> 
@@ -231,9 +234,17 @@
             </div>
         </center>
 
+          <div class="check_availability">   
+            <center>        
+                 <a href="available_suites.php" class="a"><input style=" margin-left: -100px;" class=" uk-button-default availability_button" type="button" value="Check <?php echo $category ?> Availability"/></a>    
+            </center>           
+        </div>
+
     </div>
 
-    <br><hr>
+   <br><br><br><br>
+
+
 
 <?php }elseif($category == 'Continental Club'){ ?>
 
@@ -271,8 +282,17 @@
             </div>
         </center>
 
+        <div class="check_availability" >   
+            <center>        
+                 <a href="available_clubs.php" class="a"><input style=" margin-left: -140px;" class=" uk-button-default availability_button" type="button" value="Check <?php echo $category ?> Availability"/></a>    
+            </center>           
+        </div>
+
     </div>    
-    <br><hr>
+   
+   <br><br><br><br>
+
+
 
 <?php }elseif($category == 'Function Halls'){ ?>
 
@@ -301,14 +321,22 @@
 
             </div>
         </center>
+      
+        <div class="check_availability">   
+            <center>        
+                 <a href="available_function_halls.php" class="a"><input class=" uk-button-default availability_button" type="button" value="Check <?php echo $category ?> Availability"/></a>    
+            </center>           
+        </div>
+        
 
     </div>
-    <hr><br>
+
+    <br><br><br><br>
 
 <?php } ?>
 
 
-
+<hr><br><br>
 <div class="reservation_form" id="reserve">
     <div class="reserve-content uk-margin">
 

@@ -22,9 +22,11 @@
 <body class="body">
     <div class="body-inline">
         <div class="top-bg-color">
+
             <div class="ico">
                 <a href="index.php"><img src="Images/logo.png" alt="Grey Hotel" class="ico-image"></a>
             </div>
+
             <div class="topnav" id="myTopnav">
                 <div class="dropdown">
                     <p class="nav-text"><a href="index.php" class="link-head-text" uk-scroll>HOME</a></p>
@@ -35,9 +37,27 @@
                 </div>
 
                 <p class="nav-text"><a href="rooms.php" class="link-head-text">ROOMS</a></p>
-                <p class="nav-text"><a href="reserve.php" class="link-head-text">RESERVE NOW</a></p>                
-            </div>  
+                <p class="nav-text"><a href="reserve.php" class="link-head-text">RESERVE NOW</a></p>                    
+            </div>
+
+    
+        <?php if(logged_in()==true || client_logged_in()==true){   ?>
+
+                <div class="login">
+                    <p class="nav-text"><a href="client_logout.php" class="link-head-text">LOG OUT</a></p>
+                </div>  
+
+        <?php }else{    ?>
+
+                <div class="login">
+                    <p class="nav-text"><a href="log_in.php" class="link-head-text">LOG IN</a></p>
+                </div> 
+
+        <?php }   ?>
+           
+
         </div>
+
         <div class="slideshow-container">
             <figure>
                 <img src="Images/Greatness.png">

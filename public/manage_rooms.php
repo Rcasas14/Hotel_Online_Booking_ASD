@@ -37,7 +37,6 @@
 				<th> Room Type </th>
 				<th> Room Rate </th>
 				<th> Room Number </th>
-				<th> Availability </th>
 				<th> Actions </th>  
 			</tr>
 			<?php while($room = mysqli_fetch_assoc($room_set)) { ?>
@@ -46,7 +45,6 @@
 				<td><?php echo htmlentities($room["Room_Type"]); ?> </td>
 				<td><?php echo htmlentities($room["Room_Rate"]); ?> </td>
 				<td><?php echo htmlentities($room["Room_Number"]); ?> </td>
-				<td><?php echo htmlentities($room["Available"]); ?> </td>
 				<td><a href="edit_room.php?room_id=<?php echo urlencode($room["room_id"]); ?>" class="a">Edit</a></td>
 			</tr>
 			<?php } ?>	

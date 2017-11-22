@@ -13,10 +13,10 @@
 		validate_presences($required_fields);
         */
 
-		$fields_with_max_lengths = array("username" => 25, "firstname" => 25, "lastname" => 25, "password" => 25,);
+		$fields_with_max_lengths = array("username" => 25, "firstname" => 25, "lastname" => 25, "password" => 25, "address" => 25, "city" => 25);
 		validate_max_lengths($fields_with_max_lengths);
 
-		$fields_with_min_lengths = array("username" => 5, "firstname" => 3, "lastname" => 3, "password" => 6,);
+		$fields_with_min_lengths = array("username" => 5, "firstname" => 3, "lastname" => 3, "password" => 6, "address" => 3, "city" => 3);
 		validate_min_lengths($fields_with_min_lengths);
 
 		if(empty($errors)){
@@ -26,11 +26,14 @@
 			$lastname = mysql_prep($_POST["lastname"]);
 			$username = mysql_prep($_POST["username"]);
 			$hashed_password = password_encrypt($_POST["password"]);
+            $email = mysql_prep($_POST["email"]);
+            $address = mysql_prep($_POST["address"]);
+            $city = mysql_prep($_POST["city"]);
 
 			$query  = "INSERT INTO admins (";
-			$query .= " First_Name, Last_Name, Username, hashed_password";
+			$query .= " First_Name, Last_Name, Username, hashed_password, Email, Address, City";
 			$query .= ") VALUES (";
-			$query .= " '{$firstname}', '{$lastname}', '{$username}', '{$hashed_password}'";
+			$query .= " '{$firstname}', '{$lastname}', '{$username}', '{$hashed_password}', '{$email}', '{$address}', '{$city}' ";
 			$query .= ")";
 
 			$result = mysqli_query($connection, $query);
@@ -108,6 +111,21 @@
                         <label class="add_admin_details" style="margin-left:30px;">Password:</label>
                         <input class="uk-input uk-form-small add_admin_form" type="password" required="required" value="<?php echo isset($_POST["password"]) ? $_POST["password"] : "" ?>" name="password">
 
+                        <br><br>
+
+                        <label class="add_admin_details" style="margin-left: 50px;">E-mail:</label>
+                        <input class="uk-input uk-form-small add_admin_form" type="email" placeholder="name@example.com" required="required" value="<?php echo isset($_POST["email"]) ? $_POST["email"] : "" ?>"  name="email">
+
+                        <br><br>
+
+                        <label class="add_admin_details" style="margin-left: 40px;">Address:</label>
+                        <input class="uk-input uk-form-small add_admin_form" type="text" required="required" value="<?php echo isset($_POST["address"]) ? $_POST["address"] : "" ?>"  name="address">
+
+                        <br><br>
+
+                        <label class="add_admin_details" style="margin-left: 67px;">City:</label>
+                        <input class="uk-input uk-form-small add_admin_form" type="text" required="required" value="<?php echo isset($_POST["city"]) ? $_POST["city"] : "" ?>"  name="city">
+                        
                         <br><br>
 
                         <div class="add_admin_buttons">

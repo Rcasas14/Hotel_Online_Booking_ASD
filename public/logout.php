@@ -9,5 +9,5 @@
 	$_SESSION["username"] = null;
 	$_SESSION["password"] = null;
 
-	redirect_to("admin.php");
+	redirect_to("log_in.php");
 ?>

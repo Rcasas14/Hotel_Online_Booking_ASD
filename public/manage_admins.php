@@ -39,6 +39,9 @@
 				<th> First Name </th>
 				<th> Last Name </th>
 				<th> Username </th>
+				<th> E-mail </th>
+				<th> Address </th>
+				<th> City </th>
 				<th> Actions </th>  
 			</tr>
 			<?php while($admin = mysqli_fetch_assoc($admin_set)) { ?>
@@ -47,6 +50,9 @@
 				<td><?php echo htmlentities($admin["First_Name"]); ?> </td>
 				<td><?php echo htmlentities($admin["Last_Name"]); ?> </td>
 				<td><?php echo htmlentities($admin["Username"]); ?> </td>
+				<td><?php echo htmlentities($admin["Email"]); ?> </td>
+				<td><?php echo htmlentities($admin["Address"]); ?> </td>
+				<td><?php echo htmlentities($admin["City"]); ?> </td>
 
 				<?php 
 

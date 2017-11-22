@@ -33,7 +33,7 @@
     	$message = "You have no recent reservation.";
         echo "<script type='text/javascript'>alert('$message'); window.top.location.replace(\"reserve.php\"); window.close();</script>"; 
     
-    }else{	?>
+    }else {	?>
 
 	<div class="recent_reservation">
 

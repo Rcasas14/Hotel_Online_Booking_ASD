@@ -28,6 +28,7 @@
                 <h2>Grey Hotel ADMIN</h2>
                 <p class="welcome">Welcome to the admin area, <?php echo htmlentities($_SESSION["username"]); ?>! </p>
             </div>
+
         <div>
 
         <aside class="sidebar">

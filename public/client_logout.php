@@ -9,5 +9,5 @@
 	$_SESSION["username"] = null;
 	$_SESSION["password"] = null;
 
-	redirect_to("login_as_client.php");
+	redirect_to("log_in.php");
 ?>

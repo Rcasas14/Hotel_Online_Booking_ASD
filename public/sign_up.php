@@ -37,7 +37,7 @@
                 //$_SESSION["message"] = "Client Profile successfully created!";
                 //redirect_to("login_as_client.php");
                 $message = "Client Profile successfully created! Please log in to continue.";
-                echo "<script type='text/javascript'>alert('$message'); window.location.replace(\"login_as_client.php\");</script>"; 
+                echo "<script type='text/javascript'>alert('$message'); window.location.replace(\"log_in.php\");</script>"; 
             }else{
                 //failure
                 //$_SESSION["message"] = "Client Profile creation failed!";
@@ -144,7 +144,7 @@
                         <div class="sign_up_buttons" style="margin-left:45px;">
                             <input class=" uk-button-default Save_button_sign_up" type="submit" name="submit" value="Submit"/>
 
-                            <a href="login_as_client.php" class="a"><input class=" uk-button-default Cancel_button_sign_up" type="button" onclick="return confirm('Are you sure you want to cancel?')" name="cancel" value="Cancel"/></a>   
+                            <a href="log_in.php" class="a"><input class=" uk-button-default Cancel_button_sign_up" type="button" onclick="return confirm('Are you sure you want to cancel?')" name="cancel" value="Cancel"/></a>   
                         </div>
 
                     </div>

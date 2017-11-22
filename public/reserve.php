@@ -44,8 +44,25 @@
                 <p class="nav-text"><a href="rooms.php" class="link-head-text">ROOMS</a></p>
                 <p class="nav-text"><a href="reserve.php" class="link-head-text">RESERVE NOW</a></p>
               
-            </div>             
-         </div>
+            </div>  
+
+    
+        <?php if(logged_in()==true || client_logged_in()==true){   ?>
+
+                <div class="login">
+                    <p class="nav-text"><a href="client_logout.php" class="link-head-text" >LOG OUT</a></p>
+                </div>  
+
+        <?php }else{    ?>
+
+                <div class="login">
+                    <p class="nav-text"><a href="log_in.php" class="link-head-text">LOG IN</a></p>
+                </div> 
+
+        <?php }   ?>
+
+
+        </div>
    
         <aside class="sidebar">
 
@@ -56,9 +73,6 @@
                     <li><a href="client_profile.php" target="iframe_content" class="h">Profile</a></li>
                     <br>
 
-                    <li><a href="room_availability.php" target="iframe_content" class="h">Reserved Rooms Checker</a></li>
-                    <br>
-
                     <?php while($category = mysqli_fetch_assoc($category_set)) { ?>
 
                         <li><a href="reservation_form.php?Category=<?php echo urlencode($category["Category"]);?>" target="iframe_content" class="h">Reserve <?php echo htmlentities($category["Category"]); ?></a></li>
@@ -67,9 +81,7 @@
                     <?php } ?>
                                
                                
-                    <li><a href="recent_reservation.php" target="iframe_content" class="h">Recent Reservation</a></li>
-                    <br>
-                    <li><a href="client_logout.php" class="h">Log out</a></li>
+                    <li><a href="recent_reservation.php" target="iframe_content" class="h">Recent Reservation</a></li>                  
                 </ul>
             </div>
 

@@ -64,15 +64,6 @@
     z-index: 1;
 }
 
-
-
-    
-    .login-but {
-        float: right;
-        margin-top: 70px;
-        margin-right: 20px;
-    }
-
     .topnav {
     margin-top: 50px;
     float: right;
@@ -319,6 +310,25 @@
     font-family: Calibri;
 }
 
+.login a {
+    background-color: #585858;
+    font-size: 13px;
+    margin-top: 26px;
+    margin-right: 50px;
+    text-decoration: none;
+    padding-right: 10px;
+    float:right; 
+    padding:5px 10px 5px 10px;
+}
+
+.login a:hover{
+    color: #424242;
+    background: #fff;
+    text-decoration: none;
+} 
+
+
+
 
 
 /* RESERVE -------------------------------*/
@@ -412,7 +422,7 @@
 
 /* ROOMS (USER AREA)-------------------------------------------- */
 
-    .roomType h3 {
+    .roomType h3, .roomType h4{
         font-size: 40px;
         font-weight: bold;
         margin-top: 50px;
@@ -801,6 +811,33 @@ h2, p {
     }
 
 
+
+/* ROOM AVAILABILITY CHECKER ------------------------------------------------------------*/
+
+   .reserved{
+    padding-left: 50px;
+    padding-bottom: 50px;
+    margin-top: 30px;
+    float: left;
+    margin-left: 15px;
+    display: inline-block;
+}
+
+    .availability_button {
+        font-family: Calibri;
+        text-decoration: none;
+        background: #424242;
+        color: #fff;
+        padding: 12px;
+        font-size: 18px;
+        position: absolute;
+        margin-top: 15px;
+        margin-left: -130px;
+    }
+
+
+
+
 /* RESERVATION (PAYMENT INFORMATION) ---------------------------------------------------- */
 
 .payment_information {
@@ -986,7 +1023,7 @@ h2, p {
     padding-left: 50px;
     padding-bottom: 50px;
     margin-top: 30px;
-    margin-left: 220px;
+    margin-left: 200px;
     float: left;
 }
 

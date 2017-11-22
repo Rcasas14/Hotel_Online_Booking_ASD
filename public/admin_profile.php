@@ -37,6 +37,9 @@
 		<p> <b>First Name:</b> <span style="margin-left: 30px;"><?php echo htmlentities($admin["First_Name"]); ?> </span></p>
 		<p> <b>Last Name:</b> <span style="margin-left: 30px;"><?php echo htmlentities($admin["Last_Name"]); ?></span></p>
 		<p> &nbsp;<b>Username:</b> <span style="margin-left: 30px;"><?php echo htmlentities($admin["Username"]); ?></span></p>
+        <p> <span style="margin-left: 30px;"><b>E-mail:</b></span> <span style="margin-left: 30px;"><?php echo htmlentities($admin["Email"]); ?></span></p>
+        <p> <span style="margin-left: 17px;"><b>Address:</b></span> <span style="margin-left: 30px;"> <?php echo htmlentities($admin["Address"]); ?></span></p>
+        <p> <span style="margin-left: 50px;"><b>City:</b></span> <span style="margin-left: 30px;"><?php echo htmlentities($admin["City"]); ?></span></p>   
 
 	</div>
 

@@ -26,10 +26,10 @@
 		validate_presences($required_fields);
 		*/
 
-		$fields_with_max_lengths = array("room_type" => 50, "room_rate" => 15, "room_number" => 10, "availability" => 3);
+		$fields_with_max_lengths = array("room_type" => 50, "room_rate" => 15, "room_number" => 10);
 		validate_max_lengths($fields_with_max_lengths);
 
-		$fields_with_min_lengths = array("room_type" => 5, "room_rate" => 4, "room_number" => 3, "availability" => 2);
+		$fields_with_min_lengths = array("room_type" => 5, "room_rate" => 4, "room_number" => 3);
 		validate_min_lengths($fields_with_min_lengths);
 
 		if(empty($errors)){
@@ -40,13 +40,11 @@
 			$room_type = mysql_prep($_POST["room_type"]);
 			$room_rate = mysql_prep($_POST["room_rate"]);
 			$room_number = mysql_prep($_POST["room_number"]);
-			$availability = mysql_prep($_POST["availability"]);
 
 			$query  = "UPDATE rooms SET ";
 			$query .= "Room_Type = '{$room_type}', ";
 			$query .= "Room_Rate = '{$room_rate}', ";
-			$query .= "Room_Number = '{$room_number}', ";
-			$query .= "Available = '{$availability}' ";
+			$query .= "Room_Number = '{$room_number}' ";
 			$query .= "WHERE room_id = {$room_id} ";
 			$query .= "LIMIT 1";
 
@@ -119,11 +117,6 @@
 
                         <label class="edit_room_details">Room Number:</label>
                         <input class="uk-input uk-form-small edit_room_form" type="text" required="required" value="<?php echo isset($_POST["room_number"]) ? $_POST["room_number"] : htmlentities($room["Room_Number"]); ?>" name="room_number">
-
-                        <br><br>
-
-                        <label class="edit_room_details" style="margin-left:34px;">Availability:</label>
-                        <input class="uk-input uk-form-small edit_room_form" required="required" value="<?php echo isset($_POST["availability"]) ? $_POST["availability"] : htmlentities($room["Available"]); ?>" name="availability">
 
                         <br><br>
 
