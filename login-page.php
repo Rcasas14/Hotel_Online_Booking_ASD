@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale-1">
     <link rel="shortcut icon" href="Images/icon.ico">
     <title>Grey Hotel</title>
-    <link href="UIKIT/css/uikit.min.css" rel="stylesheet">
     <link href="UIKIT/css/uikit.css" rel="stylesheet">
     <link href="UIKIT/css/uikit-rtl.css" rel="stylesheet">
-    <link href="UIKIT/css/uikit-rtl.min.css" rel="stylesheet" type="text/css">
-    <link href="style.css" type="text/css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/footer-distributed.css" rel="stylesheet" type="text/css">
+    <link href="css/login-page.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -28,34 +28,33 @@
                         <a href="#contact">Contact Us</a>
                     </div>
                 </div>
-                <div class="dropdown">
-                    <p class="nav-text"><a href="#rooms" class="link-head-text">ROOMS</a></p>
-                    <div class="dropdown-content">
-                        <a href="#about-hotel">Room Types</a>
-                    </div>
-                </div>
+                <p class="nav-text"><a href="#rooms" class="link-head-text">ROOMS</a></p>
                 <div class="dropdown">
                     <p class="nav-text"><a href="login-page.php" class="link-head-text">RESERVE NOW</a></p>
                     <div class="dropdown-content">
-                        <a href="#reserve-room">Reserve Room</a>
+                        <a href="reserve-form-page.php">Reserve Room</a>
                         <a href="#client-profile">Client Profile</a>
                     </div>
                 </div>
             </div>
         </div>
-     <!--   <div class="head-image">
+        <!--   <div class="head-image">
         <h1 class="head-wel">WELCOME BACK!</h1>
             <img src="Images/welcome.jpeg" class="Headlog-image">
         </div>-->
         <div class="log-container uk-clearfix">
+            <div class="log-center-logo">
+                <img src="Images/logo.png">
+            </div>
             <!-- must have action_page.php-->
-            <form class="form-size uk-horizontal">
+            <form class="log-form-size uk-horizontal">
                 <fieldset class="uk-fieldset">
-                    <legend class="uk-legend" id="log-text">LOGIN AS OUR CLIENT</legend>
+                    <legend class="uk-legend" id="log-text">Welcome Back!</legend>
+                    <p class="uk-margin log-signIn">Sign in with your account on Grey Hotel to Continue!</p>
                     <div class="uk-margin">
-                        <label class="uk-form-label form-horizontal-text font-Roboto">Email Address *</label>
+                        <label class="uk-form-label form-horizontal-text font-Roboto">Username *</label>
                         <div class="uk-form-controls">
-                            <input class="uk-input uk-form-small" id="form-horizontal-text" type="Email" placeholder="name@example.com">
+                            <input class="uk-input uk-form-small" id="form-horizontal-text" type="text">
                             <br>
                             <br>
                             <label class="uk-form-label form-horizontal-text font-Roboto">Password *</label>
@@ -81,6 +80,24 @@
         </div>
         </fieldset>
         </form>
+    </div>
+    <div class="Footer">
+        <footer class="footer-distributed">
+            <div class="footer-right">
+                <a href="#"><img src="Images/facebook-logo.png"><i class="fa fa-facebook"></i></a>
+                <a href="#"><img src="Images/github-logo.png"><i class="fa fa-github"></i></a>
+            </div>
+            <div class="footer-left">
+                <p class="footer-links">
+                    <a href="index.php" uk-scroll>Home</a>.
+                    <a href="#">Pricing</a> .
+                    <a href="#about-hotel" uk-scroll>About</a> .
+                    <a href="#">Contact</a> .
+                </p>
+                <p>Grey Hotel &copy; 2017</p>
+            </div>
+
+        </footer>
     </div>
     </div>
     <script src="UIKIT/js/uikit.min.js"></script>

@@ -1,0 +1,108 @@
+/*login-page style*/
+@font-face {
+    font-family: "Strait-Regular";
+    src: url(../Fonts/strait/Strait-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Roboto-Light";
+    src: url("../Fonts/Roboto/Roboto-Light.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat-Regular";
+    src: url("../Fonts/Montserrat/Montserrat-Regular.otf");
+}
+
+.log-container {
+    height: 500px;
+    padding: 25px 50px 60px 90px;
+    margin-right: 200px;
+    margin-left: 450;
+    margin-top: 120px;
+    margin-bottom: 150px;
+    display: inline-block;
+}
+
+#log-text {
+    color: #000;
+    text-decoration: none;
+    font-family: "Montserrat-Regular";
+    text-align: center;
+}
+
+.log-form-size {
+    margin-top: 100px;
+    width: 280px;
+    height: 6px;
+    display: inline;
+}
+
+.item {
+    height: 200px;
+    background: RED;
+    width: 100%;
+    color: #000;
+}
+
+.reset-margin {
+    margin: 0;
+}
+
+.font-log {
+    font-size: 14.5px;
+    margin: 0;
+    padding: 0;
+}
+
+.log-butt {
+    font-family: "Roboto-Light";
+    text-decoration: none;
+    background: #424242;
+    color: #fff;
+    padding: 12px 25px 12px 25px;
+    font-size: 13px;
+}
+
+.notAmember-yet {
+    font-size: 27px;
+    text-align: center;
+    color: #000;
+    text-decoration: none;
+    font-family: "Montserrat-Regular";
+}
+
+#create-acc {
+    text-align: center;
+    font-family: "Roboto-Light";
+}
+
+.not-member-container p {
+    text-align: center;
+    padding-right: 0;
+}
+
+.not-member-container {
+    display: inline;
+}
+
+.head-image {
+    height: 480px;
+    background-size: contain;
+}
+
+.font-Roboto {
+    font-family: "Roboto-Light";
+}
+
+.log-center-logo img {
+    display: inline;
+    margin-left: 80px;
+    margin-bottom: 35px;
+}
+
+.log-signIn {
+    font-size: 13px;
+    margin-bottom: 40px;
+    text-align: center;
+}
